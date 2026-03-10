@@ -1,4 +1,5 @@
 ---
+title: 14. Pairing-Based Cryptography Security
 tags: [math, pairing, elliptic-curves, cryptography, security, lesson-14]
 aliases: [Pairing Security, BDH, Security Analysis]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 14. Bảo mật Pairing-Based Cryptography
 
-> **Prerequisites**: [[10. Pairing-Friendly Curves]], [[12. IBE & BLS Signatures]], [[13. Polynomial Commitments & KZG]]
+> **Prerequisites**: [[10-pairing-friendly-curves|Pairing-Friendly Curves]], [[12-ibe-bls-signatures|IBE & BLS Signatures]], [[13-polynomial-commitments-kzg|Polynomial Commitments & KZG]]
 > **Objectives**:
 > - Nắm các hardness assumptions (BDH, DBDH, $q$-SDH, $q$-DLOG) và quan hệ giữa chúng
 > - Hiểu security levels thực tế cho BN254 và BLS12-381 sau Kim–Barbulescu 2016

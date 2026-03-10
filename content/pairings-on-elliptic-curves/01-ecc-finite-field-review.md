@@ -1,5 +1,5 @@
 ---
-
+title: 01. ECC & Finite Field Review
 tags: [math, pairing, elliptic-curves, lesson-01] 
 aliases: [ECC và Finite Field Review]
 created: 2026-03-09

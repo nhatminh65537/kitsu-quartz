@@ -1,4 +1,5 @@
 ---
+title: 13. Polynomial Commitments & KZG
 tags: [math, pairing, elliptic-curves, cryptography, zkp, lesson-13]
 aliases: [KZG Commitment, Polynomial Commitment, Kate-Zaverucha-Goldberg]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 13. Ứng dụng: Polynomial Commitments và KZG
 
-> **Prerequisites**: [[12. IBE & BLS Signatures]], [[10. Pairing-Friendly Curves]]
+> **Prerequisites**: [[12-ibe-bls-signatures|IBE & BLS Signatures]], [[10-pairing-friendly-curves|Pairing-Friendly Curves]]
 > **Objectives**:
 > - Hiểu polynomial commitment scheme (PCS): commit, open, verify
 > - Nắm KZG commitment: cấu trúc, trusted setup, và phương trình verify dùng pairing

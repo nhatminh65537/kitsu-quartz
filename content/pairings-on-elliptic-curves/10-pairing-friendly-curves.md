@@ -1,4 +1,5 @@
 ---
+title: 10. Pairing-Friendly Curves
 tags: [math, pairing, elliptic-curves, lesson-10]
 aliases: [Pairing-Friendly Curves, BN254, BLS12-381]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 10. Pairing-Friendly Curves: BN254, BLS12-381, và Các Gia Đình Khác
 
-> **Prerequisites**: [[09_Ate_Pairing_va_Optimal_Ate]], [[01_ECC_va_Finite_Field_Review]], [[02_Extension_Fields_va_Tower_Extensions]]
+> **Prerequisites**: [[09-ate-pairing-optimal-ate|Ate Pairing & Optimal Ate]], [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]]
 > **Objectives**:
 > - Hiểu điều kiện "pairing-friendly": embedding degree $k$, rho-value $\rho$, và cân bằng bảo mật
 > - Nắm cấu trúc tham số BN254 và BLS12-381 — hai curves quan trọng nhất hiện tại

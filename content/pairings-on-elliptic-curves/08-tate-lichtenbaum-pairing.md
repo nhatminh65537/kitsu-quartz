@@ -1,4 +1,5 @@
 ---
+title: 08. Tate–Lichtenbaum Pairing
 tags: [math, pairing, elliptic-curves, lesson-08]
 aliases: [Tate-Lichtenbaum Pairing]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 8. Tate–Lichtenbaum Pairing
 
-> **Prerequisites**: [[07. Miller's Algorithm]], [[06. Weil Pairing]], [[02. Extension Fields & Tower Extensions]]
+> **Prerequisites**: [[07-millers-algorithm|Miller's Algorithm]], [[06-weil-pairing|Weil Pairing]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]]
 > **Objectives**:
 > - Hiểu Tate pairing (unreduced) nhận giá trị trong $\mathbb{F}_{q^k}^*/(\mathbb{F}_{q^k}^*)^n$ và tại sao cần final exponentiation
 > - Nắm reduced Tate pairing $\hat{t}_n$ và 4 tính chất chính

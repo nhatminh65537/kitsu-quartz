@@ -1,4 +1,5 @@
 ---
+title: 06. Weil Pairing
 tags: [math, pairing, elliptic-curves, lesson-06]
 aliases: [Weil Pairing]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 6. Weil Pairing
 
-> **Prerequisites**: [[04. Divisors on Elliptic Curve]], [[05. Torsion Points]], [[03. Rational Functions & Algebraic Geometry on Curves]]
+> **Prerequisites**: [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]], [[05-torsion-points|Torsion Points]], [[03-rational-functions-algebraic-geometry-on-curves|Rational Functions & Algebraic Geometry on Curves]]
 > **Objectives**:
 > - Nắm định nghĩa chính xác của Weil pairing $e_n: E[n] \times E[n] \to \mu_n$ qua divisors
 > - Hiểu và chứng minh 5 tính chất: bilinear, alternating, non-degenerate, Galois-equivariant, compatible

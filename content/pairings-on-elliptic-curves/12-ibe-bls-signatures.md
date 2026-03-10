@@ -1,4 +1,5 @@
 ---
+title: 12. IBE & BLS Signatures
 tags: [math, pairing, elliptic-curves, cryptography, lesson-12]
 aliases: [IBE, BLS Signatures, Boneh-Franklin]
 created: 2026-03-09
@@ -6,7 +7,7 @@ created: 2026-03-09
 
 # 12. Ứng dụng: IBE và BLS Signatures
 
-> **Prerequisites**: [[11. MOV Attack & Frey–Rück Attack]], [[06. Weil Pairing]]
+> **Prerequisites**: [[11-mov-attack-frey-ruck-attack|MOV Attack & Frey–Rück Attack]], [[06-weil-pairing|Weil Pairing]]
 > **Objectives**:
 > - Hiểu Boneh–Franklin IBE: dùng pairing để encrypt trực tiếp vào identity
 > - Nắm BLS short signatures: chữ ký ngắn nhất có thể, aggregatable
