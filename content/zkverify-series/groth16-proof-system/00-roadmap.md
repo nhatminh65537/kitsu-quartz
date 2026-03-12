@@ -68,7 +68,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[groth16-proof-system/00-roadmap|00. Roadmap]]
+- [ ] [[zkverify-series/groth16-proof-system/00-roadmap|00. Roadmap]]
 - [ ] [[01-r1cs-groth16-bridge|01. R1CS → Groth16 Bridge]]
 - [ ] [[02-qap-groth16-bridge|02. QAP → Groth16 Bridge]]
 - [ ] [[03-pairings-groth16|03. Bilinear Pairings trong Groth16]]

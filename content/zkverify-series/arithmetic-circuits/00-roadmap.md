@@ -70,7 +70,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[arithmetic-circuits/00-roadmap|00. Roadmap]]
+- [ ] [[zkverify-series/arithmetic-circuits/00-roadmap|00. Roadmap]]
 - [ ] [[01-finite-fields|01. Finite Fields & Field Arithmetic]]
 - [ ] [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]]
 - [ ] [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]]

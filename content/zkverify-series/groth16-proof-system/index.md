@@ -6,7 +6,7 @@ created: 2026-03-12
 
 ## Navigation
 
-- [[groth16-proof-system/00-roadmap|00. Roadmap]] — Dependency graph, progress tracker, danh sách lesson đầy đủ
+- [[zkverify-series/groth16-proof-system/00-roadmap|00. Roadmap]] — Dependency graph, progress tracker, danh sách lesson đầy đủ
 
 ## Lessons
 
