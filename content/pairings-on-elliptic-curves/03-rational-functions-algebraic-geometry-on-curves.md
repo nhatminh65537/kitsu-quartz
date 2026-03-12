@@ -66,12 +66,12 @@ $$ \text{div}(f_P) = n[P] - n[\mathcal{O}] $$
 > Mọi $f \in \bar{k}(E)^*$ đều viết được duy nhất dạng $f = t_P^m \cdot u$ gần $P$, với $u$ không có zero hay pole tại $P$. Số nguyên $m$ được gọi là **order of vanishing** (bậc triệt tiêu) của $f$ tại $P$:
 > 
 > $$
-\operatorname{ord}_P(f)=
-\begin{cases}
-m>0 & \text{: } f \text{ có zero bậc } m \text{ tại } P,\\
-0 & \text{: } f \text{ regular (không zero, không pole) tại } P,\\
-m<0 & \text{: } f \text{ có pole bậc } |m| \text{ tại } P.
-\end{cases}
+> \operatorname{ord}_P(f)=
+> \begin{cases}
+> m>0 & \text{: } f \text{ có zero bậc } m \text{ tại } P,\\
+> 0 & \text{: } f \text{ regular (không zero, không pole) tại } P,\\
+> m<0 & \text{: } f \text{ có pole bậc } |m| \text{ tại } P.
+> \end{cases}
 > $$
 
 > [!example] Example 3.4 — Uniformizer trên $E$
