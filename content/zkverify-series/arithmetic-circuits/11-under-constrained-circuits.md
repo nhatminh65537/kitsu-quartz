@@ -31,10 +31,10 @@ Theo 0xPARC ZK Bug Tracker, under-constrained là class lỗi chiếm tỷ lệ 
 
 ```mermaid
 flowchart LR
-    PI["Public inputs<br>x = 9"] --> CS["Constraint System<br>(under-constrained)"]
-    W1["Witness 1: w=3<br>✅ đúng (3²=9)"] --> CS
-    W2["Witness 2: w=10<br>✅ cũng pass!<br>(10²=100≡9 mod 13)"] --> CS
-    W3["Witness 3: w=FAKE<br>✅ cũng pass nếu<br>constraint thiếu!"] --> CS
+    PI["Public inputs<br>x = 9"] --> CS["Constraint System<br>(under\-constrained)"]
+    W1["Witness 1\: w=3<br>✅ đúng (3²=9)"] --> CS
+    W2["Witness 2\: w=10<br>✅ cũng pass!<br>(10²=100≡9 mod 13)"] --> CS
+    W3["Witness 3\: w=FAKE<br>✅ cũng pass nếu<br>constraint thiếu!"] --> CS
     CS --> PROOF["Proof hợp lệ<br>cho cả 3 witness"]
 ```
 
@@ -300,15 +300,15 @@ print("→ Circuit nghĩ x=2 < 10, nhưng thực ra prover encode x=15!")
 
 ```mermaid
 flowchart TD
-    A["Đọc circuit / R1CS"] --> B["Bước 1: Signal inventory<br>Liệt kê tất cả signals"]
-    B --> C["Bước 2: Constraint graph<br>Với mỗi signal: đếm constraints chứa nó"]
+    A["Đọc circuit \/ R1CS"] --> B["Bước 1\: Signal inventory<br>Liệt kê tất cả signals"]
+    B --> C["Bước 2\: Constraint graph<br>Với mỗi signal\: đếm constraints chứa nó"]
     C --> D{"Signal có ≥1<br>constraint?"}
     D -->|"Không → unconstrained"| E["🔴 Dạng 1<br>Signal tự do hoàn toàn"]
-    D -->|"Có"| F["Bước 3: Semantic check<br>Constraints có đủ xác định<br>signal duy nhất không?"]
-    F -->|"Nhiều solutions"| G["🔴 Dạng 3/4<br>Non-deterministic"]
-    F -->|"Unique"| H["Bước 4: Type check<br>Signal dùng như bit/range<br>nhưng không có constraint?"]
-    H -->|"Thiếu"| I["🔴 Dạng 2<br>Missing bit/range check"]
-    H -->|"OK"| J["Bước 5: Field check<br>Có overflow/wrap-around không?"]
+    D -->|"Có"| F["Bước 3\: Semantic check<br>Constraints có đủ xác định<br>signal duy nhất không?"]
+    F -->|"Nhiều solutions"| G["🔴 Dạng 3\/4<br>Non\-deterministic"]
+    F -->|"Unique"| H["Bước 4\: Type check<br>Signal dùng như bit\/range<br>nhưng không có constraint?"]
+    H -->|"Thiếu"| I["🔴 Dạng 2<br>Missing bit\/range check"]
+    H -->|"OK"| J["Bước 5\: Field check<br>Có overflow\/wrap\-around không?"]
     J -->|"Có"| K["🔴 Dạng 5<br>Field arithmetic bug"]
     J -->|"OK"| L["✅ Signal OK"]
 ```

@@ -68,25 +68,25 @@ Giai đoạn D — Ứng dụng Mật mã (Lessons 11–14)
 
 ```mermaid
 graph TD
-    L01["01 - ECC and Finite Field Review"] --> L02["02 - Extension Fields"]
-    L01 --> L03["03 - Rational Functions"]
-    L02 --> L05["05 - Torsion Points and E(n)"]
-    L03 --> L04["04 - Divisors trên EC"]
+    L01["01 \- ECC and Finite Field Review"] --> L02["02 \- Extension Fields"]
+    L01 --> L03["03 \- Rational Functions"]
+    L02 --> L05["05 \- Torsion Points and E(n)"]
+    L03 --> L04["04 \- Divisors trên EC"]
     L04 --> L05
-    L04 --> L06["06 - Weil Pairing"]
+    L04 --> L06["06 \- Weil Pairing"]
     L05 --> L06
-    L06 --> L07["07 - Miller's Algorithm"]
-    L06 --> L11["11 - MOV Attack"]
-    L07 --> L08["08 - Tate-Lichtenbaum Pairing"]
+    L06 --> L07["07 \- Miller's Algorithm"]
+    L06 --> L11["11 \- MOV Attack"]
+    L07 --> L08["08 \- Tate\-Lichtenbaum Pairing"]
     L07 --> L11
-    L08 --> L09["09 - Ate Pairing and Optimal Ate"]
-    L08 --> L10["10 - Pairing-Friendly Curves"]
+    L08 --> L09["09 \- Ate Pairing and Optimal Ate"]
+    L08 --> L10["10 \- Pairing\-Friendly Curves"]
     L05 --> L10
     L09 --> L10
-    L11 --> L12["12 - IBE and BLS Signatures"]
+    L11 --> L12["12 \- IBE and BLS Signatures"]
     L06 --> L12
-    L10 --> L14["14 - Security Analysis"]
-    L12 --> L13["13 - KZG and Polynomial Commitments"]
+    L10 --> L14["14 \- Security Analysis"]
+    L12 --> L13["13 \- KZG and Polynomial Commitments"]
     L12 --> L14
     L13 --> L14
 ```

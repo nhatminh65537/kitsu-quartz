@@ -77,11 +77,11 @@ Circuit này có 4 gates, trong đó 2 multiplication và 2 addition.
 
 ```mermaid
 graph TD
-    x(["z₁ = x"]) --> mul1["× : z₃ = z₁·z₁"]
+    x(["z₁ = x"]) --> mul1["× \: z₃ = z₁·z₁"]
     x --> mul1
-    x --> mul2["× : z₄ = z₃·z₁"]
+    x --> mul2["× \: z₄ = z₃·z₁"]
     mul1 -->|z₃| mul2
-    mul2 -->|z₄| note1["z₄ + z₁ + 5·z₀ = z₂<br>(addition — no constraint)"]
+    mul2 -->|z₄| note1["z₄ \+ z₁ \+ 5·z₀ = z₂<br>(addition — no constraint)"]
     x --> note1
     c5(["z₀ = 1"]) --> note1
     note1 --> out(["z₂ = out"])
@@ -222,9 +222,9 @@ Circuit này có fan-in 2, intermediate signal, và cần xử lý cả addition
 
 ```mermaid
 graph TD
-    x(["x"]) & y(["y"]) --> add["+ : s = x+y<br>(no constraint)"]
-    add --> mul["× : t = s·s"]
-    mul -->|t| sub["− : out = t−z<br>(pinning constraint)"]
+    x(["x"]) & y(["y"]) --> add["\+ \: s = x\+y<br>(no constraint)"]
+    add --> mul["× \: t = s·s"]
+    mul -->|t| sub["− \: out = t−z<br>(pinning constraint)"]
     z_in(["z"]) --> sub
     sub --> out(["out"])
 ```
@@ -326,8 +326,8 @@ Khi đọc code circuit hoặc R1CS output từ compiler, kiểm tra theo thứ 
 
 ```mermaid
 flowchart TD
-    A["Đọc circuit / constraint list"] --> B{"Mỗi × gate<br>có constraint?"}
-    B -->|"Thiếu"| C["🔴 Under-constrained<br>Lesson 11"]
+    A["Đọc circuit \/ constraint list"] --> B{"Mỗi × gate<br>có constraint?"}
+    B -->|"Thiếu"| C["🔴 Under\-constrained<br>Lesson 11"]
     B -->|"Đủ"| D{"Mọi intermediate<br>signal bị constrain?"}
     D -->|"Có signal tự do"| E["🔴 Unconstrained signal<br>Lesson 11"]
     D -->|"OK"| F{"Output circuit<br>có pinning constraint?"}

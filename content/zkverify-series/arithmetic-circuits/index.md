@@ -11,7 +11,7 @@ updated: 2026-03-12
 
 ## Phần 1 — Nền tảng ✅
 
-- [[01-finite-fields|01. Finite Fields & Field Arithmetic]] — $\mathbb{F}_p$, phép toán field, multiplicative inverse (Extended GCD + Fermat), $\mathbb{F}_p^*$ cyclic group, primitive roots, roots of unity, extension fields. Bảng các trường ZK thực tế: BN254, BLS12-381, Goldilocks, Baby Bear.
+- [[arithmetic-circuits/01-finite-fields|01. Finite Fields & Field Arithmetic]] — $\mathbb{F}_p$, phép toán field, multiplicative inverse (Extended GCD + Fermat), $\mathbb{F}_p^*$ cyclic group, primitive roots, roots of unity, extension fields. Bảng các trường ZK thực tế: BN254, BLS12-381, Goldilocks, Baby Bear.
 - [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — Evaluation (Horner), roots, Lagrange interpolation, Schwartz-Zippel lemma, vanishing polynomial $Z_H(x)$, divisibility $Z_H \mid p(x)$ ↔ constraint satisfied.
 
 ## Phần 2 — Arithmetic Circuit Model ✅
@@ -49,14 +49,14 @@ updated: 2026-03-12
 ```mermaid
 flowchart TD
     F["🔢 Finite Field F_p<br>Lesson 01"] --> P["📐 Polynomials<br>Lesson 02"]
-    F --> C["⚙️ Arithmetic Circuit<br>Lessons 03-05"]
+    F --> C["⚙️ Arithmetic Circuit<br>Lessons 03\-05"]
     P --> QAP
-    C --> R["📊 R1CS: Az∘Bz=Cz<br>Lessons 06-08"]
-    R --> QAP["🔗 QAP: t | UV-W<br>Lessons 09-10"]
-    QAP --> ZK["🔐 ZK Proof<br>Groth16/PLONK"]
-    C --> BUG["🐛 Constraint Bugs<br>Lessons 11-13"]
-    BUG --> UC["Under-constrained<br>Soundness break"]
-    BUG --> OC["Over-constrained<br>Completeness break"]
+    C --> R["📊 R1CS\: Az∘Bz=Cz<br>Lessons 06\-08"]
+    R --> QAP["🔗 QAP\: t | UV\-W<br>Lessons 09\-10"]
+    QAP --> ZK["🔐 ZK Proof<br>Groth16\/PLONK"]
+    C --> BUG["🐛 Constraint Bugs<br>Lessons 11\-13"]
+    BUG --> UC["Under\-constrained<br>Soundness break"]
+    BUG --> OC["Over\-constrained<br>Completeness break"]
 ```
 
 *Bản đồ toàn bộ series — từ finite field đến ZK proof và constraint bugs.*

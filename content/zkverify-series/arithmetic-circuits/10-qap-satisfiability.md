@@ -131,11 +131,11 @@ Hơn nữa, trong Groth16: $\tau$ không được tiết lộ — nó được *
 
 ```mermaid
 flowchart TD
-    A["Prover gian lận<br>z* không thỏa R1CS"] --> B["p*(x) = U*V* − W*<br>không chia hết cho t(x)"]
-    B --> C["Phải tìm h' sao cho<br>h'·t = p* tại điểm τ"]
+    A["Prover gian lận<br>z\* không thỏa R1CS"] --> B["p\*(x) = U\*V\* − W\*<br>không chia hết cho t(x)"]
+    B --> C["Phải tìm h' sao cho<br>h'·t = p\* tại điểm τ"]
     C --> D{"τ được biết không?"}
     D -->|"Không — τ ẩn trong SRS"| E["Không tính được<br>[h'(τ)]₁ từ SRS<br>vì h' sai degree"]
-    D -->|"Biết τ (lý thuyết)"| F["Schwartz-Zippel:<br>Pr[trùng] ≤ 2m/p ≈ 0"]
+    D -->|"Biết τ (lý thuyết)"| F["Schwartz\-Zippel\:<br>Pr[trùng] ≤ 2m\/p ≈ 0"]
     E & F --> G["Proof bị reject<br>với xác suất ≈ 1"]
 ```
 
@@ -286,14 +286,14 @@ print(f"Divisible: {all(r==0 for r in rem_fake)}")
 
 ```mermaid
 flowchart TD
-    A["Witness z<br>(public x₁…xₗ + private w₁…wₖ)"] --> B["Tính U, V, W<br>linear combo của selectors"]
+    A["Witness z<br>(public x₁…xₗ \+ private w₁…wₖ)"] --> B["Tính U, V, W<br>linear combo của selectors"]
     B --> C["Tính p(x) = U·V − W<br>bậc ≤ 2m−2"]
     C --> D{"t(x) | p(x)?"}
     D -->|"Không"| E["🔴 R1CS NOT satisfied<br>Prover không thể tạo proof hợp lệ"]
-    D -->|"Có"| F["Tính h(x) = p(x)/t(x)\nbậc ≤ m−2"]
+    D -->|"Có"| F["Tính h(x) = p(x)\/t(x)\nbậc ≤ m−2"]
     F --> G["Dùng SRS để tính<br>[U(τ)]₁, [V(τ)]₂, [h(τ)]₁, ..."]
     G --> H["Gửi proof π<br>= (A, B, C) trong Groth16"]
-    H --> I["Verifier check:<br>e(A,B) = e(α,β)·e(pub,γ)·e(C,δ)"]
+    H --> I["Verifier check\:<br>e(A,B) = e(α,β)·e(pub,γ)·e(C,δ)"]
 ```
 
 *Pipeline đầy đủ từ witness đến Groth16 proof — QAP là cầu nối then chốt.*

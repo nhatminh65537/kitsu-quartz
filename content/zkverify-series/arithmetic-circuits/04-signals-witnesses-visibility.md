@@ -256,7 +256,7 @@ graph TD
     a([a]) & b([b]) --> mul["×<br>t₁ = a·b ✓ constrained"]
     mul --> t1["t₁"]
     t1 -.->|"??? không có constraint"| t2["t₂ ⚠️ UNCONSTRAINED"]
-    t2 --> out(["out<br>constraint: out = t₂"])
+    t2 --> out(["out<br>constraint\: out = t₂"])
 ```
 
 *Nếu $t_2$ không bị constrain nối với $t_1$, prover đặt $t_2$ tùy ý → soundness break.*

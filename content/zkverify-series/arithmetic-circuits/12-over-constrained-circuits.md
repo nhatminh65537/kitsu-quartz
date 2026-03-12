@@ -33,11 +33,11 @@ Lưu ý: over-constrained không phải lúc nào cũng là lỗi — đôi khi 
 
 ```mermaid
 flowchart LR
-    subgraph UC["Under-constrained"]
+    subgraph UC["Under\-constrained"]
         UI["Valid inputs"] --> UA["Satisfying assignments<br>(quá rộng)"]
         UB["❌ Invalid inputs"] --> UA
     end
-    subgraph OC["Over-constrained"]
+    subgraph OC["Over\-constrained"]
         OI["Valid inputs"] --> OA["❌ Không có<br>satisfying assignment"]
         OB["(expected)"] -.->|"bị loại bỏ"| OA
     end
@@ -236,12 +236,12 @@ Over-constrained bugs có thể bị khai thác theo các cách sau:
 
 ```mermaid
 flowchart TD
-    A["Over-constrained Circuit"] --> B["Honest prover\nkhông thể generate proof"]
-    B --> C1["DoS: chặn hợp lệ<br>transaction/operation"]
-    B --> C2["Griefing: attacker submit<br>input hợp lệ → proof fail"]
-    B --> C3["Silent bug: ứng dụng crash<br>không có error message rõ ràng"]
+    A["Over\-constrained Circuit"] --> B["Honest prover\nkhông thể generate proof"]
+    B --> C1["DoS\: chặn hợp lệ<br>transaction\/operation"]
+    B --> C2["Griefing\: attacker submit<br>input hợp lệ → proof fail"]
+    B --> C3["Silent bug\: ứng dụng crash<br>không có error message rõ ràng"]
     A --> D["Nếu chỉ ảnh hưởng<br>edge case inputs"]
-    D --> C4["Selective DoS:<br>chỉ ảnh hưởng một số users"]
+    D --> C4["Selective DoS\:<br>chỉ ảnh hưởng một số users"]
 ```
 
 *Các attack vector từ over-constrained circuit.*

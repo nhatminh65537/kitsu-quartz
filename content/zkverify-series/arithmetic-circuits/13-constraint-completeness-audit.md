@@ -26,30 +26,30 @@ Lessons 11 và 12 đã phân tích từng loại lỗi riêng lẻ. Bài này t�
 
 ```mermaid
 flowchart TD
-    A["📂 Circuit / R1CS Input"] --> T1
+    A["📂 Circuit \/ R1CS Input"] --> T1
     subgraph T1["Tầng 1 — Signal Inventory"]
-        S1["Liệt kê tất cả signals<br>và phân loại: public / private / intermediate"]
+        S1["Liệt kê tất cả signals<br>và phân loại\: public \/ private \/ intermediate"]
         S2["Kiểm tra mỗi signal<br>có xuất hiện trong ≥1 constraint"]
     end
     T1 --> T2
     subgraph T2["Tầng 2 — Constraint Coverage"]
         C1["Mỗi × gate → 1 constraint?"]
         C2["Mọi output signal<br>xuất hiện trong C (phía RHS)?"]
-        C3["Sub-circuit outputs<br>linked với caller?"]
+        C3["Sub\-circuit outputs<br>linked với caller?"]
     end
     T2 --> T3
     subgraph T3["Tầng 3 — Semantic Correctness"]
         M1["Constraint encode<br>đúng ý định logic không?"]
-        M2["Bit/range signals<br>có constraint kiểm tra type?"]
-        M3["Conditional / mux<br>có đủ 2 constraints?"]
+        M2["Bit\/range signals<br>có constraint kiểm tra type?"]
+        M3["Conditional \/ mux<br>có đủ 2 constraints?"]
     end
     T3 --> T4
     subgraph T4["Tầng 4 — Field Arithmetic"]
-        F1["Có overflow/wrap-around<br>trên F_p không?"]
+        F1["Có overflow\/wrap\-around<br>trên F_p không?"]
         F2["Comparison constraints<br>dùng đúng số bits?"]
         F3["Inverse có thể = 0<br>gây undefined không?"]
     end
-    T4 --> R["📋 Báo cáo:<br>Danh sách bugs + severity"]
+    T4 --> R["📋 Báo cáo\:<br>Danh sách bugs \+ severity"]
 ```
 
 *Framework audit 4 tầng — từ inventory đến field arithmetic.*
@@ -280,15 +280,15 @@ zkVerify là một ZK proof verification layer. Khi audit:
 
 ```mermaid
 flowchart TD
-    A["Clone zkVerify repo"] --> B["Xác định proof system<br>Groth16 / PLONK / STARK / ..."]
-    B --> C["Tìm circuit definitions<br>.circom / .r1cs / .zkey files"]
+    A["Clone zkVerify repo"] --> B["Xác định proof system<br>Groth16 \/ PLONK \/ STARK \/ ..."]
+    B --> C["Tìm circuit definitions<br>.circom \/ .r1cs \/ .zkey files"]
     C --> D["Chạy Framework 4 Tầng<br>trên từng circuit"]
     D --> E["Đọc verifier contract<br>onchain"]
     E --> F{"Verifier check<br>khớp R1CS không?"}
     F -->|"Không khớp"| G["🔴 Verifier mismatch bug<br>→ submit bug report"]
-    F -->|"Khớp"| H["Fuzz với edge case inputs<br>x=0, x=p-1, bits overflow"]
+    F -->|"Khớp"| H["Fuzz với edge case inputs<br>x=0, x=p\-1, bits overflow"]
     H --> I{"Proof pass<br>khi không nên?"}
-    I -->|"Có"| J["🔴 Soundness bug<br>→ PoC + submit"]
+    I -->|"Có"| J["🔴 Soundness bug<br>→ PoC \+ submit"]
     I -->|"Không"| K["✅ Circuit này OK<br>Chuyển sang circuit tiếp"]
 ```
 
