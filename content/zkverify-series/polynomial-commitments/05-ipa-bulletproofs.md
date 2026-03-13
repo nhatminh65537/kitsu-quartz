@@ -74,7 +74,7 @@ $$\mathbf{a}' = x \mathbf{a}_L + \mathbf{a}_R, \quad \mathbf{b}' = x^{-1} \mathb
 > [!theorem] Theorem 5.2 — Folding Correctness
 > Sau một vòng, $C'$ là commitment của $(\mathbf{a}', \mathbf{b}')$ có inner product $v$ không đổi:
 >
-> $$\langle \mathbf{a}', \mathbf{b}' \rangle = \langle x\mathbf{a}_L + \mathbf{a}_R,\; x^{-1}\mathbf{b}_L + \mathbf{b}_R \rangle = \langle \mathbf{a}_L, \mathbf{b}_L \rangle + \langle \mathbf{a}_R, \mathbf{b}_R \rangle + x^{-1}\langle \mathbf{a}_L, \mathbf{b}_R \rangle + x \langle \mathbf{a}_R, \mathbf{b}_L \rangle$$
+> $$\langle \mathbf{a}', \mathbf{b}' \rangle = \langle x\mathbf{a}_L + \mathbf{a}_R,\; x^{-1}\mathbf{b}_L + \mathbf{b}_R \rangle = \langle \mathbf{a}_L, \mathbf{b}_L \rangle + \langle \mathbf{a}_R, \mathbf{b}_R \rangle + x \langle \mathbf{a}_L, \mathbf{b}_R \rangle + x^{-1} \langle \mathbf{a}_R, \mathbf{b}_L \rangle$$
 
 Sau $\log_2 d$ vòng, $\mathbf{a}'$ và $\mathbf{b}'$ giảm xuống kích thước 1 — prover chỉ gửi hai scalars.
 

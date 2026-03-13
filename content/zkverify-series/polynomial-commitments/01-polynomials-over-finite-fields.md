@@ -79,8 +79,6 @@ Với $d+1$ điểm phân biệt, hai biểu diễn là **tương đương** —
 **Tại sao quan trọng trong ZK?** Trong PLONK, mạch tính toán được encode thành bảng giá trị $(x_i, w_i)$. Đa thức $f$ nội suy qua bảng đó là "nhân chứng" (witness) của phép tính. Committing to $f$ = committing to toàn bộ bảng tính.
 
 ```python
-from py_ecc.fields import field_properties
-
 def lagrange_interpolate(xs, ys, p):
     """Nội suy Lagrange trên F_p.
     xs: danh sách x-coordinates (phân biệt)
@@ -130,10 +128,10 @@ def poly_eval(coeffs, x, p):
 # Demo
 p = 101
 xs = [1, 2, 3, 4]
-ys = [6, 11, 18, 27]  # f(x) = x^2 + x + 4
+ys = [6, 11, 18, 27]  # f(x) = x^2 + 2x + 3
 
 coeffs = lagrange_interpolate(xs, ys, p)
-print(f"Coefficients: {coeffs}")  # [4, 1, 1, 0] tương ứng 4 + x + x^2
+print(f"Coefficients: {coeffs}")  # [3, 2, 1, 0] tương ứng 3 + 2x + x^2
 
 # Verify
 for x, y in zip(xs, ys):

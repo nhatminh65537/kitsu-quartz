@@ -29,7 +29,7 @@ Prover nhận:
 
 > [!definition] Definition 5.1 — Compute $[A]_1$
 >
-> $$[A]_1 = [\alpha]_1 + \sum_{i=0}^{m} z_i [A_i(\tau)]_1 + r [\delta]_1$$
+> $$[A]_1 = [\alpha]_1 + \sum_{i=0}^{n-1} z_i [A_i(\tau)]_1 + r [\delta]_1$$
 
 Phân tích từng term:
 
@@ -51,11 +51,11 @@ Prover compute bằng linear combination của proving key elements:
 
 > [!definition] Definition 5.2 — Compute $[B]_2$
 >
-> $$[B]_2 = [\beta]_2 + \sum_{i=0}^{m} z_i [B_i(\tau)]_2 + s [\delta]_2$$
+> $$[B]_2 = [\beta]_2 + \sum_{i=0}^{n-1} z_i [B_i(\tau)]_2 + s [\delta]_2$$
 
 Tương tự, có thêm $[B]_1$ (trong $\mathbb{G}_1$) dùng để tính $[C]_1$ sau:
 
-$$[B]_1 = [\beta]_1 + \sum_{i=0}^{m} z_i [B_i(\tau)]_1 + s [\delta]_1$$
+$$[B]_1 = [\beta]_1 + \sum_{i=0}^{n-1} z_i [B_i(\tau)]_1 + s [\delta]_1$$
 
 > [!warning] $[B]_2$ vs $[B]_1$
 > $[B]_2$ đi vào **proof** (dùng để verify qua pairing với $[A]_1$).
@@ -70,7 +70,7 @@ $$[B]_1 = [\beta]_1 + \sum_{i=0}^{m} z_i [B_i(\tau)]_1 + s [\delta]_1$$
 
 **3a. Tính $A(x), B(x), C(x)$**:
 
-$$A(x) = \sum_{i=0}^{m} z_i A_i(x), \quad B(x) = \sum_{i=0}^{m} z_i B_i(x), \quad C(x) = \sum_{i=0}^{m} z_i C_i(x)$$
+$$A(x) = \sum_{i=0}^{n-1} z_i A_i(x), \quad B(x) = \sum_{i=0}^{n-1} z_i B_i(x), \quad C(x) = \sum_{i=0}^{n-1} z_i C_i(x)$$
 
 **3b. Tính $h(x)$** bằng polynomial division:
 
@@ -90,13 +90,13 @@ Trong đó $h_k$ là coefficients của $h(x)$.
 
 > [!definition] Definition 5.3 — Compute $[C]_1$
 >
-> $$[C]_1 = \sum_{i=\ell+1}^{m} z_i \left[\frac{\beta A_i(\tau) + \alpha B_i(\tau) + C_i(\tau)}{\delta}\right]_1 + [h(\tau)t(\tau)/\delta]_1 + s[A]_1 + r[B]_1 - rs[\delta]_1$$
+> $$[C]_1 = \sum_{i=\ell+1}^{n-1} z_i \left[\frac{\beta A_i(\tau) + \alpha B_i(\tau) + C_i(\tau)}{\delta}\right]_1 + [h(\tau)t(\tau)/\delta]_1 + s[A]_1 + r[B]_1 - rs[\delta]_1$$
 
 Phân tích:
 
 | Term | Ý nghĩa |
 |------|--------|
-| $\sum_{i=\ell+1}^{m} z_i [\ldots/\delta]_1$ | Commit private witness vào $C$ qua precomputed elements |
+| $\sum_{i=\ell+1}^{n-1} z_i [\ldots/\delta]_1$ | Commit private witness vào $C$ qua precomputed elements |
 | $[h(\tau)t(\tau)/\delta]_1$ | Chứng minh $A \cdot B - C$ chia hết cho $t$ |
 | $s[A]_1 + r[B]_1 - rs[\delta]_1$ | **Randomness cross-terms** — đây là phần quan trọng cho ZK |
 

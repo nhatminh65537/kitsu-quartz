@@ -6,7 +6,7 @@ created: 2026-03-12
 
 ## Lessons
 
-- [[zkverify-series/polynomial-commitments/00-roadmap|00. Roadmap]]
+- [[00-roadmap|00. Roadmap]]
 - [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]] — Số học đa thức, đánh giá, nội suy Lagrange, Reed-Solomon encoding. Nền tảng toán học không thể thiếu.
 - [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]] — Binding, hiding, correctness; vector commitments, Pedersen commitments; định nghĩa chính thức.
 - [[03-kzg-commitments|03. KZG Commitments]] — Trusted setup (SRS), commit, open, verify; bilinear pairings; batch opening; Kate-Zaverucha-Goldberg scheme đầy đủ.

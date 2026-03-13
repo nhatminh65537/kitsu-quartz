@@ -1,15 +1,7 @@
 ---
-title: 05. Constraint Systems — Overview
-tags:
-  - zk
-  - arithmetic-circuits
-  - constraint-systems
-  - r1cs
-  - plonk
-  - lesson-05
-aliases:
-  - Constraint Systems ZK
-  - R1CS PLONK Overview
+title: "05. Constraint Systems — Tổng quan"
+tags: [zk, arithmetic-circuits, constraint-systems, r1cs, plonk, lesson-05]
+aliases: [Constraint Systems ZK, R1CS PLONK Overview]
 created: 2026-03-12
 ---
 
@@ -68,13 +60,13 @@ graph LR
     subgraph CIR["Circuit"]
         cx1([x₁]) & cx2([x₂]) --> mulg["× gate"]
         mulg --> ct1([t₁])
-        ct1 & cx1b([x₁]) --> addg["\+ gate"]
+        ct1 & cx1b([x₁]) --> addg["+ gate"]
         addg --> cout(["out = t₂"])
     end
     CIR -->|flatten| CON
     subgraph CON["Constraints"]
         c1["x₁ · x₂ − t₁ = 0"]
-        c2["t₁ \+ x₁ − t₂ = 0"]
+        c2["t₁ + x₁ − t₂ = 0"]
     end
 ```
 
@@ -213,11 +205,11 @@ check_satisfying_assignment(constraints, z, p)
 
 ```mermaid
 flowchart TD
-    A["🔷 PHẦN 2 · Lessons 03\-05<br>Arithmetic Circuit<br>gates, wires, signals"]
+    A["🔷 PHẦN 2 · Lessons 03-05<br>Arithmetic Circuit<br>gates, wires, signals"]
     B["Constraint System<br>{ fᵢ(z) = 0 }"]
-    C["🔷 PHẦN 3 · Lessons 06\-08<br>R1CS<br>Az ∘ Bz = Cz"]
-    D["🔷 PHẦN 4 · Lessons 09\-10<br>QAP<br>p(x) = h(x) · t(x)"]
-    E["ZK Proof\nGroth16 \/ PLONK \/ ...<br>Verify tại τ ngẫu nhiên"]
+    C["🔷 PHẦN 3 · Lessons 06-08<br>R1CS<br>Az ∘ Bz = Cz"]
+    D["🔷 PHẦN 4 · Lessons 09-10<br>QAP<br>p(x) = h(x) · t(x)"]
+    E["ZK Proof<br>Groth16 / PLONK / ...<br>Verify tại τ ngẫu nhiên"]
 
     A -->|"flatten: mỗi gate → equation"| B
     B -->|"encode thành matrix form"| C

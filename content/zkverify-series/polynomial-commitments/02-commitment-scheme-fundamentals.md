@@ -5,7 +5,7 @@ aliases: [Commitment Scheme Fundamentals]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]], group theory, discrete logarithm
+> **Prerequisites**: [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]], group theory, discrete logarithm  
 > **Objectives**:
 > - Định nghĩa chính xác commitment scheme và ba tính chất: binding, hiding, correctness
 > - Phân biệt các loại: perfectly hiding vs computationally hiding, perfectly binding vs computationally binding

@@ -9,6 +9,9 @@ created: 2026-03-12
 
 | Ký hiệu | Định nghĩa | Ghi chú |
 |---------|-----------|---------|
+| $n$ | Số wires (bao gồm $z_0=1$) | $\mathbf{z} \in \mathbb{F}_p^n$, index $0 \ldots n{-}1$ |
+| $m$ | Số constraints (gates) | Ma trận $A,B,C \in \mathbb{F}_p^{m \times n}$; $\deg(t) = m$ |
+| $\ell$ | Số public inputs | $\ell < n$; private wires: index $\ell{+}1 \ldots n{-}1$ |
 | $[a]_1 = a \cdot g_1$ | Scalar $a$ embedded vào $\mathbb{G}_1$ | $a \in \mathbb{F}_p$ |
 | $[a]_2 = a \cdot g_2$ | Scalar $a$ embedded vào $\mathbb{G}_2$ | |
 | $e([a]_1, [b]_2) = [ab]_T$ | Bilinear pairing | $[ab]_T \in \mathbb{G}_T$ |
@@ -77,17 +80,17 @@ $$\text{vk} = \Bigl([\alpha]_1,\ [\beta]_2,\ [\gamma]_2,\ [\delta]_2,\ \left\{\l
 
 ## Proving Algorithm (Summary)
 
-**Input**: $\text{pk}, \mathbf{z} = (1, z_1, \ldots, z_m), r, s \xleftarrow{\$} \mathbb{F}_p$
+**Input**: $\text{pk},\ \mathbf{z} = (1, z_1, \ldots, z_{n-1}),\ r, s \xleftarrow{\$} \mathbb{F}_p$
 
-$$[A]_1 = [\alpha]_1 + \sum_{i=0}^{m} z_i [A_i(\tau)]_1 + r[\delta]_1$$
+$$[A]_1 = [\alpha]_1 + \sum_{i=0}^{n-1} z_i [A_i(\tau)]_1 + r[\delta]_1$$
 
-$$[B]_2 = [\beta]_2 + \sum_{i=0}^{m} z_i [B_i(\tau)]_2 + s[\delta]_2$$
+$$[B]_2 = [\beta]_2 + \sum_{i=0}^{n-1} z_i [B_i(\tau)]_2 + s[\delta]_2$$
 
-$$[B]_1 = [\beta]_1 + \sum_{i=0}^{m} z_i [B_i(\tau)]_1 + s[\delta]_1$$
+$$[B]_1 = [\beta]_1 + \sum_{i=0}^{n-1} z_i [B_i(\tau)]_1 + s[\delta]_1$$
 
 $$h(x) = \frac{A(x)B(x) - C(x)}{t(x)}$$
 
-$$[C]_1 = \sum_{i=\ell+1}^{m} z_i \!\left[\frac{\beta A_i + \alpha B_i + C_i}{\delta}\right]_1 + \sum_{k=0}^{m-2} h_k \!\left[\frac{\tau^k t(\tau)}{\delta}\right]_1 + s[A]_1 + r[B]_1 - rs[\delta]_1$$
+$$[C]_1 = \sum_{i=\ell+1}^{n-1} z_i \!\left[\frac{\beta A_i + \alpha B_i + C_i}{\delta}\right]_1 + \sum_{k=0}^{m-2} h_k \!\left[\frac{\tau^k t(\tau)}{\delta}\right]_1 + s[A]_1 + r[B]_1 - rs[\delta]_1$$
 
 **Output**: $\pi = ([A]_1, [B]_2, [C]_1)$
 

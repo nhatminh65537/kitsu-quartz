@@ -6,7 +6,7 @@ created: 2026-03-13
 
 ## Lessons
 
-- [[zkverify-series/starks-fri-protocol/00-roadmap|00. Roadmap]]
+- [[00-roadmap|00. Roadmap]]
 - [[01-mathematical-foundations|01. Mathematical Foundations]] — Trường hữu hạn $\mathbb{F}_p$, primitive root, roots of unity, NTT/FFT $O(n \log n)$, Reed-Solomon code & code rate $\rho$, Schwartz-Zippel lemma, zerofier $X^n - 1$. Nền tảng toán học cho toàn bộ STARK/FRI pipeline.
 - [[02-zero-knowledge-proof-systems|02. Zero-Knowledge Proof Systems]] — IP, PCP, IOP model, Completeness/Soundness/ZK, public-coin, Fiat-Shamir transform, 4 attack vectors.
 - [[03-starks-air-arithmetization|03. STARKs Overview & Arithmetization (AIR)]] — Execution trace $T \in \mathbb{F}^{n \times w}$, boundary constraints, transition constraints, AIR, trace polynomials, quotient polynomials, zerofier $Z_{\text{trans}}$.

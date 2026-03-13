@@ -32,13 +32,13 @@ Có ba loại signal:
 ```mermaid
 graph LR
     subgraph PUB["🔓 Public Input"]
-        P["Prover ✓\nVerifier ✓"]
+        P["Prover ✓<br>Verifier ✓"]
     end
     subgraph PRIV["🔒 Private Input · Witness"]
-        W["Prover ✓\nVerifier ✗"]
+        W["Prover ✓<br>Verifier ✗"]
     end
     subgraph INTER["⚙️ Intermediate Signals"]
-        I["Wires nội bộ\nthường private"]
+        I["Wires nội bộ<br>thường private"]
     end
 ```
 
@@ -160,7 +160,7 @@ Hiểu rõ ai biết gì là cực kỳ quan trọng khi audit circuit:
 sequenceDiagram
     participant P as Prover
     participant V as Verifier
-    Note over P: Biết: public x, witness w,<br/>tất cả intermediate signals
+    Note over P: Biết: public x, witness w, tất cả intermediate signals
     Note over V: Biết: public inputs x
     P->>V: public inputs x
     P->>P: π = Prove(x, w)
@@ -256,7 +256,7 @@ graph TD
     a([a]) & b([b]) --> mul["×<br>t₁ = a·b ✓ constrained"]
     mul --> t1["t₁"]
     t1 -.->|"??? không có constraint"| t2["t₂ ⚠️ UNCONSTRAINED"]
-    t2 --> out(["out<br>constraint\: out = t₂"])
+    t2 --> out(["out<br>constraint: out = t₂"])
 ```
 
 *Nếu $t_2$ không bị constrain nối với $t_1$, prover đặt $t_2$ tùy ý → soundness break.*

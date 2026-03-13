@@ -6,7 +6,7 @@ created: 2026-03-13
 
 ## Lessons
 
-- [[zkverify-series/plonk-ultraplonk-ultrahonk/00-roadmap|00. Roadmap]]
+- [[00-roadmap|00. Roadmap]]
 - [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — Polynomial IOP model, KZG commitment scheme, structured reference string (SRS), trusted setup, binding và hiding properties. Batch opening, AGM security, trusted setup attack surface.
 - [[02-plonk-arithmetization|02. PLONK Arithmetization]] — Biểu diễn computation thành arithmetic circuit, selector polynomials ($q_L, q_R, q_O, q_M, q_C$), wire polynomials ($a, b, c$), copy constraints, vanishing polynomial $Z_H(X)$. Bug bounty: under-constrained circuits.
 - [[03-plonk-permutation-argument|03. PLONK Permutation Argument]] — Grand product argument, permutation polynomial $z(X)$, Bayer-Groth, encode copy constraints thành multiset equality check. Bug bounty: missing copy constraints, sai coset params.

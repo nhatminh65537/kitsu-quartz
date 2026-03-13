@@ -65,7 +65,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[zkverify-series/plonk-ultraplonk-ultrahonk/00-roadmap|00. Roadmap]]
+- [ ] [[00-roadmap|00. Roadmap]]
 - [ ] [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]]
 - [ ] [[02-plonk-arithmetization|02. PLONK Arithmetization]]
 - [ ] [[03-plonk-permutation-argument|03. PLONK Permutation Argument]]

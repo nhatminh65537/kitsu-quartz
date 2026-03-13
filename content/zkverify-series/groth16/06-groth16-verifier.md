@@ -41,52 +41,47 @@ $$[L_\text{pub}]_1 = \left[\frac{\beta A_0(\tau) + \alpha B_0(\tau) + C_0(\tau)}
 
 Đây là phần quan trọng nhất — unpack equation để hiểu tại sao nó kiểm tra đúng mọi thứ.
 
-### Expand $e([A]_1, [B]_2)$
+### Expand vế trái: $e([A]_1, [B]_2)$
 
 Substitue công thức prover từ Bài 05:
 
-$$[A]_1 = [\alpha]_1 + [A(\tau)]_1 + r[\delta]_1$$
+$$[A]_1 = [\alpha + A(\tau) + r\delta]_1, \qquad [B]_2 = [\beta + B(\tau) + s\delta]_2$$
 
-$$[B]_2 = [\beta]_2 + [B(\tau)]_2 + s[\delta]_2$$
+Áp dụng bilinearity của $e$:
 
-Pairing bilinear:
+$$e([A]_1, [B]_2) = \bigl[\alpha\beta + \alpha B(\tau) + \alpha s\delta + \beta A(\tau) + A(\tau)B(\tau) + sA(\tau)\delta + r\beta\delta + rB(\tau)\delta + rs\delta^2\bigr]_T$$
 
-$$e([A]_1, [B]_2) = e([\alpha + A(\tau) + r\delta], [\beta + B(\tau) + s\delta])$$
+### Expand vế phải: RHS
 
-$$= [\underbrace{\alpha\beta}_{\text{term 1}} + \underbrace{\alpha B(\tau)}_{\text{term 2}} + \underbrace{\alpha s\delta}_{\text{term 3}} + \underbrace{\beta A(\tau)}_{\text{term 4}} + \underbrace{A(\tau)B(\tau)}_{\text{term 5}} + \underbrace{rsA(\tau)\delta}_{\text{???}}...]_T$$
+**Term 1** — $e([\alpha]_1, [\beta]_2) = [\alpha\beta]_T$
 
-Expand đầy đủ:
+**Term 2** — $e([L_\text{pub}]_1, [\gamma]_2)$: do $[L_\text{pub}]_1 = [L_\text{pub}(\tau)/\gamma]_1 \cdot \gamma$, pairing cho $[L_\text{pub}(\tau)]_T$.
 
-$$e([A]_1, [B]_2) = [\alpha\beta + \alpha B(\tau) + A(\tau)\beta + A(\tau)B(\tau)$$
-$$+ s\alpha\delta + rB(\tau)\delta + s A(\tau)\delta + r\beta\delta + rs\delta^2]_T$$
+**Term 3** — $e([C]_1, [\delta]_2)$: substitue $[C]_1$ từ Bài 05:
 
-### Expand vế phải
+$$[C]_1 = \left[\frac{L_\text{priv}(\tau)}{\delta} + \frac{h(\tau)t(\tau)}{\delta} + s\alpha + sA(\tau) + r\beta + rB(\tau) + sr\delta\right]_1$$
 
-$e([\alpha]_1, [\beta]_2) = [\alpha\beta]_T$ (precomputed trong vk)
+*(lưu ý: $s[A]_1 + r[B]_1 - rs[\delta]_1$ đã được expand; $rs\delta$ từ $r\cdot s\delta$ và $s\cdot r\delta$ trừ đi $rs\delta$ → còn $sr\delta$)*
 
-$e([C]_1, [\delta]_2)$: substitue $[C]_1$ từ Bài 05:
+Nhân với $\delta$ qua pairing:
 
-$$[C]_1 = [L_\text{priv}(\tau)/\delta + h(\tau)t(\tau)/\delta]_1 + s[A]_1 + r[B]_1 - rs[\delta]_1$$
+$$e([C]_1, [\delta]_2) = [L_\text{priv}(\tau) + h(\tau)t(\tau) + s\alpha\delta + sA(\tau)\delta + r\beta\delta + rB(\tau)\delta + sr\delta^2]_T$$
 
-$$e([C]_1, [\delta]_2) = [C(\tau) + h(\tau)t(\tau) + s\delta A(\tau) + s\delta\alpha + rs\delta^2 \cdot ???...]_T$$
+**Tổng RHS**:
 
-Sau khi expand và cancel tất cả:
+$$\text{RHS} = \bigl[\alpha\beta + L_\text{pub}(\tau) + L_\text{priv}(\tau) + h(\tau)t(\tau) + s\alpha\delta + sA(\tau)\delta + r\beta\delta + rB(\tau)\delta + sr\delta^2\bigr]_T$$
 
-$$\text{VK RHS} = [\alpha\beta]_T \cdot [L_\text{pub} \cdot \gamma / \gamma]_T \cdot [C(\tau) + h(\tau)t(\tau) + ...]_T$$
+### Cancellation và QAP Check
 
-### Magic cancellation
+So sánh LHS và RHS, các cross-terms $s\alpha\delta$, $sA(\tau)\delta$, $r\beta\delta$, $rB(\tau)\delta$, $rs\delta^2$ **xuất hiện ở cả hai vế** → cancel nhau. Còn lại:
 
-Sau khi mở rộng đầy đủ, tất cả các cross-terms liên quan đến $r, s, \delta$ cancel nhau. Còn lại:
+$$\underbrace{\alpha B(\tau) + \beta A(\tau) + A(\tau)B(\tau)}_{\text{LHS}} = \underbrace{L_\text{pub}(\tau) + L_\text{priv}(\tau) + h(\tau)t(\tau)}_{\text{RHS}}$$
 
-$$e([A]_1, [B]_2) = [\alpha\beta + A(\tau)B(\tau)]_T$$
+Vì $L_\text{pub}(\tau) + L_\text{priv}(\tau) = \sum_{i=0}^{n-1} z_i \bigl(\beta A_i(\tau) + \alpha B_i(\tau) + C_i(\tau)\bigr) = \beta A(\tau) + \alpha B(\tau) + C(\tau)$, hai vế trở thành:
 
-$$\text{VK RHS} = [\alpha\beta + L_\text{pub}(\tau)\gamma/\gamma + C(\tau) + h(\tau)t(\tau)]_T$$
+$$A(\tau)B(\tau) = C(\tau) + h(\tau)t(\tau)$$
 
-Hai vế bằng nhau $\Leftrightarrow$:
-
-$$A(\tau)B(\tau) = L_\text{pub}(\tau) + C(\tau) + h(\tau)t(\tau)$$
-
-Đây chính là QAP check! $L_\text{pub}(\tau)$ chứa public inputs, $C(\tau)$ chứa private witness portion, và $h(\tau)t(\tau)$ chứng minh $t | AB - C$.
+Đây chính là **QAP check** — tương đương R1CS thỏa mãn.
 
 > [!theorem] Theorem 6.2 — Correctness của Verification
 > Verification equation pass $\Leftrightarrow$ (with overwhelming probability) witness $\mathbf{z}$ thỏa mãn R1CS với public inputs $\mathbf{x}$.

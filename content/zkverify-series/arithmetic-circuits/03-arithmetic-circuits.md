@@ -1,15 +1,7 @@
 ---
-title: 03. Arithmetic Circuits — Definition & Structure
-tags:
-  - zk
-  - arithmetic-circuits
-  - gates
-  - wires
-  - circuit-satisfiability
-  - lesson-03
-aliases:
-  - Arithmetic Circuits Structure
-  - Circuit Gates Wires
+title: "03. Arithmetic Circuits — Định nghĩa & Cấu trúc"
+tags: [zk, arithmetic-circuits, gates, wires, circuit-satisfiability, lesson-03]
+aliases: [Arithmetic Circuits Structure, Circuit Gates Wires]
 created: 2026-03-12
 ---
 
@@ -58,7 +50,7 @@ Chỉ có hai loại gate cơ bản — đây là sự khác biệt lớn nhất
 graph LR
     subgraph ADD["Addition gate"]
         a1([a]) & b1([b]) --> plus["＋"]
-        plus --> sum(["a \+ b"])
+        plus --> sum(["a + b"])
     end
     subgraph MUL["Multiplication gate"]
         a2([a]) & b2([b]) --> times["×"]
@@ -78,7 +70,7 @@ Mỗi cạnh trong DAG là một **wire** mang một giá trị trong $\mathbb{F
 ```mermaid
 graph TD
     x1(["x₁<br>input"]) & x2(["x₂<br>input"]) --> gMul["× gate"]
-    x2 & x3(["x₃<br>input"]) --> gAdd["\+ gate"]
+    x2 & x3(["x₃<br>input"]) --> gAdd["+ gate"]
     gMul --> w1["w₁<br>intermediate"]
     gAdd --> w2["w₂<br>intermediate"]
     w1 & w2 --> gFinal["× gate"]
@@ -100,7 +92,7 @@ graph TD
 graph TD
     a([a]) & b1([b]) --> mul1["× (depth 1)<br>w₁ = a·b"]
     b2([b]) & c([c]) --> mul2["× (depth 1)<br>w₂ = b·c"]
-    mul1 & mul2 --> add["\+ (depth 2)<br>out = w₁\+w₂"]
+    mul1 & mul2 --> add["+ (depth 2)<br>out = w₁+w₂"]
     add --> out(["out"])
 ```
 
@@ -162,12 +154,12 @@ x^3 + x + 5
 
 ```mermaid
 graph TD
-    x(["x<br>input"]) -->|fan-out 3| mul1["× \: t₁ = x·x"]
-    x --> mul2["× \: t₂ = t₁·x"]
-    x --> add1["\+ \: t₃ = t₂\+x"]
+    x(["x<br>input"]) -->|fan-out 3| mul1["× : t₁ = x·x"]
+    x --> mul2["× : t₂ = t₁·x"]
+    x --> add1["+ : t₃ = t₂+x"]
     mul1 --> mul2
     mul2 --> add1
-    add1 --> add2["\+ \: out = t₃\+5"]
+    add1 --> add2["+ : out = t₃+5"]
     c5(["const 5"]) --> add2
     add2 --> out(["out"])
 ```
@@ -210,7 +202,7 @@ assert result == (x**3 + x + 5) % p    # kiểm tra correctness
 
 ```mermaid
 graph TD
-    w(["w<br>private"]) --> sub["−1 \: w−1"]
+    w(["w<br>private"]) --> sub["−1 : w−1"]
     w --> mul["×<br>out = w·(w−1)"]
     sub --> mul
     mul --> out(["out = 0<br>(constraint)"])

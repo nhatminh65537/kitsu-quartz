@@ -350,9 +350,9 @@ print("reconstructed == f:", reconstructed == f)   # True
 ```mermaid
 flowchart TD
     A["Circuit<br>gates, wires"] -->|"mỗi wire → điểm (xᵢ, yᵢ)"| B["Lagrange Interpolation<br>f(x) encode assignment"]
-    B -->|"constraint thỏa mãn ⟺ identity đúng"| C["Polynomial Identity Testing<br>Schwartz\-Zippel"]
+    B -->|"constraint thỏa mãn ⟺ identity đúng"| C["Polynomial Identity Testing<br>Schwartz-Zippel"]
     C -->|"kiểm tra tại τ ngẫu nhiên"| D["Vanishing Polynomial<br>p(x) = h(x) · Z_H(x)"]
-    D -->|"prover gửi h(x), verifier kiểm tra tại τ"| E["ZK Proof Protocol<br>Groth16 \/ PLONK \/ ..."]
+    D -->|"prover gửi h(x), verifier kiểm tra tại τ"| E["ZK Proof Protocol<br>Groth16 / PLONK / ..."]
 ```
 
 *Pipeline từ circuit sang ZK proof — polynomials là ngôn ngữ trung gian.*

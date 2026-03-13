@@ -61,7 +61,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[zkverify-series/polynomial-commitments/00-roadmap|00. Roadmap]]
+- [ ] [[00-roadmap|00. Roadmap]]
 - [ ] [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]]
 - [ ] [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]]
 - [ ] [[03-kzg-commitments|03. KZG Commitments]]

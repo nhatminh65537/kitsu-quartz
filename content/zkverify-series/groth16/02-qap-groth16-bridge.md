@@ -39,7 +39,7 @@ Từ R1CS với ma trận $A, B, C \in \mathbb{F}_p^{m \times n}$ và $m$ constr
 >
 > $$t(x) = \prod_{k=1}^{m}(x - r_k)$$
 >
-> Groth16 convention đặt $n = m$ (số wires = số constraints) để $t(x)$ có degree $m$.
+> $t(x)$ có degree $m$ (bằng số constraints). Mỗi $A_i(x), B_i(x), C_i(x)$ có degree $\leq m-1$. Như vậy $A(x) \cdot B(x)$ có degree $\leq 2(m-1)$, và quotient $h(x) = (AB - C)/t$ có degree $\leq m-2$.
 
 Ký hiệu "tổng hợp" khi prover có witness $\mathbf{z}$:
 

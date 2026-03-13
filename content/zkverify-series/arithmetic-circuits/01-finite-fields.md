@@ -130,8 +130,11 @@ Chia trong $\mathbb{F}_p$ chính là nhân với nghịch đảo:
 $$\frac{a}{b} = a \cdot b^{-1} \pmod{p}$$
 
 ```python
+def modinv(a, p):
+    return pow(a, p - 2, p)   # Fermat's little theorem
+
 def div(a, b, p):
-    return mul(a, modinv(b, p)) % p   # a * b^{-1} mod p
+    return (a * modinv(b, p)) % p   # a * b^{-1} mod p
 
 print(div(1, 3, 7))   # 5  (1/3 = 1 * 3^{-1} = 5 trong F_7)
 ```
@@ -220,7 +223,7 @@ print([pow(omega, k, p) for k in range(1, n + 1)])
 
 **Ứng dụng trong ZK**: BN254 (dùng trong Groth16) và BLS12-381 (dùng trong nhiều protocol) đều cần extension fields $\mathbb{F}_{p^{12}}$ để tính **bilinear pairing** — phép toán nền của verifier.
 
-```python
+```sage
 # SageMath: làm việc với F_{p^2}
 # (Chạy trong SageMath, không phải Python thuần)
 p = 7

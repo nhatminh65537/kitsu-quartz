@@ -61,7 +61,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[zkverify-series/starks-fri-protocol/00-roadmap|00. Roadmap]]
+- [ ] [[00-roadmap|00. Roadmap]]
 - [ ] [[01-mathematical-foundations|01. Mathematical Foundations]]
 - [ ] [[02-zero-knowledge-proof-systems|02. Zero-Knowledge Proof Systems]]
 - [ ] [[03-starks-air-arithmetization|03. STARKs Overview & Arithmetization (AIR)]]

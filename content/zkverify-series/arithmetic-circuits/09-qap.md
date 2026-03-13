@@ -71,12 +71,12 @@ Do đó: **R1CS satisfied** $\Longleftrightarrow$ $U(r_i) \cdot V(r_i) - W(r_i) 
 
 ```mermaid
 flowchart TD
-    A["R1CS\: Ma trận A, B, C<br>m×n — m constraints, n signals"] --> B["Chọn evaluation domain<br>H = {r₁, r₂, ..., rₘ}"]
-    B --> C["Với mỗi cột j\:<br>Lagrange\-interpolate uⱼ, vⱼ, wⱼ<br>qua m điểm (rᵢ, Aᵢⱼ)"]
+    A["R1CS: Ma trận A, B, C<br>m×n — m constraints, n signals"] --> B["Chọn evaluation domain<br>H = {r₁, r₂, ..., rₘ}"]
+    B --> C["Với mỗi cột j:<br>Lagrange-interpolate uⱼ, vⱼ, wⱼ<br>qua m điểm (rᵢ, Aᵢⱼ)"]
     C --> D["Tính t(x) = ∏(x − rᵢ)<br>(vanishing polynomial)"]
     D --> E["Tính U, V, W<br>bằng linear combination theo z"]
     E --> F["Tính p(x) = U·V − W<br>Kiểm tra t(x) | p(x)"]
-    F --> G["Nếu chia hết\: tìm h(x) = p(x)\/t(x)<br>Prover gửi commitments cho U,V,W,h"]
+    F --> G["Nếu chia hết: tìm h(x) = p(x)/t(x)<br>Prover gửi commitments cho U,V,W,h"]
 ```
 
 *Pipeline conversion R1CS → QAP: từ ma trận sang polynomial identity.*

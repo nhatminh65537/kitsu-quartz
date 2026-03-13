@@ -89,7 +89,7 @@ Tại sao soundness xấp xỉ $1$? Lý do đến từ Schwartz-Zippel lemma (Le
 ```mermaid
 flowchart LR
     A["R1CS constraint sai<br>Az∘Bz ≠ Cz"] -->|"encode"| B["Polynomial identity sai<br>p(x) ≢ h(x)·t(x)"]
-    B -->|"Schwartz-Zippel"| C["Pr[p(τ) = h(τ)·t(τ)] ≤ d\/p"]
+    B -->|"Schwartz-Zippel"| C["Pr[p(τ) = h(τ)·t(τ)] ≤ d/p"]
     C -->|"p lớn → negl"| D["Verifier phát hiện<br>với xác suất ≈ 1"]
 ```
 
@@ -220,11 +220,11 @@ Khi audit một R1CS (từ Circom output, snarkjs, hoặc custom circuit):
 
 ```mermaid
 flowchart TD
-    A["Lấy R1CS\: A, B, C matrices"] --> B["Với mỗi signal s<br>liệt kê constraints chứa s"]
+    A["Lấy R1CS: A, B, C matrices"] --> B["Với mỗi signal s<br>liệt kê constraints chứa s"]
     B --> C{"s xuất hiện trong<br>ít nhất 1 constraint?"}
     C -->|"Không"| D["🔴 Unconstrained signal<br>Prover đặt s tùy ý"]
     C -->|"Có"| E{"Constraints đủ<br>xác định s duy nhất<br>từ public inputs?"}
-    E -->|"Không"| F["⚠️ Under\-constrained<br>Nhiều witness hợp lệ"]
+    E -->|"Không"| F["⚠️ Under-constrained<br>Nhiều witness hợp lệ"]
     E -->|"Có"| G{"Tất cả multiplication<br>có constraint riêng?"}
     G -->|"Thiếu"| H["🔴 Missing constraint<br>Phép nhân không verified"]
     G -->|"OK"| I["✅ R1CS sound<br>(cần verify QAP tiếp)"]

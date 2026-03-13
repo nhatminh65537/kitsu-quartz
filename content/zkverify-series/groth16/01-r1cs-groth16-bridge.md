@@ -46,12 +46,14 @@ Ký hiệu $(A\mathbf{z})_i$ nghĩa là dot product của hàng $i$ của $A$ v�
 Đây là chỗ Groth16 **thêm một yêu cầu** mà R1CS generic không có:
 
 > [!definition] Definition 1.2 — Witness Split trong Groth16
-> Witness vector $\mathbf{z}$ được chia thành hai phần:
+> Witness vector $\mathbf{z}$ có $n$ phần tử (index $0 \ldots n-1$) được chia thành hai phần:
 >
-> $$\mathbf{z} = (1, \underbrace{z_1, \ldots, z_\ell}_{\text{public inputs } \mathbf{x}}, \underbrace{z_{\ell+1}, \ldots, z_m}_{\text{private witness } \mathbf{w}})$$
+> $$\mathbf{z} = (\underbrace{1}_{z_0},\ \underbrace{z_1, \ldots, z_\ell}_{\text{public inputs } \mathbf{x}},\ \underbrace{z_{\ell+1}, \ldots, z_{n-1}}_{\text{private witness } \mathbf{w}})$$
 >
 > - $\mathbf{x} = (z_1, \ldots, z_\ell)$: **public inputs** — verifier biết
-> - $\mathbf{w} = (z_{\ell+1}, \ldots, z_m)$: **private witness** — chỉ prover biết
+> - $\mathbf{w} = (z_{\ell+1}, \ldots, z_{n-1})$: **private witness** — chỉ prover biết
+>
+> Như vậy witness có $n$ phần tử: $1$ (constant) $+$ $\ell$ (public) $+$ $(n-1-\ell)$ (private).
 
 **Tại sao split này quan trọng?** Vì trong verifier equation của Groth16, public inputs và private witness sẽ được xử lý hoàn toàn khác nhau:
 - Public inputs đi vào verifier trực tiếp (verifier tự tính)
@@ -72,11 +74,15 @@ Witness: $\mathbf{z} = (1, \underbrace{35}_{\text{public: out}}, \underbrace{3, 
 
 Indices: $z_0=1, z_1=35$ (public, $\ell=1$), $z_2=3, z_3=9, z_4=27$ (private).
 
-Ma trận R1CS cho 3 constraints này:
+Ma trận R1CS cho 3 constraints, 5 wires ($n=5$, $m=3$, $\ell=1$):
 
-$$A = \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 5 & 0 & 0 & 0 & 0 \end{pmatrix}$$
+$$A = \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 5 & 0 & 1 & 0 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 & 0 \end{pmatrix}, \quad C = \begin{pmatrix} 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 & 0 \end{pmatrix}$$
 
-*(Hàng 3 của $B$ encode constant $5 \cdot z_0 = 5$)*
+Kiểm tra nhanh với $\mathbf{z} = (1, 35, 3, 9, 27)$:
+
+- Constraint 1: $(A[0]\cdot\mathbf{z}) \circ (B[0]\cdot\mathbf{z}) = z_2 \cdot z_2 = 3 \cdot 3 = 9 = z_3 = C[0]\cdot\mathbf{z}$ ✓
+- Constraint 2: $(A[1]\cdot\mathbf{z}) \circ (B[1]\cdot\mathbf{z}) = z_3 \cdot z_2 = 9 \cdot 3 = 27 = z_4 = C[1]\cdot\mathbf{z}$ ✓
+- Constraint 3: $(A[2]\cdot\mathbf{z}) \circ (B[2]\cdot\mathbf{z}) = (5 + z_2 + z_4) \cdot z_0 = (5+3+27) \cdot 1 = 35 = z_1 = C[2]\cdot\mathbf{z}$ ✓
 
 ---
 
@@ -112,7 +118,10 @@ Tại sao Groth16 bắt buộc $z_0 = 1$? Hai lý do:
 Sau khi QAP được xây dựng từ R1CS, Trusted Setup sẽ pre-compute và commit toàn bộ các QAP polynomials tại điểm bí mật $\tau$:
 
 $$[\tau^0]_1, [\tau^1]_1, \ldots, [\tau^{n-1}]_1$$
-$$[A_i(\tau)]_1, [B_i(\tau)]_1, [B_i(\tau)]_2, [C_i(\tau)]_1 \quad \text{cho mọi } i$$
+$$[A_i(\tau)]_1,\ [B_i(\tau)]_1,\ [B_i(\tau)]_2 \quad \text{cho mọi } i$$
+$$\left[\frac{\beta A_i(\tau) + \alpha B_i(\tau) + C_i(\tau)}{\delta}\right]_1 \quad (i = \ell+1,\ldots,n-1), \quad \left[\frac{\beta A_i(\tau) + \alpha B_i(\tau) + C_i(\tau)}{\gamma}\right]_1 \quad (i = 0,\ldots,\ell)$$
+
+*Lưu ý: $[C_i(\tau)]_1$ standalone **không** có trong CRS. Các polynomial $C_i$ chỉ xuất hiện trong các combined terms chia cho $\gamma$ hoặc $\delta$ — đây là cơ chế force soundness của Groth16.*
 
 Khi prover tính $[A]_1 = [\sum_i z_i A_i(\tau)]_1$, họ thực ra đang tính:
 
@@ -139,7 +148,7 @@ Trong PLONK hay Halo2, public inputs được xử lý như một phần của p
 
 ## Summary
 
-- R1CS trong Groth16 có thêm **witness split**: index $0 \ldots \ell$ là public, $\ell{+}1 \ldots m$ là private
+- R1CS trong Groth16 có thêm **witness split**: index $0 \ldots \ell$ là public, $\ell{+}1 \ldots n{-}1$ là private ($n$ = tổng số wires)
 - $z_0 = 1$ là bắt buộc — loại bỏ zero solution và encode constants
 - R1CS thỏa mãn $\Leftrightarrow$ tồn tại $h(x)$ sao cho $A(x)B(x) - C(x) = h(x)t(x)$ — cầu nối sang QAP
 - Groth16 prover làm việc với **linear combinations của CRS points** — không cần biết $\tau$

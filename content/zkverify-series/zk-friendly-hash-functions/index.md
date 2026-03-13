@@ -6,7 +6,7 @@ created: 2026-03-13
 
 ## Lessons
 
-- [[zkverify-series/zk-friendly-hash-functions/00-roadmap|00. Roadmap]]
+- [[00-roadmap|00. Roadmap]]
 - [[01-hash-functions-overview|01. Hash Functions — Nền tảng & Baseline]] — Ba tính chất bảo mật, Merkle-Damgård, sponge construction, SHA-256 & Keccak internals. Phân tích tại sao bitwise ops làm tăng constraint count trong ZK.
 - [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]] — R1CS, PLONK, AIR constraint systems. Finite field arithmetic. Metric đo chi phí circuit: số constraints, circuit depth, multiplicative complexity.
 - [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly & Threat Model]] — ZK-friendly là gì, low-degree map, native field ops. SNARKs-friendly vs STARKs-friendly. Phân loại primitive theo proof system.

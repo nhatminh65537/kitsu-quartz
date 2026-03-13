@@ -75,7 +75,7 @@ graph TD
 
 ## Progress Tracker
 
-- [ ] [[zkverify-series/zk-friendly-hash-functions/00-roadmap|00. Roadmap]]
+- [ ] [[00-roadmap|00. Roadmap]]
 - [ ] [[01-hash-functions-overview|01. Hash Functions — Nền tảng & Baseline]]
 - [ ] [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]]
 - [ ] [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly & Threat Model]]

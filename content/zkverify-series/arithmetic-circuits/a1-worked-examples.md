@@ -17,9 +17,9 @@ Circuit tính tổng của hai tích — 2 multiplication gates, 1 addition gate
 
 ```mermaid
 graph TD
-    a([a]) & b([b]) --> mul1["× \: t₁ = a·b"]
-    c([c]) & d([d]) --> mul2["× \: t₂ = c·d"]
-    mul1 & mul2 --> pin["pin \: out = t₁\+t₂"]
+    a([a]) & b([b]) --> mul1["× : t₁ = a·b"]
+    c([c]) & d([d]) --> mul2["× : t₂ = c·d"]
+    mul1 & mul2 --> pin["pin : out = t₁+t₂"]
     pin --> out(["out"])
 ```
 
