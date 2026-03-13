@@ -5,8 +5,8 @@ aliases: [Attack Vectors, Bug Classes, ZK Security]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Tất cả L01–L07
-> **Objectives**:
+> **Prerequisites**: Tất cả L01–L07  
+> **Objectives**:  
 > - Catalog đầy đủ bug classes trong STARK/FRI-based ZK systems
 > - Hiểu cơ chế exploit cho từng loại bug
 > - Biết cách detect mỗi bug khi đọc code

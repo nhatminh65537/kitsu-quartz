@@ -5,8 +5,8 @@ aliases: [Groth16]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[10-qap|10. QAP]] — Lagrange interpolation, vanishing polynomial, polynomial divisibility; [[13-kzg-and-pairings|13. KZG & Pairings]] — bilinear pairing, SRS, commitment scheme
-> **Objectives**:
+> **Prerequisites**: [[10-qap|10. QAP]] — Lagrange interpolation, vanishing polynomial, polynomial divisibility; [[13-kzg-and-pairings|13. KZG & Pairings]] — bilinear pairing, SRS, commitment scheme  
+> **Objectives**:  
 > - Hiểu cấu trúc tổng quát của Groth16: QAP + pairing-based verification
 > - Nắm được ý nghĩa của bộ proof $(A, B, C)$ — ba group elements
 > - Hiểu verification equation và tại sao nó đủ để kiểm tra QAP satisfiability
@@ -77,7 +77,7 @@ Tại sao một phương trình duy nhất là đủ? Vì bilinearity của pair
 >
 > **Setup** $(1^\lambda, \mathcal{C})$ — phụ thuộc vào circuit $\mathcal{C}$:
 >
-> Chọn $\tau, \alpha, \beta, \gamma, \delta \xleftarrow{\$} \mathbb{F}_p^*$ (toxic waste).
+> Chọn $\tau, \alpha, \beta, \gamma, \delta \xleftarrow{R} \mathbb{F}_p^*$ (toxic waste).
 >
 > **Proving key** $\mathsf{pk}$ (prover cần để tạo proof):
 > - $[\tau^i]_1$ cho $i = 0, \ldots, d$ (powers of tau, $\mathbb{G}_1$)
@@ -98,7 +98,7 @@ Setup là **circuit-specific**: $\mathsf{pk}$ và $\mathsf{vk}$ phụ thuộc v�
 >
 > **Prove** $(\mathsf{pk}, \mathbf{w}_{\text{pub}}, \mathbf{w}_{\text{priv}}) \to \pi = ([A]_1, [B]_2, [C]_1)$:
 >
-> Chọn blinding factors $r, s \xleftarrow{\$} \mathbb{F}_p$ (để đạt ZK).
+> Chọn blinding factors $r, s \xleftarrow{R} \mathbb{F}_p$ (để đạt ZK).
 >
 > $$[A]_1 = [\alpha]_1 + \sum_{i=0}^n w_i [u_i(\tau)]_1 + r[\delta]_1$$
 >
@@ -130,8 +130,8 @@ Verification: **3 pairing operations** + tính $[\text{pub}]_1$ (tuyến tính t
 
 Để hiểu tại sao equation trên encode QAP satisfiability, xét version đơn giản không có blinding ($r = s = 0$) và không phân tách public/private:
 
-$$A(\tau) = \alpha + \sum_i w_i u_i(\tau)$$
-$$B(\tau) = \beta + \sum_i w_i v_i(\tau)$$
+$$A(\tau) = \alpha + \sum_i w_i u_i(\tau)$$  
+$$B(\tau) = \beta + \sum_i w_i v_i(\tau)$$  
 $$C(\tau) \cdot \delta = \sum_i w_i (\beta u_i(\tau) + \alpha v_i(\tau) + w_i(\tau)) + H(\tau) Z_H(\tau)$$
 
 Nhân $A \cdot B$:

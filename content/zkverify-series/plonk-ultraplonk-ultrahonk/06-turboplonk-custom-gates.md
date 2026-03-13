@@ -5,8 +5,8 @@ aliases: [TurboPlonk and Custom Gates]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[02-plonk-arithmetization|02. PLONK Arithmetization]] — gate equation, selector polynomials, wire polynomials
-> **Objectives**:
+> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[02-plonk-arithmetization|02. PLONK Arithmetization]] — gate equation, selector polynomials, wire polynomials  
+> **Objectives**:  
 > - Hiểu tại sao standard PLONK (fan-in-2) không đủ hiệu quả cho cryptographic primitives
 > - Nắm cơ chế custom gates: thêm selector columns, tăng fan-in, define arbitrary polynomial relation
 > - Biết các custom gate quan trọng: EC scalar multiplication, range check, Poseidon hash gate

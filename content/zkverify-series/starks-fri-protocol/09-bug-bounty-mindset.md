@@ -5,8 +5,8 @@ aliases: [Bug Bounty, Audit Methodology, PoC Construction]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-zkverify-architecture|L07]] — zkVerify architecture; [[08-attack-vectors-bug-classes|L08]] — Attack vectors
-> **Objectives**:
+> **Prerequisites**: [[07-zkverify-architecture|L07]] — zkVerify architecture; [[08-attack-vectors-bug-classes|L08]] — Attack vectors  
+> **Objectives**:  
 > - Hiểu mindset khác nhau giữa "học ZK" và "hunt ZK bugs"
 > - Nắm quy trình audit Rust ZK codebase từ A đến Z
 > - Học cách đọc code zkVerify có mục tiêu (targeted reading)

@@ -5,8 +5,8 @@ aliases: [Polynomials over Finite Fields]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: Modular arithmetic, group theory cơ bản
-> **Objectives**:
+> **Prerequisites**: Modular arithmetic, group theory cơ bản  
+> **Objectives**:  
 > - Nắm vững cấu trúc đa thức trên trường hữu hạn và lý do chúng được dùng trong ZK
 > - Hiểu và tính được nội suy Lagrange (Lagrange interpolation)
 > - Hiểu FFT-friendly domains và multiplicative subgroups

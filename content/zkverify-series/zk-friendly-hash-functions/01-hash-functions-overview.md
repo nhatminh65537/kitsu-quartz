@@ -5,8 +5,8 @@ aliases: [Hash Functions Overview]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Số học modular cơ bản, khái niệm XOR và bitwise operations
-> **Objectives**:
+> **Prerequisites**: Số học modular cơ bản, khái niệm XOR và bitwise operations  
+> **Objectives**:  
 > - Nắm vững ba tính chất bảo mật cốt lõi của hash function và phân biệt chúng chính xác
 > - Hiểu cơ chế hoạt động của Merkle-Damgård và Sponge Construction ở mức internals
 > - Phân tích SHA-256 và Keccak-256 đủ sâu để thấy tại sao chúng không phù hợp với ZK

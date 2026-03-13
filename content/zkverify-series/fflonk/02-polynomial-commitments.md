@@ -5,8 +5,8 @@ aliases: [Polynomial Commitment Schemes]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zk-foundations|01. ZK-SNARK Foundations]] — bilinear pairing, BN254, nhóm elliptic curve
-> **Objectives**:
+> **Prerequisites**: [[01-zk-foundations|01. ZK-SNARK Foundations]] — bilinear pairing, BN254, nhóm elliptic curve  
+> **Objectives**:  
 > - Hiểu Polynomial Commitment Scheme (PCS) là gì và tại sao nó là building block của PLONK/FFLONK
 > - Nắm vững KZG scheme: Setup → Commit → Open → Verify
 > - Hiểu KZG batch opening — nền tảng trực tiếp của cải tiến trong FFLONK

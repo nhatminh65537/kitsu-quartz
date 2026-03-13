@@ -4,12 +4,12 @@ tags: [zk, arithmetic-circuits, r1cs, qap, roadmap]
 created: 2026-03-12
 ---
 
-> **Topic**: Arithmetic Circuits — R1CS, QAP & Constraint Analysis
-> **Domain**: Cryptography / Zero-Knowledge Proofs
-> **Level**: Intermediate → Advanced
-> **Background**: Group theory, field theory, modular arithmetic
-> **Tools / Code**: Python, SageMath, Circom (tham khảo)
-> **Sources**: Boneh & Shoup, ZKProof Community Reference, Oded Goldreich, Justin Thaler — *Proofs, Arguments, and Zero-Knowledge*
+> **Topic**: Arithmetic Circuits — R1CS, QAP & Constraint Analysis  
+> **Domain**: Cryptography / Zero-Knowledge Proofs  
+> **Level**: Intermediate → Advanced  
+> **Background**: Group theory, field theory, modular arithmetic  
+> **Tools / Code**: Python, SageMath, Circom (tham khảo)  
+> **Sources**: Boneh & Shoup, ZKProof Community Reference, Oded Goldreich, Justin Thaler — *Proofs, Arguments, and Zero-Knowledge*  
 
 ---
 

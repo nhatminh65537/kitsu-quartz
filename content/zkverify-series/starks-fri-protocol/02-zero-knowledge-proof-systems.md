@@ -5,8 +5,8 @@ aliases: [Zero-Knowledge Proof Systems, ZK Proof, IOP]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-mathematical-foundations|Lesson 01]] — Trường hữu hạn, Schwartz-Zippel Lemma, polynomial
-> **Objectives**:
+> **Prerequisites**: [[01-mathematical-foundations|Lesson 01]] — Trường hữu hạn, Schwartz-Zippel Lemma, polynomial  
+> **Objectives**:  
 > - Hiểu ba tính chất cốt lõi: Completeness, Soundness, Zero-Knowledge
 > - Phân biệt các loại proof system: IP, PCP, IOP
 > - Nắm IOP model — nền tảng trực tiếp của STARK

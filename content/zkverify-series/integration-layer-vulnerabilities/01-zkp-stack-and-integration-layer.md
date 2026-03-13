@@ -5,8 +5,8 @@ aliases: [ZKP Stack & Integration Layer]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Biết ZKP là gì (prover, verifier, proof); Solidity smart contract cơ bản
-> **Objectives**:
+> **Prerequisites**: Biết ZKP là gì (prover, verifier, proof); Solidity smart contract cơ bản  
+> **Objectives**:  
 > - Hiểu toàn bộ kiến trúc 4 lớp của hệ thống SNARK
 > - Xác định chính xác vị trí và vai trò của Integration Layer
 > - Mô tả các thành phần cụ thể trong Integration Layer

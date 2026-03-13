@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 11. MOV Attack và Frey–Rück Attack
 
-> **Prerequisites**: [[06-weil-pairing|Weil Pairing]], [[08-tate-lichtenbaum-pairing|Tate–Lichtenbaum Pairing]], [[10-pairing-friendly-curves|Pairing-Friendly Curves]]
-> **Objectives**:
+> **Prerequisites**: [[06-weil-pairing|Weil Pairing]], [[08-tate-lichtenbaum-pairing|Tate–Lichtenbaum Pairing]], [[10-pairing-friendly-curves|Pairing-Friendly Curves]]  
+> **Objectives**:  
 > - Hiểu MOV attack: dùng Weil pairing để biến ECDLP thành DLP trong extension field
 > - Hiểu Frey–Rück attack: phiên bản dùng Tate pairing, hiệu quả hơn
 > - Nắm điều kiện để attacks này work và cách phòng tránh (embedding degree lớn)

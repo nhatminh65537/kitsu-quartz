@@ -5,8 +5,8 @@ aliases: [Fiat-Shamir FFLONK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-fflonk-prover|05. FFLONK Prover Algorithm]], [[06-fflonk-verifier|06. FFLONK Verifier Algorithm]]
-> **Objectives**:
+> **Prerequisites**: [[05-fflonk-prover|05. FFLONK Prover Algorithm]], [[06-fflonk-verifier|06. FFLONK Verifier Algorithm]]  
+> **Objectives**:  
 > - Nắm vững Fiat-Shamir transform: cơ chế, điều kiện đúng, và điều kiện fail
 > - Hiểu đặc điểm **Last Challenge Attack (LCA)** — CVE thực tế trên Linea PLONK verifier
 > - Phân tích đầy đủ khi nào một transcript bị "weak" và exploit cụ thể ra sao

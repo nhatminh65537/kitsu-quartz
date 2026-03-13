@@ -5,8 +5,8 @@ aliases: [Circuit to R1CS, Flattening Circuit]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — ma trận $A, B, C$, witness vector, encoding constraint; [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires
-> **Objectives**:
+> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — ma trận $A, B, C$, witness vector, encoding constraint; [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires  
+> **Objectives**:  
 > - Nắm vững quy trình **flattening** — chuyển circuit thành danh sách phương trình phẳng
 > - Thực hiện được conversion Circuit → R1CS end-to-end cho circuit tùy ý
 > - Hiểu cách xử lý các trường hợp đặc biệt: addition, constant, boolean, conditional

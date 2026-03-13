@@ -4,13 +4,13 @@ tags: [cryptography, zk-hash, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: ZK-Friendly Hash Functions
-> **Domain**: Cryptography
-> **Level**: Advanced (audit & bug bounty focused)
+> **Topic**: ZK-Friendly Hash Functions  
+> **Domain**: Cryptography  
+> **Level**: Advanced (audit & bug bounty focused)  
 > **Background assumed**: Mật mã học cơ bản, finite field, elliptic curve theory
-> **Tools / Code**: Python + SageMath, Circom, Rust/Halo2
+> **Tools / Code**: Python + SageMath, Circom, Rust/Halo2  
 > **Plugin**: LaTeX-like Theorem & Equation Referencer (enabled)
-> **Sources**: IACR ePrint, USENIX Security 2021 (Poseidon), Zellic Research, RareSkills, TACEO Blog
+> **Sources**: IACR ePrint, USENIX Security 2021 (Poseidon), Zellic Research, RareSkills, TACEO Blog  
 
 ---
 

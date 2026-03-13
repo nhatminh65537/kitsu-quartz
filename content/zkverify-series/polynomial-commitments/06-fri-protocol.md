@@ -5,8 +5,8 @@ aliases: [FRI Protocol]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]], Reed-Solomon codes, Merkle trees, hash functions
-> **Objectives**:
+> **Prerequisites**: [[01-polynomials-over-finite-fields|01. Polynomials over Finite Fields]], Reed-Solomon codes, Merkle trees, hash functions  
+> **Objectives**:  
 > - Hiểu FRI là IOP of Proximity — không phải commitment scheme trực tiếp
 > - Follow được commit phase (folding) và query phase (spot-check)
 > - Hiểu soundness bound và cách chọn parameters

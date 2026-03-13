@@ -5,8 +5,8 @@ aliases: [R1CS Groth16 Bridge]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: Biết R1CS là gì (wire, gate, witness vector), biết finite field, biết elliptic curve scalar multiplication cơ bản
-> **Objectives**:
+> **Prerequisites**: Biết R1CS là gì (wire, gate, witness vector), biết finite field, biết elliptic curve scalar multiplication cơ bản  
+> **Objectives**:  
 > - Hiểu Groth16 nhìn R1CS theo cách nào khác với định nghĩa thông thường
 > - Phân biệt public input vs private witness và tại sao sự phân chia này quan trọng trong Groth16
 > - Hiểu homomorphic hiding của R1CS constraints — nền tảng cho CRS

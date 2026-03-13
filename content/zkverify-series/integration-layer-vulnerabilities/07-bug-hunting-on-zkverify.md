@@ -5,8 +5,8 @@ aliases: [Bug Hunting on zkVerify]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-v4-passing-unchecked-data|03. V4]], [[04-v5-proof-delegation-error|04. V5]], [[05-v6-proof-composition-error|05. V6]], [[06-v7-zkp-complementary-logic-error|06. V7]]
-> **Objectives**:
+> **Prerequisites**: [[03-v4-passing-unchecked-data|03. V4]], [[04-v5-proof-delegation-error|04. V5]], [[05-v6-proof-composition-error|05. V6]], [[06-v7-zkp-complementary-logic-error|06. V7]]  
+> **Objectives**:  
 > - Hiểu kiến trúc và codebase của zkVerify đủ để audit
 > - Đọc và áp dụng Immunefi scope/rules đúng cách
 > - Có quy trình săn bug có hệ thống cho 4 loại lỗi V4–V7

@@ -5,8 +5,8 @@ aliases: [Arithmetic Circuits and R1CS]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — NP, witness; kiến thức về trường hữu hạn $\mathbb{F}_p$
-> **Objectives**:
+> **Prerequisites**: [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — NP, witness; kiến thức về trường hữu hạn $\mathbb{F}_p$  
+> **Objectives**:  
 > - Hiểu tại sao tính toán cần được "số học hóa" trước khi đưa vào ZKP
 > - Nắm vững arithmetic circuit và circuit satisfiability
 > - Định nghĩa R1CS: matrices A, B, C và vector witness

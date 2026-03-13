@@ -5,8 +5,8 @@ aliases: [Compiler and Frontend Bugs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[08-circuit-bugs|08. Circuit Bugs in zkVM]]
-> **Objectives**:
+> **Prerequisites**: [[08-circuit-bugs|08. Circuit Bugs in zkVM]]  
+> **Objectives**:  
 > - Hiểu frontend layer trong zkVM: compiler và executor làm gì, tại sao chúng là attack surface
 > - Phân biệt circuit bug (constraints sai) vs compiler bug (compiler sinh constraints sai) vs executor bug (execution trace sai)
 > - Nắm các class bug phổ biến trong executor/preflight: semantic mismatch, RISC-V edge cases

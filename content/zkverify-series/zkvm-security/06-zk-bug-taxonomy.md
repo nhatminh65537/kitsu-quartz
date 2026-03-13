@@ -5,8 +5,8 @@ aliases: [ZK Bug Taxonomy]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]
-> **Objectives**:
+> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]  
+> **Objectives**:  
 > - Nắm vững phân loại bug trong ZK systems theo taxonomy chuẩn (USENIX Security'24 corpus 141 bugs)
 > - Phân biệt rõ underconstrained, overconstrained, computational, và integration bugs
 > - Hiểu ý nghĩa security của từng loại: loại nào break soundness, loại nào break completeness

@@ -5,8 +5,8 @@ aliases: [Groth16 Prover Algorithm]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[04-trusted-setup-crs|04. Trusted Setup & CRS]]
-> **Objectives**:
+> **Prerequisites**: [[04-trusted-setup-crs|04. Trusted Setup & CRS]]  
+> **Objectives**:  
 > - Hiểu đầy đủ thuật toán prove: tính $[A]_1, [B]_2, [C]_1$
 > - Hiểu vai trò của randomness $r, s$ trong zero-knowledge
 > - Hiểu tại sao cần $\alpha, \beta$ shifts trong $A, B$

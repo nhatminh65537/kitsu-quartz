@@ -5,8 +5,8 @@ aliases: [Risc0 Deep Dive]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]
-> **Objectives**:
+> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]  
+> **Objectives**:  
 > - Hiểu kiến trúc chi tiết của Risc0: Executor, circuit rv32im, Zirgen DSL
 > - Biết cấu trúc của Receipt (journal + seal), Image ID, continuations
 > - Hiểu pipeline STARK → SNARK (Groth16) và ý nghĩa bảo mật của từng bước

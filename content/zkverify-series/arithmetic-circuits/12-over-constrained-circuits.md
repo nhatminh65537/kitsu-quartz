@@ -5,8 +5,8 @@ aliases: [Over-constrained Circuits, Conflicting Constraint Bug]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — completeness; [[11-under-constrained-circuits|11. Under-constrained Circuits]] — phân loại constraint bugs
-> **Objectives**:
+> **Prerequisites**: [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — completeness; [[11-under-constrained-circuits|11. Under-constrained Circuits]] — phân loại constraint bugs  
+> **Objectives**:  
 > - Định nghĩa over-constrained circuit và phân biệt với under-constrained
 > - Phân tích hậu quả: honest prover không thể generate proof → DoS / griefing
 > - Nhận diện 4 pattern over-constrained phổ biến

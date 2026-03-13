@@ -5,8 +5,8 @@ aliases: [Polynomial IOP and KZG]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Group theory (cyclic groups, generators), finite fields $\mathbb{F}_p$, elliptic curves cơ bản (point addition, scalar multiplication), discrete logarithm problem
-> **Objectives**:
+> **Prerequisites**: Group theory (cyclic groups, generators), finite fields $\mathbb{F}_p$, elliptic curves cơ bản (point addition, scalar multiplication), discrete logarithm problem  
+> **Objectives**:  
 > - Hiểu mô hình Polynomial IOP (Interactive Oracle Proof) và tại sao nó là nền tảng của PLONK
 > - Nắm vững cấu trúc KZG commitment: Setup, Commit, Open, Verify
 > - Phân tích security properties: binding, hiding, knowledge soundness trong AGM

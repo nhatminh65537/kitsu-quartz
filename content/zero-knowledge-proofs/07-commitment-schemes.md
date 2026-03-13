@@ -5,8 +5,8 @@ aliases: [Commitment Schemes]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]] — computational indistinguishability; [[05-sigma-protocols|05. Sigma Protocols]] — Pedersen context
-> **Objectives**:
+> **Prerequisites**: [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]] — computational indistinguishability; [[05-sigma-protocols|05. Sigma Protocols]] — Pedersen context  
+> **Objectives**:  
 > - Nắm vững định nghĩa formal của hiding và binding, và sự đánh đổi giữa chúng
 > - Phân tích Pedersen commitment: perfectly hiding, computationally binding, homomorphic
 > - Hiểu hash-based commitment và tradeoff so với Pedersen

@@ -5,8 +5,8 @@ aliases: [Groth16 Security Properties]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[05-groth16-prover|05]], [[06-groth16-verifier|06]]
-> **Objectives**:
+> **Prerequisites**: [[05-groth16-prover|05]], [[06-groth16-verifier|06]]  
+> **Objectives**:  
 > - Nắm formal definition của completeness, soundness, zero-knowledge trong ngữ cảnh Groth16
 > - Hiểu tại sao Groth16 đạt **perfect completeness** và **perfect zero-knowledge**
 > - Hiểu **computational knowledge soundness** và tại sao nó mạnh hơn soundness thông thường

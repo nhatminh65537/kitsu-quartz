@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 10. Pairing-Friendly Curves: BN254, BLS12-381, và Các Gia Đình Khác
 
-> **Prerequisites**: [[09-ate-pairing-optimal-ate|Ate Pairing & Optimal Ate]], [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]]
-> **Objectives**:
+> **Prerequisites**: [[09-ate-pairing-optimal-ate|Ate Pairing & Optimal Ate]], [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]]  
+> **Objectives**:  
 > - Hiểu điều kiện "pairing-friendly": embedding degree $k$, rho-value $\rho$, và cân bằng bảo mật
 > - Nắm cấu trúc tham số BN254 và BLS12-381 — hai curves quan trọng nhất hiện tại
 > - Biết tower field arithmetic $\mathbb{F}_{p^{12}}$ và sextic twist tối ưu hóa $\mathbb{G}_2$

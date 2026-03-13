@@ -5,8 +5,8 @@ aliases: [Constraint Systems ZK, R1CS PLONK Overview]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires; [[04-signals-witnesses-visibility|04. Signals, Witnesses & Visibility]] — witness vector $\vec{z}$
-> **Objectives**:
+> **Prerequisites**: [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires; [[04-signals-witnesses-visibility|04. Signals, Witnesses & Visibility]] — witness vector $\vec{z}$  
+> **Objectives**:  
 > - Hiểu tại sao cần "encode" circuit thành constraint system — không thể prove trực tiếp trên circuit
 > - Nắm được ý tưởng tổng quát của constraint system: tập phương trình phải được thỏa mãn
 > - Phân biệt các loại constraint system phổ biến: R1CS, Plonkish, AIR

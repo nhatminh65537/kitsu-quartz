@@ -5,8 +5,8 @@ aliases: [Multilinear Extensions and Sumcheck Protocol]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[10-qap|10. Quadratic Arithmetic Programs]] — Schwartz-Zippel, polynomial identity; [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — IP = PSPACE, interactive proofs
-> **Objectives**:
+> **Prerequisites**: [[10-qap|10. Quadratic Arithmetic Programs]] — Schwartz-Zippel, polynomial identity; [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — IP = PSPACE, interactive proofs  
+> **Objectives**:  
 > - Hiểu multilinear polynomial và multilinear extension của một hàm
 > - Nắm vững sumcheck protocol: cách reduce tổng trên hypercube thành point evaluation
 > - Theo dõi được phân tích completeness và soundness của sumcheck
@@ -195,13 +195,13 @@ Sumcheck và multilinear extensions là nền tảng của:
 
 ```mermaid
 graph TD
-    SZ["Schwartz-Zippel\n(polynomial identity testing)"]
-    MLE["Multilinear Extensions\n(encode functions as polynomials)"]
-    SC["Sumcheck Protocol\n(reduce sum → point eval)"]
-    GKR["GKR Protocol\n(circuit verification via sumcheck)"]
-    IOP["IOP Model\n(Bài 12)"]
-    SNARK["Transparent SNARKs\n(no trusted setup)"]
-    STARK["ZK-STARKs\n(Bài 16)"]
+    SZ["Schwartz-Zippel<br>(polynomial identity testing)"]
+    MLE["Multilinear Extensions<br>(encode functions as polynomials)"]
+    SC["Sumcheck Protocol<br>(reduce sum → point eval)"]
+    GKR["GKR Protocol<br>(circuit verification via sumcheck)"]
+    IOP["IOP Model<br>(Bài 12)"]
+    SNARK["Transparent SNARKs<br>(no trusted setup)"]
+    STARK["ZK-STARKs<br>(Bài 16)"]
 
     SZ --> SC
     MLE --> SC

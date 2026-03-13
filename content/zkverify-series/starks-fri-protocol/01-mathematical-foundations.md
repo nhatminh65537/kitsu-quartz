@@ -5,8 +5,8 @@ aliases: [Mathematical Foundations]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Số học modular (modular arithmetic) — phép cộng/nhân mod $p$, nghịch đảo modular; khái niệm đa thức (polynomial) cơ bản
-> **Objectives**:
+> **Prerequisites**: Số học modular (modular arithmetic) — phép cộng/nhân mod $p$, nghịch đảo modular; khái niệm đa thức (polynomial) cơ bản  
+> **Objectives**:  
 > - Nắm vững cấu trúc của trường hữu hạn (finite field) $\mathbb{F}_p$ và tại sao STARK/FRI yêu cầu nó
 > - Hiểu roots of unity và subgroup cấu trúc quan trọng cho evaluation domain
 > - Nắm NTT/FFT như công cụ tính toán polynomial hiệu quả

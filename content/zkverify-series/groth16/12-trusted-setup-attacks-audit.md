@@ -5,8 +5,8 @@ aliases: [Groth16 Audit Methodology]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[04-trusted-setup-crs|04]], [[10-proof-malleability|10]], [[11-under-over-constrained|11]]
-> **Objectives**:
+> **Prerequisites**: [[04-trusted-setup-crs|04]], [[10-proof-malleability|10]], [[11-under-over-constrained|11]]  
+> **Objectives**:  
 > - Hiểu các attack vectors lên trusted setup
 > - Phân tích real exploit: γ = δ bug (2025, $1.5M)
 > - Nắm đầy đủ audit checklist cho Groth16 system

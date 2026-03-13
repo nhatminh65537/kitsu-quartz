@@ -5,8 +5,8 @@ aliases: [ZK-Friendly Criteria Threat Model]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-hash-functions-overview|01. Hash Functions]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]]
-> **Objectives**:
+> **Prerequisites**: [[01-hash-functions-overview|01. Hash Functions]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]]  
+> **Objectives**:  
 > - Định nghĩa chính xác "ZK-friendly" theo từng chiều: multiplicative complexity, circuit depth, field nativeness
 > - Phân biệt SNARKs-friendly vs STARKs-friendly và hiểu tại sao chúng khác nhau
 > - Nắm threat model đầy đủ: cả phía mật mã (cryptanalysis) lẫn phía circuit (soundness)

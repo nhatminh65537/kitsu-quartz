@@ -10,7 +10,11 @@ created: 2026-03-09
 ---
 # Roadmap: Pairing trên Đường Cong Elliptic (Pairings on Elliptic Curves)
 
-> **Level**: Research — đủ để đọc paper và implement **Background**: ECC cơ bản, đại số tuyến tính, trường hữu hạn cơ bản **SageMath**: Có **Obsidian Theorem Plugin**: Có **Ngôn ngữ**: Nội dung tiếng Việt — thuật ngữ toán tiếng Anh
+> **Level**: Research — đủ để đọc paper và implement  
+> **Background**: ECC cơ bản, đại số tuyến tính, trường hữu hạn cơ bản  
+> **SageMath**: Có  
+> **Obsidian Theorem Plugin**: Có  
+> **Ngôn ngữ**: Nội dung tiếng Việt — thuật ngữ toán tiếng Anh  
 > 
 > **Textbooks chính:**
 > 

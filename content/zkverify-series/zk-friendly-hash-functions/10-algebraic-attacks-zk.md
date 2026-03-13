@@ -5,8 +5,8 @@ aliases: [Algebraic Attacks ZK Hash]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[09-algebraic-cryptanalysis|09. Algebraic Cryptanalysis — Cơ bản]], [[04-mimc-gmimc|04. MiMC & GMiMC]], đa thức trên trường hữu hạn, kiến thức cơ bản về hệ phương trình phi tuyến
-> **Objectives**:
+> **Prerequisites**: [[09-algebraic-cryptanalysis|09. Algebraic Cryptanalysis — Cơ bản]], [[04-mimc-gmimc|04. MiMC & GMiMC]], đa thức trên trường hữu hạn, kiến thức cơ bản về hệ phương trình phi tuyến  
+> **Objectives**:  
 > - Hiểu interpolation attack end-to-end: query model, complexity, điều kiện thành công
 > - Nắm cơ chế Gröbner basis attack và tại sao nó nguy hiểm với low-degree hash functions
 > - Biết GCD attacks trên MiMC và invariant subspace attacks

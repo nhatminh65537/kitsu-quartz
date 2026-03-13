@@ -5,8 +5,8 @@ aliases: [Sigma Protocols]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]]; [[04-proof-of-knowledge|04. Proof of Knowledge & Knowledge Soundness]]
-> **Objectives**:
+> **Prerequisites**: [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]]; [[04-proof-of-knowledge|04. Proof of Knowledge & Knowledge Soundness]]  
+> **Objectives**:  
 > - Nắm vững cấu trúc 3-move của Sigma protocol và ba tính chất bảo mật
 > - Phân tích chi tiết Schnorr protocol: completeness, SHVZK, special soundness
 > - Hiểu Chaum-Pedersen protocol: chứng minh đẳng thức discrete log

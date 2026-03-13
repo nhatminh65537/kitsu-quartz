@@ -5,8 +5,8 @@ aliases: [Poseidon Design]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems]], [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]]
-> **Objectives**:
+> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems]], [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]]  
+> **Objectives**:  
 > - Hiểu hoàn toàn HADES design strategy và tại sao nó cải thiện hiệu quả so với MiMC
 > - Nắm kiến trúc Poseidon: full rounds, partial rounds, S-box, MDS matrix, round constants
 > - Phân tích security argument của Poseidon theo từng attack class

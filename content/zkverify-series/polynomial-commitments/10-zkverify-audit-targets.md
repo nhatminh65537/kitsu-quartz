@@ -5,8 +5,8 @@ aliases: [zkVerify Audit Targets]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: Toàn bộ bài 01–09
-> **Objectives**:
+> **Prerequisites**: Toàn bộ bài 01–09  
+> **Objectives**:  
 > - Nắm kiến trúc zkVerify và attack surface của nó
 > - Biết cách map lỗi PCS vào codebase zkVerify cụ thể
 > - Hiểu threat model của bug bounty program

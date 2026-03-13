@@ -5,8 +5,8 @@ aliases: [MDS Matrix Diffusion Layer]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-poseidon-design|05. Poseidon]], [[09-algebraic-cryptanalysis|09. Algebraic Cryptanalysis]], đại số tuyến tính (ma trận, determinant)
-> **Objectives**:
+> **Prerequisites**: [[05-poseidon-design|05. Poseidon]], [[09-algebraic-cryptanalysis|09. Algebraic Cryptanalysis]], đại số tuyến tính (ma trận, determinant)  
+> **Objectives**:  
 > - Hiểu branch number và tại sao nó đo lường chất lượng diffusion
 > - Biết các cấu trúc MDS phổ biến: Cauchy, Circulant, và ưu/nhược điểm từng loại
 > - Verify xem một matrix có phải MDS không bằng SageMath

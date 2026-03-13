@@ -5,8 +5,8 @@ aliases: [V7 ZKP Complementary Logic Error]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]
-> **Objectives**:
+> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]  
+> **Objectives**:  
 > - Hiểu "complementary logic" là gì và tại sao nó cần thiết nhưng dễ sai
 > - Phân tích case study Tornado Cash nullifier bug chi tiết
 > - Nhận diện 4 loại complementary logic thường gặp và các sai lầm điển hình

@@ -5,8 +5,8 @@ aliases: [Circuit Bugs in zkVM]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[06-zk-bug-taxonomy|06. ZK Bug Taxonomy]], [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]]
-> **Objectives**:
+> **Prerequisites**: [[06-zk-bug-taxonomy|06. ZK Bug Taxonomy]], [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]]  
+> **Objectives**:  
 > - Hiểu anatomy chi tiết của circuit bugs trong Zirgen (Risc0) và AIR chips (SP1)
 > - Phân tích từng bug thực tế: CVE-2025-52484, ExpandU32, Poseidon2, ARGUZZ bugs
 > - Biết pattern nhận diện underconstrained bugs khi đọc Zirgen/AIR constraint code

@@ -5,8 +5,8 @@ aliases: [FRI Query Phase, FRI Verification, Decommitment]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[04-fri-commit-fold|L04]] — FRI commit phase, folding, Merkle trees
-> **Objectives**:
+> **Prerequisites**: [[04-fri-commit-fold|L04]] — FRI commit phase, folding, Merkle trees  
+> **Objectives**:  
 > - Hiểu query phase: verifier spot-check consistency
 > - Nắm colinearity check và tại sao nó đủ để verify folding
 > - Tính soundness error tổng thể của FRI

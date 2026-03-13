@@ -5,8 +5,8 @@ aliases: [KZG Security Analysis]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], DLP hardness, security reductions
-> **Objectives**:
+> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], DLP hardness, security reductions  
+> **Objectives**:  
 > - Phát biểu và hiểu t-SDH assumption
 > - Prove binding của KZG từ t-SDH
 > - Hiểu evaluation binding vs polynomial binding

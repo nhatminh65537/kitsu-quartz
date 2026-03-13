@@ -6,7 +6,7 @@ created: 2026-03-12
 ---
 
 > **Prerequisites**: [[11-under-constrained-circuits|11. Under-constrained Circuits]]; [[12-over-constrained-circuits|12. Over-constrained Circuits]]; [[07-circuit-to-r1cs|07. Chuyển đổi Circuit → R1CS]]; [[10-qap-satisfiability|10. QAP Satisfiability & Divisibility]]  
-> **Objectives**:
+> **Objectives**:  
 > - Tổng hợp thành một framework audit hoàn chỉnh cho ZK circuit
 > - Nắm vững 4 tầng kiểm tra: signal, constraint, semantic, field
 > - Áp dụng được framework vào zkVerify và các ZK codebase thực tế

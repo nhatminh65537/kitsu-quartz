@@ -5,8 +5,8 @@ aliases: [Fiat-Shamir and Security Model]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[04-plonk-prover-verifier|04. PLONK Prover and Verifier]] — rounds, challenges, transcript; [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — AGM
-> **Objectives**:
+> **Prerequisites**: [[04-plonk-prover-verifier|04. PLONK Prover and Verifier]] — rounds, challenges, transcript; [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — AGM  
+> **Objectives**:  
 > - Hiểu Fiat-Shamir transformation và Random Oracle Model
 > - Nắm formal security definitions: knowledge soundness, zero-knowledge, succinctness
 > - Biết cách xây dựng transcript đúng cho PLONK

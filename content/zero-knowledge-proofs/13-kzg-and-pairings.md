@@ -5,8 +5,8 @@ aliases: [KZG and Pairings]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding, Pedersen; [[12-iop-and-polynomial-commitments|12. IOP & Polynomial Commitments]] — định nghĩa PCS formal; kiến thức nhóm cyclic, discrete log
-> **Objectives**:
+> **Prerequisites**: [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding, Pedersen; [[12-iop-and-polynomial-commitments|12. IOP & Polynomial Commitments]] — định nghĩa PCS formal; kiến thức nhóm cyclic, discrete log  
+> **Objectives**:  
 > - Hiểu bilinear pairing là gì và tại sao nó mạnh hơn DLP thông thường
 > - Nắm được KZG commitment scheme: cách commit, open, verify đa thức
 > - Hiểu tại sao KZG có constant-size proof và ý nghĩa của nó
@@ -98,7 +98,7 @@ KZG cần prover biết $\tau, \tau^2, \ldots, \tau^d$ trong exponent — nhưng
 >
 > $$\mathsf{srs} = \left( \underbrace{[1]_1, [\tau]_1, [\tau^2]_1, \ldots, [\tau^d]_1}_{\mathbb{G}_1},\; \underbrace{[1]_2, [\tau]_2}_{\mathbb{G}_2} \right)$$
 >
-> trong đó $\tau \xleftarrow{\$} \mathbb{F}_p^*$ được chọn ngẫu nhiên rồi **xóa** (toxic waste).
+> trong đó $\tau \xleftarrow{R} \mathbb{F}_p^*$ được chọn ngẫu nhiên rồi **xóa** (toxic waste).
 >
 > Prover chỉ biết $[\tau^i]_1$, không biết $\tau$ trực tiếp.
 
@@ -137,7 +137,7 @@ $$[f(\tau)]_1 = \left[\sum_{i=0}^d a_i \tau^i\right]_1 = \sum_{i=0}^d a_i \cdot 
 > [!definition] Definition 13.4 — KZG Polynomial Commitment Scheme
 >
 > **Setup**: $\mathsf{KZG.Setup}(1^\lambda, d)$
-> - Chọn $\tau \xleftarrow{\$} \mathbb{F}_p^*$
+> - Chọn $\tau \xleftarrow{R} \mathbb{F}_p^*$
 > - Tính $\mathsf{srs} = ([1]_1, [\tau]_1, \ldots, [\tau^d]_1, [1]_2, [\tau]_2)$
 > - Xóa $\tau$, trả về $\mathsf{srs}$
 >
@@ -215,7 +215,7 @@ Quotient polynomial $q(X) = \frac{f(X) - f(z)}{X - z}$ là bằng chứng rằng
 >
 > Cho nhóm $(\mathbb{G}_1, \mathbb{G}_2, \mathbb{G}_T, e, p)$ với pairing $e$. **$q$-SDH assumption** phát biểu:
 >
-> Với SRS $= ([1]_1, [\tau]_1, \ldots, [\tau^q]_1, [1]_2, [\tau]_2)$ và $\tau \xleftarrow{\$} \mathbb{F}_p^*$, mọi PPT adversary $\mathcal{A}$:
+> Với SRS $= ([1]_1, [\tau]_1, \ldots, [\tau^q]_1, [1]_2, [\tau]_2)$ và $\tau \xleftarrow{R} \mathbb{F}_p^*$, mọi PPT adversary $\mathcal{A}$:
 >
 > $$\Pr\left[\mathcal{A}(\mathsf{srs}) = (c, [1/(\tau+c)]_1) \text{ với } c \in \mathbb{F}_p\right] \leq \mathsf{negl}(\lambda)$$
 >
@@ -247,7 +247,7 @@ Quotient polynomial $q(X) = \frac{f(X) - f(z)}{X - z}$ là bằng chứng rằng
 >
 > Hơn nữa: với SRS trong exponent, có thể "detect" một số thông tin về $f$ nếu biết structure.
 >
-> **Cách thêm hiding**: commit $\mathsf{cm} = [f(\tau) + r \cdot \hat{\tau}]_1$ với $r \xleftarrow{\$} \mathbb{F}_p$ và $\hat{\tau}$ từ SRS phụ. Điều này làm commitment perfectly hiding (Pedersen-like trong exponent).
+> **Cách thêm hiding**: commit $\mathsf{cm} = [f(\tau) + r \cdot \hat{\tau}]_1$ với $r \xleftarrow{R} \mathbb{F}_p$ và $\hat{\tau}$ từ SRS phụ. Điều này làm commitment perfectly hiding (Pedersen-like trong exponent).
 
 ---
 

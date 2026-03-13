@@ -5,8 +5,8 @@ aliases: [Under-constrained Circuits, Missing Constraint Bug]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — soundness, knowledge soundness; [[07-circuit-to-r1cs|07. Chuyển đổi Circuit → R1CS]] — quy trình flattening, pinning constraint; [[04-signals-witnesses-visibility|04. Signals, Witnesses & Visibility]] — intermediate signals
-> **Objectives**:
+> **Prerequisites**: [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — soundness, knowledge soundness; [[07-circuit-to-r1cs|07. Chuyển đổi Circuit → R1CS]] — quy trình flattening, pinning constraint; [[04-signals-witnesses-visibility|04. Signals, Witnesses & Visibility]] — intermediate signals  
+> **Objectives**:  
 > - Định nghĩa chính xác under-constrained circuit và phân biệt các dạng
 > - Phân tích attack vector: prover chọn witness tự do để forge proof
 > - Nhận diện 5 pattern under-constrained phổ biến nhất trong ZK circuits thực tế

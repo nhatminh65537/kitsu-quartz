@@ -5,8 +5,8 @@ aliases: [V5 Proof Delegation Error]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]
-> **Objectives**:
+> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]  
+> **Objectives**:  
 > - Hiểu tại sao proof generation cần được delegate và khi nào nó xảy ra
 > - Phân tích 3 loại rủi ro trong proof delegation: data leakage, witness manipulation, và service DoS
 > - Nhận diện các design pattern không an toàn trong decentralized proving services

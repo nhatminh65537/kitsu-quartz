@@ -5,8 +5,8 @@ aliases: [Bug Hunting Methodology]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Tất cả lessons trước, đặc biệt [[06-zk-bug-taxonomy|06]], [[07-threat-models-zkvm|07]], [[12-zkverify-architecture|12]], [[13-real-world-cves|13]]
-> **Objectives**:
+> **Prerequisites**: Tất cả lessons trước, đặc biệt [[06-zk-bug-taxonomy|06]], [[07-threat-models-zkvm|07]], [[12-zkverify-architecture|12]], [[13-real-world-cves|13]]  
+> **Objectives**:  
 > - Xây dựng systematic methodology để hunt bugs trong Risc0/SP1/zkVerify
 > - Biết cách prioritize effort: layer nào, class nào, tool nào
 > - Hiểu quy trình từ setup environment → enumerate attack surface → audit → PoC → report

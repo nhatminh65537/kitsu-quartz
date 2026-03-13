@@ -5,8 +5,8 @@ aliases: [Algebraic Cryptanalysis Basics]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]], [[05-poseidon-design|05. Poseidon]], đại số tuyến tính cơ bản, đa thức trên trường hữu hạn
-> **Objectives**:
+> **Prerequisites**: [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]], [[05-poseidon-design|05. Poseidon]], đại số tuyến tính cơ bản, đa thức trên trường hữu hạn  
+> **Objectives**:  
 > - Hiểu differential và linear cryptanalysis trong setting algebraic (khác với setting bitwise)
 > - Nắm khái niệm algebraic degree và tại sao nó là metric bảo mật
 > - Biết differential uniformity và linear bias trong context ZK hash

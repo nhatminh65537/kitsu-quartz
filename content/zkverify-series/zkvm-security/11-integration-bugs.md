@@ -5,8 +5,8 @@ aliases: [Integration Bugs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-threat-models-zkvm|07. Threat Models in zkVM]], [[10-host-guest-bugs|10. Host/Guest Bugs]]
-> **Objectives**:
+> **Prerequisites**: [[07-threat-models-zkvm|07. Threat Models in zkVM]], [[10-host-guest-bugs|10. Host/Guest Bugs]]  
+> **Objectives**:  
 > - Hiểu integration layer: on-chain verifier, proof aggregation, cross-chain bridges
 > - Nắm class bugs phổ biến nhất trong integration: vkey bypass, nullifier reuse, public input mismatch
 > - Phân tích Groth16 trusted setup pitfalls và snarkjs misconfiguration

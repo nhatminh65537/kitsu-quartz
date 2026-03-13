@@ -5,8 +5,8 @@ aliases: [R1CS Soundness Completeness, ZK Security Properties]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — định nghĩa R1CS; [[07-circuit-to-r1cs|07. Chuyển đổi Circuit → R1CS]] — quy trình conversion; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — Schwartz-Zippel lemma
-> **Objectives**:
+> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — định nghĩa R1CS; [[07-circuit-to-r1cs|07. Chuyển đổi Circuit → R1CS]] — quy trình conversion; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — Schwartz-Zippel lemma  
+> **Objectives**:  
 > - Định nghĩa chính xác **completeness** và **soundness** trong ngữ cảnh R1CS và ZK proof
 > - Hiểu **knowledge soundness** — tại sao prover phải *thực sự biết* witness
 > - Phân tích nguồn gốc lỗi soundness trong R1CS: constraint sai, constraint thiếu, witness flexibility

@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 6. Weil Pairing
 
-> **Prerequisites**: [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]], [[05-torsion-points|Torsion Points]], [[03-rational-functions-algebraic-geometry-on-curves|Rational Functions & Algebraic Geometry on Curves]]
-> **Objectives**:
+> **Prerequisites**: [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]], [[05-torsion-points|Torsion Points]], [[03-rational-functions-algebraic-geometry-on-curves|Rational Functions & Algebraic Geometry on Curves]]  
+> **Objectives**:  
 > - Nắm định nghĩa chính xác của Weil pairing $e_n: E[n] \times E[n] \to \mu_n$ qua divisors
 > - Hiểu và chứng minh 5 tính chất: bilinear, alternating, non-degenerate, Galois-equivariant, compatible
 > - Tính toán được $e_n$ trên ví dụ cụ thể

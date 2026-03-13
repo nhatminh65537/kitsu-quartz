@@ -4,12 +4,12 @@ tags: [crypto, plonk, ultraplonk, ultrahonk, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: PLONK, UltraPlonk & UltraHonk
-> **Domain**: Cryptography
-> **Level**: Advanced + Bug Bounty
-> **Background**: Số học modular, group theory, finite fields; Rust/C++/Python
-> **Tools / Code**: Python (sympy, sage snippets), Rust (Barretenberg source references)
-> **Sources**: IACR ePrint 2019/953, 2020/315, Aztec Barretenberg docs, Trail of Bits, 0xPARC bug tracker, zkVerify
+> **Topic**: PLONK, UltraPlonk & UltraHonk  
+> **Domain**: Cryptography  
+> **Level**: Advanced + Bug Bounty  
+> **Background**: Số học modular, group theory, finite fields; Rust/C++/Python  
+> **Tools / Code**: Python (sympy, sage snippets), Rust (Barretenberg source references)  
+> **Sources**: IACR ePrint 2019/953, 2020/315, Aztec Barretenberg docs, Trail of Bits, 0xPARC bug tracker, zkVerify  
 
 ---
 

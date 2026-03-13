@@ -5,8 +5,8 @@ aliases: [Real-World CVEs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[08-circuit-bugs|08. Circuit Bugs]], [[09-compiler-frontend-bugs|09. Compiler & Frontend Bugs]], [[10-host-guest-bugs|10. Host/Guest Bugs]]
-> **Objectives**:
+> **Prerequisites**: [[08-circuit-bugs|08. Circuit Bugs]], [[09-compiler-frontend-bugs|09. Compiler & Frontend Bugs]], [[10-host-guest-bugs|10. Host/Guest Bugs]]  
+> **Objectives**:  
 > - Phân tích kỹ 5 real-world bugs: CVE-2025-52484, ExpandU32, Poseidon2, SP1 LambdaClass, Unfaithful Claims
 > - Hiểu root cause → attack vector → impact → fix cho mỗi bug
 > - Học cách bug finder tiếp cận và verify từng finding

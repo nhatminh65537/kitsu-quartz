@@ -5,8 +5,8 @@ aliases: [FFLONK Security Analysis]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-trusted-setup|07. Trusted Setup]], [[08-fiat-shamir|08. Fiat-Shamir in FFLONK]]
-> **Objectives**:
+> **Prerequisites**: [[07-trusted-setup|07. Trusted Setup]], [[08-fiat-shamir|08. Fiat-Shamir in FFLONK]]  
+> **Objectives**:  
 > - Hiểu đầy đủ security assumptions của FFLONK và khi nào chúng fail
 > - Nắm vững Algebraic Group Model (AGM) và tại sao nó cần thiết
 > - Phân tích threat model thực tế: ai là attacker, attack surface là gì

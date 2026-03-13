@@ -5,8 +5,8 @@ aliases: [AIR, Arithmetization, Execution Trace]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-mathematical-foundations|L01]] — Polynomial, zerofier, Schwartz-Zippel; [[02-zero-knowledge-proof-systems|L02]] — IOP model, soundness
-> **Objectives**:
+> **Prerequisites**: [[01-mathematical-foundations|L01]] — Polynomial, zerofier, Schwartz-Zippel; [[02-zero-knowledge-proof-systems|L02]] — IOP model, soundness  
+> **Objectives**:  
 > - Hiểu Arithmetization là gì và tại sao cần nó
 > - Xây dựng Execution Trace từ computation cụ thể (Fibonacci)
 > - Phân biệt Boundary Constraints vs Transition Constraints

@@ -5,8 +5,8 @@ aliases: [Groth16 Worked Example]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[08-circom-snarkjs-workflow|08. Circom + snarkjs Workflow]]
-> **Objectives**:
+> **Prerequisites**: [[08-circom-snarkjs-workflow|08. Circom + snarkjs Workflow]]  
+> **Objectives**:  
 > - Hoàn thành một bài toán ZK thực tế từ đầu đến cuối
 > - Áp dụng đúng constraint design
 > - Hiểu cách verify on-chain với Solidity

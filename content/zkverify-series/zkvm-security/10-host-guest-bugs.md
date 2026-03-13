@@ -5,8 +5,8 @@ aliases: [Host Guest Bugs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-threat-models-zkvm|07. Threat Models in zkVM]]
-> **Objectives**:
+> **Prerequisites**: [[07-threat-models-zkvm|07. Threat Models in zkVM]]  
+> **Objectives**:  
 > - Hiểu class bugs xảy ra trong *application layer* — guest program logic
 > - Nắm các pitfalls đặc thù của zkVM programming: integer overflow, type cast, nondeterminism
 > - Biết các bugs từ việc dùng sai syscall/precompile API

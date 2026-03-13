@@ -5,8 +5,8 @@ aliases: [PLONK and Multi-point Evaluation]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], [[04-kzg-security-analysis|04. KZG Security Analysis]], vanishing polynomials
-> **Objectives**:
+> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], [[04-kzg-security-analysis|04. KZG Security Analysis]], vanishing polynomials  
+> **Objectives**:  
 > - Hiểu PLONK dùng KZG như thế nào để prove circuit satisfiability
 > - Nắm linearization trick và tại sao nó cần thiết
 > - Hiểu batch multi-point, multi-polynomial opening

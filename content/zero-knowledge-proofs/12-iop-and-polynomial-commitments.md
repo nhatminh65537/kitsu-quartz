@@ -5,8 +5,8 @@ aliases: [IOP and Polynomial Commitments]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding; [[11-multilinear-extensions-and-sumcheck|11. Multilinear Extensions & Sumcheck]] — đa thức multilinear, sumcheck protocol
-> **Objectives**:
+> **Prerequisites**: [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding; [[11-multilinear-extensions-and-sumcheck|11. Multilinear Extensions & Sumcheck]] — đa thức multilinear, sumcheck protocol  
+> **Objectives**:  
 > - Hiểu mô hình Interactive Oracle Proof (IOP) và vai trò của oracle access
 > - Nắm được cách compile IOP thành SNARK qua polynomial commitment scheme
 > - Định nghĩa formal của polynomial commitment scheme (PCS): commit, open, verify

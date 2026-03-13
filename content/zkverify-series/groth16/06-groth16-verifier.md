@@ -5,8 +5,8 @@ aliases: [Groth16 Verifier Algorithm]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[05-groth16-prover|05. Groth16 Prover]]
-> **Objectives**:
+> **Prerequisites**: [[05-groth16-prover|05. Groth16 Prover]]  
+> **Objectives**:  
 > - Hiểu đầy đủ verification equation và tại sao nó đúng
 > - Biết verifier cần tính gì từ public inputs
 > - Hiểu tại sao 3 pairing checks là đủ để verify toàn bộ R1CS

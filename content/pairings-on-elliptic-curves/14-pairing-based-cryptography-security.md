@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 14. Bảo mật Pairing-Based Cryptography
 
-> **Prerequisites**: [[10-pairing-friendly-curves|Pairing-Friendly Curves]], [[12-ibe-bls-signatures|IBE & BLS Signatures]], [[13-polynomial-commitments-kzg|Polynomial Commitments & KZG]]
-> **Objectives**:
+> **Prerequisites**: [[10-pairing-friendly-curves|Pairing-Friendly Curves]], [[12-ibe-bls-signatures|IBE & BLS Signatures]], [[13-polynomial-commitments-kzg|Polynomial Commitments & KZG]]  
+> **Objectives**:  
 > - Nắm các hardness assumptions (BDH, DBDH, $q$-SDH, $q$-DLOG) và quan hệ giữa chúng
 > - Hiểu security levels thực tế cho BN254 và BLS12-381 sau Kim–Barbulescu 2016
 > - Biết các attack vectors: subgroup attacks, twist attacks, small subgroup attacks, pairing inversion

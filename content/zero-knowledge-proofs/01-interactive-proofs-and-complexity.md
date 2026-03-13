@@ -6,7 +6,7 @@ created: 2026-03-13
 ---
 
 > **Prerequisites**: Lý thuyết tính toán cơ bản (Turing machine, P, NP), xác suất cơ bản, đại số modular  
-> **Objectives**:
+> **Objectives**:  
 > - Hiểu mô hình tương tác giữa prover và verifier
 > - Nắm vững định nghĩa formal của completeness và soundness
 > - Phân biệt IP, NP, AM, và vị trí của chúng trong bức tranh độ phức tạp

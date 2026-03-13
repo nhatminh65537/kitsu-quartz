@@ -4,13 +4,13 @@ tags: [zk, zkvm, security, risc0, sp1, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: zkVM Security — Risc0 & SP1
-> **Domain**: ZK / Cryptography Security (Applied Bug Hunting)
-> **Level**: Intermediate → Advanced
-> **Background**: SNARK/STARK concept cơ bản, Rust, Cryptography cơ bản, CTF/security mindset
-> **Tools / Code**: Rust, cargo-risczero, sp1up, Picus, ARGUZZ
-> **Context**: Bug bounty hunting trên zkVerify (Horizen Labs)
-> **Sources**: USENIX'24 ZK corpus, Veridise audit reports, Sigma Prime SP1 guide, Risc0/SP1 docs, GitHub advisories
+> **Topic**: zkVM Security — Risc0 & SP1  
+> **Domain**: ZK / Cryptography Security (Applied Bug Hunting)  
+> **Level**: Intermediate → Advanced  
+> **Background**: SNARK/STARK concept cơ bản, Rust, Cryptography cơ bản, CTF/security mindset  
+> **Tools / Code**: Rust, cargo-risczero, sp1up, Picus, ARGUZZ  
+> **Context**: Bug bounty hunting trên zkVerify (Horizen Labs)  
+> **Sources**: USENIX'24 ZK corpus, Veridise audit reports, Sigma Prime SP1 guide, Risc0/SP1 docs, GitHub advisories  
 
 ---
 

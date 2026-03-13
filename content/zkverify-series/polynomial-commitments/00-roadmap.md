@@ -4,13 +4,13 @@ tags: [crypto, zk, polynomial-commitments, roadmap]
 created: 2026-03-12
 ---
 
-> **Topic**: Polynomial Commitments
-> **Domain**: Cryptography (ZK)
-> **Level**: Advanced
-> **Background**: Modular arithmetic, group theory, elliptic curves cơ bản, Python
-> **Tools / Code**: SageMath, Python (py_ecc), Rust (arkworks)
-> **Context**: Bug bounty trên zkVerify — nắm sâu để audit verifier pallets
-> **Sources**: KZG original paper (Kate et al. 2010), Dankrad Feist's blog, ZKDocs (ToB), ZKP MOOC Berkeley, 0xPARC zk-bug-tracker
+> **Topic**: Polynomial Commitments  
+> **Domain**: Cryptography (ZK)  
+> **Level**: Advanced  
+> **Background**: Modular arithmetic, group theory, elliptic curves cơ bản, Python  
+> **Tools / Code**: SageMath, Python (py_ecc), Rust (arkworks)  
+> **Context**: Bug bounty trên zkVerify — nắm sâu để audit verifier pallets  
+> **Sources**: KZG original paper (Kate et al. 2010), Dankrad Feist's blog, ZKDocs (ToB), ZKP MOOC Berkeley, 0xPARC zk-bug-tracker  
 
 ---
 

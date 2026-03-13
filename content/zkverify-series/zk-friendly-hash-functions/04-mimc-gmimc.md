@@ -5,8 +5,8 @@ aliases: [MiMC GMiMC]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems]], [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]]
-> **Objectives**:
+> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems]], [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]]  
+> **Objectives**:  
 > - Hiểu thiết kế MiMC từ đầu: Feistel structure, cube map, round constants
 > - Phân tích constraint count chính xác trong R1CS
 > - Hiểu GMiMC và tại sao nó cải thiện throughput

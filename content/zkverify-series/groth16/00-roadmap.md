@@ -4,12 +4,12 @@ tags: [crypto, groth16, zksnark, roadmap]
 created: 2026-03-12
 ---
 
-> **Topic**: Groth16 zk-SNARK
-> **Domain**: Cryptography — Zero-Knowledge Proofs
-> **Level**: Intermediate → Advanced
-> **Background**: ZKP tổng quan, elliptic curve basics, modular arithmetic
-> **Tools / Code**: Python (py_ecc, sympy), Circom, snarkjs, SageMath
-> **Sources**: Groth 2016 paper (ePrint 2016/260), alinush.github.io/groth16, lambdaclass blog, 0xPARC zk-bug-tracker, zksecurity.xyz
+> **Topic**: Groth16  
+> **Domain**: Cryptography — Zero-Knowledge Proofs  
+> **Level**: Intermediate → Advanced  
+> **Background**: ZKP tổng quan, elliptic curve basics, modular arithmetic  
+> **Tools / Code**: Python (py_ecc, sympy), Circom, snarkjs, SageMath  
+> **Sources**: Groth 2016 paper (ePrint 2016/260), alinush.github.io/groth16, lambdaclass blog, 0xPARC zk-bug-tracker, zksecurity.xyz  
 
 ---
 

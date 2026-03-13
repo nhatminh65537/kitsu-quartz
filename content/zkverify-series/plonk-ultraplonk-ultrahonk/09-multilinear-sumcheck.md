@@ -5,8 +5,8 @@ aliases: [Multilinear Extensions and Sumcheck]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — polynomial commitments, IOP model; [[02-plonk-arithmetization|02. PLONK Arithmetization]] — polynomial identities trên domain
-> **Objectives**:
+> **Prerequisites**: [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — polynomial commitments, IOP model; [[02-plonk-arithmetization|02. PLONK Arithmetization]] — polynomial identities trên domain  
+> **Objectives**:  
 > - Nắm định nghĩa Multilinear Extension (MLE) và tại sao nó thay thế univariate polynomial trong Honk
 > - Hiểu sumcheck protocol từ đầu đến cuối, bao gồm soundness
 > - Biết ZeroMorph: cách compile multilinear IOP thành SNARK dùng KZG

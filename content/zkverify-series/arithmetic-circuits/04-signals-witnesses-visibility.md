@@ -5,8 +5,8 @@ aliases: [Signals Witnesses ZK, Public Private Input Circuit]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires, circuit satisfiability
-> **Objectives**:
+> **Prerequisites**: [[03-arithmetic-circuits|03. Arithmetic Circuits — Định nghĩa & Cấu trúc]] — gates, wires, circuit satisfiability  
+> **Objectives**:  
 > - Phân biệt rõ ba loại signal: public input, private input (witness), intermediate
 > - Hiểu witness vector $\vec{z}$ và cấu trúc của nó trong R1CS
 > - Nắm được luồng dữ liệu trong circuit — cái gì verifier biết, cái gì chỉ prover biết

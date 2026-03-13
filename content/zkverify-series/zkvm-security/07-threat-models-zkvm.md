@@ -5,8 +5,8 @@ aliases: [Threat Models in zkVM]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]], [[06-zk-bug-taxonomy|06. ZK Bug Taxonomy]]
-> **Objectives**:
+> **Prerequisites**: [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]], [[06-zk-bug-taxonomy|06. ZK Bug Taxonomy]]  
+> **Objectives**:  
 > - Xác định đầy đủ các adversary trong hệ thống zkVM: adversarial prover, adversarial user, adversarial verifier
 > - Map từng adversary với attack surface và class bug tương ứng
 > - Hiểu trust boundary chi tiết trong Risc0 và SP1

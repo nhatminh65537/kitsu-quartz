@@ -5,8 +5,8 @@ aliases: [PLONK Prover and Verifier]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-plonk-permutation-argument|03. PLONK Permutation Argument]], [[02-plonk-arithmetization|02. PLONK Arithmetization]], [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]]
-> **Objectives**:
+> **Prerequisites**: [[03-plonk-permutation-argument|03. PLONK Permutation Argument]], [[02-plonk-arithmetization|02. PLONK Arithmetization]], [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]]  
+> **Objectives**:  
 > - Nắm toàn bộ 5 rounds của PLONK Prover
 > - Hiểu quotient polynomial $t(X)$ và cách split để giữ degree thấp
 > - Hiểu linearization polynomial $r(X)$ và mục đích giảm số pairing

@@ -5,8 +5,8 @@ aliases: [zkVerify Architecture]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[11-integration-bugs|11. Integration Bugs]], [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]]
-> **Objectives**:
+> **Prerequisites**: [[11-integration-bugs|11. Integration Bugs]], [[04-risc0-deep-dive|04. Risc0 Deep Dive]], [[05-sp1-deep-dive|05. SP1 Deep Dive]]  
+> **Objectives**:  
 > - Hiểu kiến trúc end-to-end của zkVerify: từ proof submission đến attestation on destination chain
 > - Nắm role của Substrate pallets, aggregation engine, và Merkle attestation mechanism
 > - Map từng component của zkVerify sang attack surface cụ thể

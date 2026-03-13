@@ -5,8 +5,8 @@ aliases: [zkVerify FFLONK Implementation]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[06-fflonk-verifier|06. FFLONK Verifier Algorithm]], [[09-security-analysis|09. Security Analysis]]
-> **Objectives**:
+> **Prerequisites**: [[06-fflonk-verifier|06. FFLONK Verifier Algorithm]], [[09-security-analysis|09. Security Analysis]]  
+> **Objectives**:  
 > - Nắm architecture của zkVerify: Substrate blockchain, pallet system, proof flow
 > - Hiểu cấu trúc Rust crate `fflonk_verifier` và `pallet-fflonk-verifier`
 > - Biết cách đọc và navigate code để tìm verification logic

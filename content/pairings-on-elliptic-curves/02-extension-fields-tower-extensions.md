@@ -6,7 +6,8 @@ created: 2026-03-09
 ---
 # 2. Extension Fields và Tower Extensions
 
-> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]] — đặc biệt phần embedding degree và $\mu_n$ **Objectives**:
+> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]] — đặc biệt phần embedding degree và $\mu_n$  
+> **Objectives**:  
 > 
 > - Nắm vững cấu trúc $\mathbb{F}_{q^k}$ như vector space trên $\mathbb{F}_q$, cách xây dựng qua đa thức bất khả quy
 > - Hiểu subfield lattice và tại sao pairing output rơi vào $\mathbb{F}_{q^k}^\times$

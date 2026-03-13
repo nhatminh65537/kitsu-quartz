@@ -5,8 +5,8 @@ aliases: [Security Vulnerabilities]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[08-ultraplonk|08. UltraPlonk]], [[10-ultrahonk|10. UltraHonk]]
-> **Objectives**:
+> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[08-ultraplonk|08. UltraPlonk]], [[10-ultrahonk|10. UltraHonk]]  
+> **Objectives**:  
 > - Nắm toàn bộ các vulnerability class trong PLONK family theo taxonomy rõ ràng
 > - Hiểu cơ chế khai thác chi tiết cho từng loại: Frozen Heart, Point at Infinity, under-constrained, lookup bypass
 > - Biết cách phân biệt soundness failure vs ZK failure vs completeness failure

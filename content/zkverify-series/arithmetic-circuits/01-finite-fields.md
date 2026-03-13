@@ -5,8 +5,8 @@ aliases: [Finite Fields, Field Arithmetic]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: Group theory cơ bản (group, abelian group, order), định nghĩa ring và field, modular arithmetic ($a \bmod p$, phép tính $\mathbb{Z}/n\mathbb{Z}$)
-> **Objectives**:
+> **Prerequisites**: Group theory cơ bản (group, abelian group, order), định nghĩa ring và field, modular arithmetic ($a \bmod p$, phép tính $\mathbb{Z}/n\mathbb{Z}$)  
+> **Objectives**:  
 > - Hiểu tại sao arithmetic circuits phải chạy trên finite field thay vì số nguyên thông thường
 > - Nắm vững phép toán trên $\mathbb{F}_p$: cộng, trừ, nhân, tìm nghịch đảo
 > - Hiểu extension fields và khi nào chúng xuất hiện trong ZK systems

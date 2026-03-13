@@ -5,8 +5,8 @@ aliases: [zkVM Architecture Overview]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zk-proof-fundamentals|01. ZK Proof Fundamentals]], [[02-riscv-for-zkvm|02. RISC-V rv32im]] (hoặc đã biết STARK/SNARK cơ bản và RISC-V basics)
-> **Objectives**:
+> **Prerequisites**: [[01-zk-proof-fundamentals|01. ZK Proof Fundamentals]], [[02-riscv-for-zkvm|02. RISC-V rv32im]] (hoặc đã biết STARK/SNARK cơ bản và RISC-V basics)  
+> **Objectives**:  
 > - Nắm được pipeline đầy đủ của một zkVM: từ source code đến verified proof
 > - Phân biệt vai trò của prover, verifier, host, guest trong trust model
 > - Hiểu tại sao zkVM cần từng thành phần và mỗi thành phần mang theo attack surface gì

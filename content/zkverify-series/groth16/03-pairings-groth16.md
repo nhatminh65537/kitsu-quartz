@@ -5,8 +5,8 @@ aliases: [Bilinear Pairings Groth16]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[02-qap-groth16-bridge|02. QAP → Groth16 Bridge]], biết elliptic curve group, scalar multiplication, biết pairing cơ bản ($e(aP, bQ) = e(P, Q)^{ab}$)
-> **Objectives**:
+> **Prerequisites**: [[02-qap-groth16-bridge|02. QAP → Groth16 Bridge]], biết elliptic curve group, scalar multiplication, biết pairing cơ bản ($e(aP, bQ) = e(P, Q)^{ab}$)  
+> **Objectives**:  
 > - Hiểu tại sao Groth16 cần **asymmetric pairing** (Type III) thay vì symmetric
 > - Nắm vững ký hiệu $[x]_1, [x]_2, [x]_T$ và các phép tính trên đó
 > - Hiểu tại sao verification chỉ cần **3 pairing checks**

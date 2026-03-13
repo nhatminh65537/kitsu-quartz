@@ -5,8 +5,8 @@ aliases: [QAP Satisfiability, QAP Divisibility]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[09-qap|09. QAP — Quadratic Arithmetic Programs]] — định nghĩa QAP, selector polynomials, target polynomial; [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — soundness, knowledge soundness
-> **Objectives**:
+> **Prerequisites**: [[09-qap|09. QAP — Quadratic Arithmetic Programs]] — định nghĩa QAP, selector polynomials, target polynomial; [[08-r1cs-soundness-completeness|08. R1CS — Soundness & Completeness]] — soundness, knowledge soundness  
+> **Objectives**:  
 > - Hiểu sâu ý nghĩa của điều kiện $t(x) \mid p(x)$ — tại sao đây là "chứng chỉ" của satisfiability
 > - Phân tích soundness của QAP: fake $h(x)$ có bypass được không?
 > - Nắm được cách Groth16 sử dụng QAP để tạo succinct proof

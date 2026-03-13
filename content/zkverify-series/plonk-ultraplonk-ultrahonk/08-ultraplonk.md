@@ -5,8 +5,8 @@ aliases: [UltraPlonk]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[06-turboplonk-custom-gates|06. TurboPlonk and Custom Gates]], [[07-plookup|07. Plookup]]
-> **Objectives**:
+> **Prerequisites**: [[06-turboplonk-custom-gates|06. TurboPlonk and Custom Gates]], [[07-plookup|07. Plookup]]  
+> **Objectives**:  
 > - Hiểu Ultra arithmetization: 4-wire system và cấu trúc gate mở rộng
 > - Nắm cách UltraPlonk tích hợp custom gates + Plookup trong một constraint system
 > - Hiểu RAM/ROM abstraction và memory argument

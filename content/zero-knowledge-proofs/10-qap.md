@@ -5,8 +5,8 @@ aliases: [Quadratic Arithmetic Programs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[09-arithmetic-circuits-and-r1cs|09. Arithmetic Circuits & R1CS]] — R1CS, witness; kiến thức về đa thức, Lagrange interpolation
-> **Objectives**:
+> **Prerequisites**: [[09-arithmetic-circuits-and-r1cs|09. Arithmetic Circuits & R1CS]] — R1CS, witness; kiến thức về đa thức, Lagrange interpolation  
+> **Objectives**:  
 > - Hiểu tại sao cần biến R1CS thành đa thức (polynomial representation)
 > - Nắm vững Lagrange interpolation và ý nghĩa của nó trong QAP
 > - Định nghĩa chính xác QAP và điều kiện thỏa mãn qua divisibility

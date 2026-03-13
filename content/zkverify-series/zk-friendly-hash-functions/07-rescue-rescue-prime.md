@@ -5,8 +5,8 @@ aliases: [Rescue Rescue-Prime]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]], [[05-poseidon-design|05. Poseidon]], đã quen với AIR và STARK concepts
-> **Objectives**:
+> **Prerequisites**: [[03-zk-friendly-criteria|03. Tiêu chí ZK-Friendly]], [[04-mimc-gmimc|04. MiMC & GMiMC]], [[05-poseidon-design|05. Poseidon]], đã quen với AIR và STARK concepts  
+> **Objectives**:  
 > - Hiểu tại sao Rescue dùng cả forward lẫn inverse S-box trong cùng một round
 > - Phân tích cấu trúc Rescue-XLIX và Rescue-Prime
 > - So sánh Rescue với Poseidon: khi nào dùng cái nào

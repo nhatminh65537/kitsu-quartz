@@ -4,11 +4,11 @@ tags: [zkp, security, integration-layer, bug-bounty, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: Integration Layer Vulnerabilities in ZKP/SNARK Systems
-> **Domain**: Cryptography × Web Security (Security Audit / Bug Bounty)
-> **Level**: Intermediate
+> **Topic**: Integration Layer Vulnerabilities in ZKP/SNARK Systems  
+> **Domain**: Cryptography × Web Security (Security Audit / Bug Bounty)  
+> **Level**: Intermediate  
 > **Background giả định**: Hiểu circuit, witness, public input; Solidity & smart contract security cơ bản; Cryptography cơ bản (hash, modular arithmetic)
-> **Tools / Code**: Python (scripting PoC), Solidity (integration contracts), Rust (đọc zkVerify source), snarkjs/circom (end-to-end flow)
+> **Tools / Code**: Python (scripting PoC), Solidity (integration contracts), Rust (đọc zkVerify source), snarkjs/circom (end-to-end flow)  
 > **Mục tiêu cuối**: Săn bug trên Immunefi zkVerify program (max $50,000 Critical)
 > **Nguồn học thuật chính**: Chaliasos et al. — *SoK: What Don't We Know? Understanding Security Vulnerabilities in SNARKs* (USENIX Security 2024, arXiv:2402.15293); zkSecurity blog; Cantina ZKP audit reports
 

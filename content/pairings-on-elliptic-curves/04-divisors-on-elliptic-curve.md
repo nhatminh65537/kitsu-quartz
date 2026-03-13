@@ -6,7 +6,8 @@ created: 2026-03-09
 ---
 # 4. Divisors trên Đường Cong Elliptic
 
-> **Prerequisites**: [[03-rational-functions-algebraic-geometry-on-curves|Rational Functions & Algebraic Geometry on Curves]], [[01-ecc-finite-field-review|ECC & Finite Field Review]] **Objectives**:
+> **Prerequisites**: [[03-rational-functions-algebraic-geometry-on-curves|Rational Functions & Algebraic Geometry on Curves]], [[01-ecc-finite-field-review|ECC & Finite Field Review]]  
+> **Objectives**:  
 > 
 > - Formalize hoàn toàn ngôn ngữ divisors: $\text{Div}(E)$, $\text{Div}^0(E)$, $\text{Princ}(E)$, $\text{Pic}^0(E)$
 > - Hiểu $n$-divisors và tại sao $n \cdot [P] - n \cdot [\mathcal{O}]$ luôn là principal — nền tảng của định nghĩa $f_{n,P}$

@@ -4,12 +4,12 @@ tags: [crypto, zk-snark, fflonk, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: FFLONK — Fast-Fourier inspired verifier-efficient PlonK
-> **Domain**: Cryptography (zk-SNARK)
-> **Level**: Advanced + CTF-focused
-> **Background**: Modular arithmetic, group theory, polynomial rings, Python
-> **Tools / Code**: Python (SageMath, py_ecc), Rust (zkVerify fflonk_verifier)
-> **Sources**: Gabizon & Williamson 2021 (IACR 2021/1167), Polygon zkEVM docs, zkVerify GitHub
+> **Topic**: FFLONK — Fast-Fourier inspired verifier-efficient PlonK  
+> **Domain**: Cryptography (zk-SNARK)  
+> **Level**: Advanced + CTF-focused  
+> **Background**: Modular arithmetic, group theory, polynomial rings, Python  
+> **Tools / Code**: Python (SageMath, py_ecc), Rust (zkVerify fflonk_verifier)  
+> **Sources**: Gabizon & Williamson 2021 (IACR 2021/1167), Polygon zkEVM docs, zkVerify GitHub  
 
 ---
 

@@ -5,8 +5,8 @@ aliases: [Bug Bounty Playbook ZK Hash]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Tất cả bài trước, đặc biệt [[12-circuit-bugs|12]], [[13-implementation-integration-bugs|13]]
-> **Objectives**:
+> **Prerequisites**: Tất cả bài trước, đặc biệt [[12-circuit-bugs|12]], [[13-implementation-integration-bugs|13]]  
+> **Objectives**:  
 > - Có checklist đầy đủ cho một ZK hash function audit engagement
 > - Biết cách setup và dùng Circomspect, halo2-analyzer, SageMath cho automated analysis
 > - Hiểu quy trình viết bug report chuyên nghiệp và estimate severity

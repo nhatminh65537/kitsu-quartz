@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 7. Miller's Algorithm
 
-> **Prerequisites**: [[06-weil-pairing|Weil Pairing]], [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]]
-> **Objectives**:
+> **Prerequisites**: [[06-weil-pairing|Weil Pairing]], [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]]  
+> **Objectives**:  
 > - Hiểu vì sao cần Miller's algorithm: $f_{n,P}$ không cho bởi công thức đóng
 > - Nắm Miller functions $h_{a,b}$ và cách chúng xây dựng $f_{n,P}$ theo bước double-and-add
 > - Cài đặt và trace tay thuật toán trên ví dụ cụ thể ($E/\mathbb{F}_{631}$, $n=5$)

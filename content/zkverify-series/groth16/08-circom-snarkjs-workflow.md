@@ -5,8 +5,8 @@ aliases: [Circom snarkjs Groth16 Workflow]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[04-trusted-setup-crs|04. Trusted Setup & CRS]], [[01-r1cs-groth16-bridge|01]], [[02-qap-groth16-bridge|02]]
-> **Objectives**:
+> **Prerequisites**: [[04-trusted-setup-crs|04. Trusted Setup & CRS]], [[01-r1cs-groth16-bridge|01]], [[02-qap-groth16-bridge|02]]  
+> **Objectives**:  
 > - Nắm vững toàn bộ workflow: Circuit → R1CS → Setup → Prove → Verify
 > - Hiểu file formats: `.circom`, `.r1cs`, `.wasm`, `.zkey`, `.wtns`, `.json`
 > - Biết cách debug circuit và đọc constraint count

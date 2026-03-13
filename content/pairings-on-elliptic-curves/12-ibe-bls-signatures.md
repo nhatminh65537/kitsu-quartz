@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 12. Ứng dụng: IBE và BLS Signatures
 
-> **Prerequisites**: [[11-mov-attack-frey-ruck-attack|MOV Attack & Frey–Rück Attack]], [[06-weil-pairing|Weil Pairing]]
-> **Objectives**:
+> **Prerequisites**: [[11-mov-attack-frey-ruck-attack|MOV Attack & Frey–Rück Attack]], [[06-weil-pairing|Weil Pairing]]  
+> **Objectives**:  
 > - Hiểu Boneh–Franklin IBE: dùng pairing để encrypt trực tiếp vào identity
 > - Nắm BLS short signatures: chữ ký ngắn nhất có thể, aggregatable
 > - Thấy bilinearity là "kỹ năng" cốt lõi trong cả hai ứng dụng

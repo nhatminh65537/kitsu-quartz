@@ -5,8 +5,8 @@ aliases: [Proof of Knowledge and Knowledge Soundness]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zk-definitions-and-simulator|02. ZK Definitions & Simulator Paradigm]] — view, soundness; [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]] — các mức độ ZK
-> **Objectives**:
+> **Prerequisites**: [[02-zk-definitions-and-simulator|02. ZK Definitions & Simulator Paradigm]] — view, soundness; [[03-perfect-statistical-computational-zk|03. Perfect, Statistical, Computational ZK]] — các mức độ ZK  
+> **Objectives**:  
 > - Phân biệt rõ "chứng minh rằng $x \in L$" với "chứng minh rằng mình *biết* witness $w$"
 > - Nắm vững định nghĩa formal của **proof of knowledge** qua **knowledge extractor**
 > - Hiểu kỹ thuật **rewinding** — cách extractor hoạt động

@@ -5,8 +5,8 @@ aliases: [PLONK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[09-arithmetic-circuits-and-r1cs|09. Arithmetic Circuits & R1CS]] — gates, constraints; [[13-kzg-and-pairings|13. KZG & Pairings]] — KZG commit/verify, batch opening; [[14-groth16|14. Groth16]] — để hiểu vấn đề circuit-specific setup
-> **Objectives**:
+> **Prerequisites**: [[09-arithmetic-circuits-and-r1cs|09. Arithmetic Circuits & R1CS]] — gates, constraints; [[13-kzg-and-pairings|13. KZG & Pairings]] — KZG commit/verify, batch opening; [[14-groth16|14. Groth16]] — để hiểu vấn đề circuit-specific setup  
+> **Objectives**:  
 > - Hiểu tại sao Groth16's circuit-specific setup là vấn đề và universal setup giải quyết như thế nào
 > - Nắm được Plonkish arithmetization: gate constraints và copy constraints (wiring)
 > - Hiểu permutation argument và grand product check
@@ -107,8 +107,8 @@ Nếu có vi phạm ($w[i] \neq w[\sigma(i)]$ cho một $i$ nào đó), tử và
 
 Grand product được kiểm tra bằng **accumulator polynomial** $Z(X)$:
 
-$$Z(\omega^0) = 1$$
-$$Z(\omega^{i+1}) = Z(\omega^i) \cdot \frac{w[i] + \beta \cdot i + \gamma}{w[i] + \beta \cdot \sigma(i) + \gamma}$$
+$$Z(\omega^0) = 1$$  
+$$Z(\omega^{i+1}) = Z(\omega^i) \cdot \frac{w[i] + \beta \cdot i + \gamma}{w[i] + \beta \cdot \sigma(i) + \gamma}$$  
 $$Z(\omega^n) = 1 \text{ (phải về 1)}$$
 
 Điều kiện $Z(\omega^n) = 1$ chính là grand product = 1.

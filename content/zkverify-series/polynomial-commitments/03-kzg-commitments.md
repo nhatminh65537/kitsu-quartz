@@ -5,8 +5,8 @@ aliases: [KZG Commitments]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]], elliptic curves, bilinear pairings cơ bản
-> **Objectives**:
+> **Prerequisites**: [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]], elliptic curves, bilinear pairings cơ bản  
+> **Objectives**:  
 > - Hiểu đầy đủ 4 bước KZG: Setup, Commit, Open/Prove, Verify
 > - Tự derive được quotient polynomial trick và pairing check
 > - Hiểu batch opening (nhiều điểm, nhiều đa thức)

@@ -5,8 +5,8 @@ aliases: [FFLONK Core Idea]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-polynomial-commitments|02. Polynomial Commitment Schemes]], [[03-plonk|03. PLONK Protocol]]
-> **Objectives**:
+> **Prerequisites**: [[02-polynomial-commitments|02. Polynomial Commitment Schemes]], [[03-plonk|03. PLONK Protocol]]  
+> **Objectives**:  
 > - Hiểu đúng vấn đề mà FFLONK giải quyết: tại sao PLONK verifier cần nhiều scalar multiplications
 > - Nắm vững FFT-like identity — trái tim của toàn bộ FFLONK
 > - Hiểu cơ chế combining $t$ polynomials thành 1 và ý nghĩa của nó

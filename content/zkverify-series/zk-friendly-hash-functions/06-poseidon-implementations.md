@@ -5,8 +5,8 @@ aliases: [Poseidon Implementations]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-poseidon-design|05. Poseidon — Thiết kế (Phần 1)]], quen thuộc Circom cơ bản
-> **Objectives**:
+> **Prerequisites**: [[05-poseidon-design|05. Poseidon — Thiết kế (Phần 1)]], quen thuộc Circom cơ bản  
+> **Objectives**:  
 > - Đọc và phân tích Circom implementation của Poseidon từ circomlib một cách chi tiết
 > - Hiểu Halo2 Poseidon chip: cách custom gates tiết kiệm constraints
 > - Nhận biết sự khác biệt giữa tham số của các trường khác nhau — nguồn gốc của nhiều bugs

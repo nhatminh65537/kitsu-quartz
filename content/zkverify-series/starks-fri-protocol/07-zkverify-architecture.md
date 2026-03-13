@@ -5,8 +5,8 @@ aliases: [zkVerify, Substrate, Verifier Pallets]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[06-full-stark-pipeline|L06]] — Full STARK pipeline; [[02-zero-knowledge-proof-systems|L02]] — Proof systems overview
-> **Objectives**:
+> **Prerequisites**: [[06-full-stark-pipeline|L06]] — Full STARK pipeline; [[02-zero-knowledge-proof-systems|L02]] — Proof systems overview  
+> **Objectives**:  
 > - Hiểu zkVerify là gì và tại sao nó tồn tại
 > - Nắm kiến trúc Substrate-based L1 blockchain
 > - Hiểu cơ chế Verifier Pallets và proof submission flow

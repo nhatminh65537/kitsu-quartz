@@ -5,8 +5,8 @@ aliases: [Trusted Setup]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-polynomial-commitments|02. Polynomial Commitment Schemes]], [[04-fflonk-core|04. FFLONK Core Idea]]
-> **Objectives**:
+> **Prerequisites**: [[02-polynomial-commitments|02. Polynomial Commitment Schemes]], [[04-fflonk-core|04. FFLONK Core Idea]]  
+> **Objectives**:  
 > - Hiểu tại sao KZG cần trusted setup và SRS có cấu trúc như thế nào
 > - Nắm vững quy trình Powers of Tau ceremony và tính bảo mật của nó
 > - Biết pháp SRS của FFLONK khác PLONK ở đâu và tại sao

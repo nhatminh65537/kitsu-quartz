@@ -5,8 +5,8 @@ aliases: [Circuit Level Bugs ZK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]], [[06-poseidon-implementations|06. Poseidon Implementations]], quen Circom syntax
-> **Objectives**:
+> **Prerequisites**: [[02-zk-proof-systems-circuits|02. ZK Proof Systems & Arithmetic Circuits]], [[06-poseidon-implementations|06. Poseidon Implementations]], quen Circom syntax  
+> **Objectives**:  
 > - Phân biệt underconstrained (soundness bug) vs overconstrained (completeness bug)
 > - Nắm 6 bug patterns phổ biến nhất trong ZK hash circuits
 > - Có khả năng viết PoC exploit cho underconstrained circuit

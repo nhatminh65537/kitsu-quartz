@@ -5,8 +5,8 @@ aliases: [ZK Definitions and Simulator Paradigm]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — mô hình prover-verifier, completeness, soundness
-> **Objectives**:
+> **Prerequisites**: [[01-interactive-proofs-and-complexity|01. Interactive Proofs & Complexity]] — mô hình prover-verifier, completeness, soundness  
+> **Objectives**:  
 > - Hình thức hóa được câu hỏi: "verifier học được gì từ giao thức?"
 > - Nắm vững khái niệm **view** của verifier và **transcript**
 > - Hiểu **simulator paradigm** — nền tảng toán học của định nghĩa ZK

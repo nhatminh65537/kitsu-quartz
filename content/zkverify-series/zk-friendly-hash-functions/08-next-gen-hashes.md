@@ -5,8 +5,8 @@ aliases: [Next Generation ZK Hash Functions]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-poseidon-design|05. Poseidon]], [[07-rescue-rescue-prime|07. Rescue & Rescue-Prime]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems]]
-> **Objectives**:
+> **Prerequisites**: [[05-poseidon-design|05. Poseidon]], [[07-rescue-rescue-prime|07. Rescue & Rescue-Prime]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems]]  
+> **Objectives**:  
 > - Hiểu động lực ra đời của các hash functions thế hệ mới (2022–2024)
 > - Nắm Flystel construction và tại sao Anemoi hiệu quả hơn Poseidon trong nhiều settings
 > - Hiểu Griffin's non-uniform nonlinearity

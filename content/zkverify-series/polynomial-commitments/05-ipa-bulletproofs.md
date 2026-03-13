@@ -5,8 +5,8 @@ aliases: [IPA and Bulletproofs]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]], Pedersen vector commitments, inner products
-> **Objectives**:
+> **Prerequisites**: [[02-commitment-scheme-fundamentals|02. Commitment Scheme Fundamentals]], Pedersen vector commitments, inner products  
+> **Objectives**:  
 > - Hiểu Inner Product Argument (IPA) là gì và tại sao nó là polynomial commitment
 > - Follow được IPA protocol từng bước: recursive halving
 > - Hiểu proof size $O(\log d)$ đến từ đâu

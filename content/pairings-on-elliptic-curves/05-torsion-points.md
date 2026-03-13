@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 5. Torsion Points và Cấu trúc $E[n]$
 
-> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]], [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]]
-> **Objectives**:
+> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]], [[04-divisors-on-elliptic-curve|Divisors on Elliptic Curve]]  
+> **Objectives**:  
 > - Chứng minh $E[n] \cong (\mathbb{Z}/n\mathbb{Z})^2$ khi $\gcd(n, \text{char}(k)) = 1$
 > - Hiểu Galois action trên $E[n]$ và tại sao toàn bộ $E[n]$ thường không nằm trong $E(\mathbb{F}_q)$
 > - Hiểu basis của $E[n]$, Weil pairing matrix, và tại sao cần phải lên $E(\mathbb{F}_{q^k})$

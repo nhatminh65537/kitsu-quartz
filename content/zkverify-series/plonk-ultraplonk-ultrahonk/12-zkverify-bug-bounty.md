@@ -5,8 +5,8 @@ aliases: [zkVerify Bug Bounty]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[11-security-vulnerabilities|11. Security Vulnerabilities]] — full vulnerability taxonomy; [[10-ultrahonk|10. UltraHonk]] — architecture; [[08-ultraplonk|08. UltraPlonk]] — UltraCircuitBuilder
-> **Objectives**:
+> **Prerequisites**: [[11-security-vulnerabilities|11. Security Vulnerabilities]] — full vulnerability taxonomy; [[10-ultrahonk|10. UltraHonk]] — architecture; [[08-ultraplonk|08. UltraPlonk]] — UltraCircuitBuilder  
+> **Objectives**:  
 > - Hiểu kiến trúc zkVerify on-chain và Rust verifier codebase
 > - Biết cách trace proof verification flow từ submission đến accept/reject
 > - Có methodology cụ thể để hunt bug trong `ultraplonk_verifier` và `ultrahonk_verifier`

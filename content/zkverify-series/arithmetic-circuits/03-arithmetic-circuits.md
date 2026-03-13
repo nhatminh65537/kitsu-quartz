@@ -5,8 +5,8 @@ aliases: [Arithmetic Circuits Structure, Circuit Gates Wires]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-finite-fields|01. Finite Fields & Field Arithmetic]] — phép toán trong $\mathbb{F}_p$; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — khái niệm đa thức
-> **Objectives**:
+> **Prerequisites**: [[01-finite-fields|01. Finite Fields & Field Arithmetic]] — phép toán trong $\mathbb{F}_p$; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — khái niệm đa thức  
+> **Objectives**:  
 > - Định nghĩa chính xác arithmetic circuit: gates, wires, fan-in, depth, size
 > - Phân biệt arithmetic circuit với Boolean circuit — tại sao ZK dùng arithmetic
 > - Hiểu circuit satisfiability (CSAT) và mối quan hệ với NP

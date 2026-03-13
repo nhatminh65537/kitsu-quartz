@@ -5,8 +5,8 @@ aliases: [Trusted Setup Vulnerabilities]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], [[04-kzg-security-analysis|04. KZG Security Analysis]]
-> **Objectives**:
+> **Prerequisites**: [[03-kzg-commitments|03. KZG Commitments]], [[04-kzg-security-analysis|04. KZG Security Analysis]]  
+> **Objectives**:  
 > - Hiểu threat model của trusted setup và tại sao nó nguy hiểm
 > - Phân tích Powers of Tau ceremony và các attack scenarios
 > - Nắm subgroup attacks trong pairing-based crypto

@@ -5,8 +5,8 @@ aliases: [V6 Proof Composition Error]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]], [[03-v4-passing-unchecked-data|03. V4 — Passing Unchecked Data]]
-> **Objectives**:
+> **Prerequisites**: [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]], [[03-v4-passing-unchecked-data|03. V4 — Passing Unchecked Data]]  
+> **Objectives**:  
 > - Hiểu tại sao hệ thống phân phối logic trên nhiều proofs và rủi ro khi làm vậy
 > - Phân tích 3 pattern V6: missing linkage, inconsistent public inputs, recursive composition bug
 > - Hiểu vai trò của "verifier gluing" và tại sao nó hay bị sai

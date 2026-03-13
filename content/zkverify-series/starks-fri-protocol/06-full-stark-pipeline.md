@@ -5,8 +5,8 @@ aliases: [STARK Pipeline, STARK Prover, STARK Verifier]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-starks-air-arithmetization|L03]] — AIR, quotient polynomials; [[04-fri-commit-fold|L04]], [[05-fri-query-verification|L05]] — FRI commit + query
-> **Objectives**:
+> **Prerequisites**: [[03-starks-air-arithmetization|L03]] — AIR, quotient polynomials; [[04-fri-commit-fold|L04]], [[05-fri-query-verification|L05]] — FRI commit + query  
+> **Objectives**:  
 > - Ghép toàn bộ STARK pipeline từ computation → proof → verify
 > - Hiểu Low-Degree Extension (LDE) và tại sao cần
 > - Nắm DEEP-ALI: liên kết AIR checks với FRI

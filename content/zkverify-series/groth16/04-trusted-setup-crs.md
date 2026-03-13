@@ -5,8 +5,8 @@ aliases: [Trusted Setup CRS Groth16]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-r1cs-groth16-bridge|01]], [[02-qap-groth16-bridge|02]], [[03-pairings-groth16|03]]
-> **Objectives**:
+> **Prerequisites**: [[01-r1cs-groth16-bridge|01]], [[02-qap-groth16-bridge|02]], [[03-pairings-groth16|03]]  
+> **Objectives**:  
 > - Hiểu đầy đủ cấu trúc CRS: proving key và verifying key chứa gì
 > - Phân biệt Phase 1 (Powers of Tau) và Phase 2 (circuit-specific)
 > - Hiểu "toxic waste" là gì và tại sao nó phải bị hủy

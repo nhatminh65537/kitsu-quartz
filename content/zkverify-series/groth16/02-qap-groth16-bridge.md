@@ -5,8 +5,8 @@ aliases: [QAP Groth16 Bridge]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-r1cs-groth16-bridge|01. R1CS → Groth16 Bridge]], biết QAP và Lagrange interpolation cơ bản, Schwartz-Zippel lemma
-> **Objectives**:
+> **Prerequisites**: [[01-r1cs-groth16-bridge|01. R1CS → Groth16 Bridge]], biết QAP và Lagrange interpolation cơ bản, Schwartz-Zippel lemma  
+> **Objectives**:  
 > - Hiểu tại sao Groth16 cần evaluate polynomials tại điểm $\tau$ ẩn (không phải tại random point từ verifier)
 > - Biết QAP polynomials được bố trí thế nào trong CRS
 > - Hiểu vai trò của $t(\tau)$ và $h(\tau)$ trong proving equation

@@ -5,8 +5,8 @@ aliases: [Fiat-Shamir Transform and NIZK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-sigma-protocols|05. Sigma Protocols]] — SHVZK, public-coin; [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding; [[04-proof-of-knowledge|04. Proof of Knowledge & Knowledge Soundness]] — Forking Lemma
-> **Objectives**:
+> **Prerequisites**: [[05-sigma-protocols|05. Sigma Protocols]] — SHVZK, public-coin; [[07-commitment-schemes|07. Commitment Schemes]] — hiding/binding; [[04-proof-of-knowledge|04. Proof of Knowledge & Knowledge Soundness]] — Forking Lemma  
+> **Objectives**:  
 > - Hiểu Random Oracle Model (ROM) và vai trò của nó trong cryptographic proofs
 > - Nắm vững Fiat-Shamir transform: biến interactive protocol thành non-interactive
 > - Phân biệt **strong** vs. **weak** Fiat-Shamir và tại sao điều này quan trọng

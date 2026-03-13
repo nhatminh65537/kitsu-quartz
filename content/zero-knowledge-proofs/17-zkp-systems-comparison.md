@@ -5,8 +5,8 @@ aliases: [ZKP Systems Comparison]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[13-kzg-and-pairings|13. KZG & Pairings]], [[14-groth16|14. Groth16]], [[15-plonk|15. PLONK]], [[16-fri-and-starks|16. FRI & STARKs]]
-> **Objectives**:
+> **Prerequisites**: [[13-kzg-and-pairings|13. KZG & Pairings]], [[14-groth16|14. Groth16]], [[15-plonk|15. PLONK]], [[16-fri-and-starks|16. FRI & STARKs]]  
+> **Objectives**:  
 > - Tổng hợp toàn bộ kiến thức về ZKP systems thành một bức tranh nhất quán
 > - Hiểu các tradeoff cốt lõi: trusted setup, proof size, verify time, quantum safety
 > - Phân biệt khi nào dùng loại ZKP nào

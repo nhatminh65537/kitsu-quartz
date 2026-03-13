@@ -6,7 +6,8 @@ created: 2026-03-09
 ---
 # 3. Rational Functions và Algebraic Geometry trên Curves
 
-> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]] **Objectives**:
+> **Prerequisites**: [[01-ecc-finite-field-review|ECC & Finite Field Review]], [[02-extension-fields-tower-extensions|Extension Fields & Tower Extensions]]  
+> **Objectives**:  
 > 
 > - Hiểu function field $\bar{k}(E)$, zeros/poles của rational functions trên đường cong elliptic
 > - Nắm vững khái niệm order of vanishing $\text{ord}_P(f)$ và divisor $\text{div}(f)$

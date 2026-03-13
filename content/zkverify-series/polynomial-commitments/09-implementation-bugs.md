@@ -5,8 +5,8 @@ aliases: [Common Implementation Bugs]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: Bài 03–08 toàn bộ
-> **Objectives**:
+> **Prerequisites**: Bài 03–08 toàn bộ  
+> **Objectives**:  
 > - Nắm toàn bộ taxonomy các lỗi trong polynomial commitment implementations
 > - Hiểu root cause và exploit scenario của từng loại lỗi
 > - Biết cách detect mỗi lỗi khi audit

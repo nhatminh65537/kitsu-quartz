@@ -5,8 +5,8 @@ aliases: [PLONK Permutation Argument]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-plonk-arithmetization|02. PLONK Arithmetization]] — copy constraints, wire polynomials, vanishing polynomial; [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — polynomial identities trên $H$
-> **Objectives**:
+> **Prerequisites**: [[02-plonk-arithmetization|02. PLONK Arithmetization]] — copy constraints, wire polynomials, vanishing polynomial; [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — polynomial identities trên $H$  
+> **Objectives**:  
 > - Hiểu tại sao copy constraints cần một argument riêng (không encode được bằng gate equations)
 > - Nắm vững multiset equality check và grand product argument (Bayer-Groth)
 > - Derive permutation polynomial $z(X)$ và tại sao nó đủ để enforce copy constraints

@@ -1,5 +1,5 @@
 ---
-title: "Groth16 zk-SNARK"
+title: "Groth16"
 tags: [crypto, groth16, zksnark, index]
 created: 2026-03-12
 ---

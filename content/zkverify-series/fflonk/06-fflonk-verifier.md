@@ -5,8 +5,8 @@ aliases: [FFLONK Verifier Algorithm]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[04-fflonk-core|04. FFLONK Core Idea]], [[05-fflonk-prover|05. FFLONK Prover Algorithm]]
-> **Objectives**:
+> **Prerequisites**: [[04-fflonk-core|04. FFLONK Core Idea]], [[05-fflonk-prover|05. FFLONK Prover Algorithm]]  
+> **Objectives**:  
 > - Nắm vững từng bước của FFLONK verifier: từ deserialize đến pairing check cuối cùng
 > - Hiểu tại sao verifier chỉ cần 5 scalar multiplications + 2 pairings
 > - Biết chính xác những gì verifier **kiểm tra** và **không kiểm tra** — đây là nguồn gốc bug

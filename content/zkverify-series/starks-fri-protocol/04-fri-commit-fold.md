@@ -5,8 +5,8 @@ aliases: [FRI, Fast Reed-Solomon IOP, Commit Phase, Folding]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-mathematical-foundations|Lesson 01]] — Roots of unity, Reed-Solomon, Merkle tree; [[03-starks-arithmetization-air|Lesson 03]] — Quotient polynomials
-> **Objectives**:
+> **Prerequisites**: [[01-mathematical-foundations|Lesson 01]] — Roots of unity, Reed-Solomon, Merkle tree; [[03-starks-arithmetization-air|Lesson 03]] — Quotient polynomials  
+> **Objectives**:  
 > - Hiểu FRI là gì và tại sao cần thiết trong STARK
 > - Nắm cơ chế fold: even/odd split + random combination
 > - Hiểu domain halving: $x \mapsto x^2$ tại sao hoạt động

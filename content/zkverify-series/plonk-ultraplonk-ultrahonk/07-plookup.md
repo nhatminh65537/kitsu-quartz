@@ -5,8 +5,8 @@ aliases: [Plookup]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[02-plonk-arithmetization|02. PLONK Arithmetization]]
-> **Objectives**:
+> **Prerequisites**: [[05-fiat-shamir-security-model|05. Fiat-Shamir and Security Model]], [[02-plonk-arithmetization|02. PLONK Arithmetization]]  
+> **Objectives**:  
 > - Hiểu tại sao lookup tables cần thiết trong SNARK
 > - Nắm vững Plookup protocol: sorted multiset argument
 > - Hiểu cải tiến log-derivative lookup

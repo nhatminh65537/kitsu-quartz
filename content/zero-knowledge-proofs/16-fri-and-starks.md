@@ -5,8 +5,8 @@ aliases: [FRI and STARKs]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[11-multilinear-extensions-and-sumcheck|11. Multilinear Extensions & Sumcheck]] — IOP model, sumcheck; [[12-iop-and-polynomial-commitments|12. IOP & Polynomial Commitments]] — PCS phân loại, hash-based PCS; [[08-fiat-shamir-and-nizk|08. Fiat-Shamir]] — Random Oracle Model
-> **Objectives**:
+> **Prerequisites**: [[11-multilinear-extensions-and-sumcheck|11. Multilinear Extensions & Sumcheck]] — IOP model, sumcheck; [[12-iop-and-polynomial-commitments|12. IOP & Polynomial Commitments]] — PCS phân loại, hash-based PCS; [[08-fiat-shamir-and-nizk|08. Fiat-Shamir]] — Random Oracle Model  
+> **Objectives**:  
 > - Hiểu tại sao STARK không cần trusted setup và hậu quả với proof size
 > - Nắm được khái niệm Reed-Solomon codes và proximity testing
 > - Hiểu ý tưởng FRI folding: giảm bậc đa thức qua từng round
@@ -78,7 +78,7 @@ FRI hoạt động theo cơ chế **folding**: chia đa thức bậc $k$ thành 
 >
 > trong đó $f_E$ là phần chẵn (even powers), $f_O$ là phần lẻ (odd powers). Cả $f_E, f_O$ đều có bậc $< k/2$.
 >
-> Với random challenge $\beta \xleftarrow{\$} \mathbb{F}_p$, define:
+> Với random challenge $\beta \xleftarrow{R} \mathbb{F}_p$, define:
 >
 > $$f^{(1)}(X^2) := f_E(X^2) + \beta \cdot f_O(X^2) = \frac{f(X) + f(-X)}{2} + \beta \cdot \frac{f(X) - f(-X)}{2X}$$
 >

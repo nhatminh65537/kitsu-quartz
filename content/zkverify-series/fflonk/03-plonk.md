@@ -5,8 +5,8 @@ aliases: [PLONK Protocol]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zk-foundations|01. ZK-SNARK Foundations]], [[02-polynomial-commitments|02. Polynomial Commitment Schemes]]
-> **Objectives**:
+> **Prerequisites**: [[01-zk-foundations|01. ZK-SNARK Foundations]], [[02-polynomial-commitments|02. Polynomial Commitment Schemes]]  
+> **Objectives**:  
 > - Hiểu PLONK arithmetization: gate equations và copy constraints
 > - Nắm được permutation argument — cách encode copy constraints bằng polynomial
 > - Hiểu linearization trick — tại sao nó quan trọng và tại sao FFLONK cải tiến nó

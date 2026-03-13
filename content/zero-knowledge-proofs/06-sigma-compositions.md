@@ -5,8 +5,8 @@ aliases: [Sigma Protocol Compositions]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[05-sigma-protocols|05. Sigma Protocols]] — cấu trúc 3-move, SHVZK, special soundness, Schnorr
-> **Objectives**:
+> **Prerequisites**: [[05-sigma-protocols|05. Sigma Protocols]] — cấu trúc 3-move, SHVZK, special soundness, Schnorr  
+> **Objectives**:  
 > - Hiểu AND-composition: chứng minh knowledge của nhiều witness cùng lúc
 > - Nắm vững OR-composition (Cramer-Damgård-Schoenmakers): chứng minh "ít nhất một trong hai" mà không tiết lộ cái nào
 > - Hiểu cách compose Sigma protocols để chứng minh các quan hệ phức tạp hơn

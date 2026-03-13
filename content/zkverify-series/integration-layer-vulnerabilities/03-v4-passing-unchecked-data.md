@@ -5,8 +5,8 @@ aliases: [V4 Passing Unchecked Data]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]
-> **Objectives**:
+> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]], [[02-zkp-foundations-for-auditors|02. ZKP Foundations for Auditors]]  
+> **Objectives**:  
 > - Định nghĩa chính xác "implicit constraint" và phân biệt với constraint trong circuit
 > - Hiểu tại sao on-chain verifier không tự động enforce implicit constraints
 > - Phân tích 3 pattern lỗi V4 phổ biến: range, semantic, và cross-input

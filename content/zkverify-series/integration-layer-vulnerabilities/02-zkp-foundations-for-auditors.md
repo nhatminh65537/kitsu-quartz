@@ -5,8 +5,8 @@ aliases: [ZKP Foundations for Auditors]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]]
-> **Objectives**:
+> **Prerequisites**: [[01-zkp-stack-and-integration-layer|01. ZKP Stack & Integration Layer]]  
+> **Objectives**:  
 > - Định nghĩa chính xác 3 thuộc tính bảo mật của ZKP và hiểu cái nào bị vi phạm khi nào
 > - Phân biệt public input vs. private witness và hiểu tại sao ranh giới này quan trọng với auditor
 > - Nắm quy trình verify của Groth16 ở mức đủ để đọc code verifier

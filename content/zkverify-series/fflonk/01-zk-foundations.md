@@ -5,8 +5,8 @@ aliases: [ZK-SNARK Foundations]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: Số học modular (modular arithmetic), nhóm (group theory) ở mức cơ bản, polynomial 1 biến
-> **Objectives**:
+> **Prerequisites**: Số học modular (modular arithmetic), nhóm (group theory) ở mức cơ bản, polynomial 1 biến  
+> **Objectives**:  
 > - Hiểu zk-SNARK là gì và tại sao cần nó
 > - Nắm vững ba tính chất: Completeness, Soundness, Zero-Knowledge
 > - Hiểu bilinear pairing hoạt động như thế nào và tại sao nó là nền tảng của KZG/FFLONK

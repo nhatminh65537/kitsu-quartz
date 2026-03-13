@@ -5,8 +5,8 @@ aliases: [QAP, Quadratic Arithmetic Programs]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — ma trận $A, B, C$, $Az \circ Bz = Cz$; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — Lagrange interpolation, vanishing polynomial, divisibility
-> **Objectives**:
+> **Prerequisites**: [[06-r1cs|06. R1CS — Rank-1 Constraint System]] — ma trận $A, B, C$, $Az \circ Bz = Cz$; [[02-polynomials-over-finite-fields|02. Polynomials over Finite Fields]] — Lagrange interpolation, vanishing polynomial, divisibility  
+> **Objectives**:  
 > - Hiểu tại sao cần chuyển R1CS sang QAP — polynomial encoding mở ra polynomial commitment
 > - Thực hiện được conversion R1CS → QAP: từ ma trận sang tập đa thức
 > - Hiểu target polynomial $t(x)$ và ý nghĩa của phép chia $p(x) / t(x)$

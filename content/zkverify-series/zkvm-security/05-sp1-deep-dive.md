@@ -5,8 +5,8 @@ aliases: [SP1 Deep Dive]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]
-> **Objectives**:
+> **Prerequisites**: [[03-zkvm-architecture-overview|03. zkVM Architecture Overview]]  
+> **Objectives**:  
 > - Hiểu kiến trúc SP1: Plonky3 backend, chip/AIR table, cross-table lookup
 > - Nắm hệ thống syscall và precompile — cách hoạt động và tại sao là attack surface
 > - Phân biệt host/guest boundary trong SP1 và các implication bảo mật

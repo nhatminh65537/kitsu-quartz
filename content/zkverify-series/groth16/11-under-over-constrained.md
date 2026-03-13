@@ -5,8 +5,8 @@ aliases: [Under Over Constrained Circuits]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[08-circom-snarkjs-workflow|08. Circom + snarkjs Workflow]]
-> **Objectives**:
+> **Prerequisites**: [[08-circom-snarkjs-workflow|08. Circom + snarkjs Workflow]]  
+> **Objectives**:  
 > - Phân loại đầy đủ các loại constraint bugs: under-constrained, over-constrained, non-deterministic
 > - Hiểu cơ chế: signal assignment vs constraint — tại sao nhầm gây lỗi
 > - Phân tích real-world bugs trong Tornado Cash, Aztec, Light Protocol

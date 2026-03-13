@@ -5,8 +5,8 @@ aliases: [Perfect Statistical Computational ZK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[02-zk-definitions-and-simulator|02. ZK Definitions & Simulator Paradigm]] — view, simulator paradigm, định nghĩa ZK
-> **Objectives**:
+> **Prerequisites**: [[02-zk-definitions-and-simulator|02. ZK Definitions & Simulator Paradigm]] — view, simulator paradigm, định nghĩa ZK  
+> **Objectives**:  
 > - Định nghĩa chính xác ba mức độ ZK: perfect, statistical, computational
 > - Nắm vững khái niệm **statistical distance** và **computational indistinguishability**
 > - Hiểu quan hệ bao hàm và sự khác biệt về giả định bảo mật giữa ba loại

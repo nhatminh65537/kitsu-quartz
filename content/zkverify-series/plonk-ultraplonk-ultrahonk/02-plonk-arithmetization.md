@@ -5,8 +5,8 @@ aliases: [PLONK Arithmetization]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — KZG commitment, finite fields, Lagrange basis
-> **Objectives**:
+> **Prerequisites**: [[01-polynomial-iop-kzg|01. Polynomial IOP and KZG]] — KZG commitment, finite fields, Lagrange basis  
+> **Objectives**:  
 > - Hiểu cách mạch tính toán (arithmetic circuit) được biểu diễn trong PLONK
 > - Nắm vững vai trò của selector polynomials và wire polynomials
 > - Hiểu copy constraints và tại sao chúng cần permutation argument

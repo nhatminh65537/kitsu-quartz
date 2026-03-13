@@ -6,7 +6,8 @@ created: 2026-03-09
 ---
 # 1. ECC và Finite Field Review
 
-> **Prerequisites**: Đại số tuyến tính cơ bản, trường hữu hạn cơ bản ($\mathbb{F}_p$), số học modular **Objectives**:
+> **Prerequisites**: Đại số tuyến tính cơ bản, trường hữu hạn cơ bản ($\mathbb{F}_p$), số học modular  
+> **Objectives**:  
 > 
 > - Nắm vững định nghĩa đường cong elliptic, group law, và tính toán cụ thể trên $E(\mathbb{F}_q)$
 > - Hiểu $j$-invariant, phân loại các curves theo đẳng cấu

@@ -5,8 +5,8 @@ aliases: [FFLONK Bug Hunting]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[06-fflonk-verifier|06. FFLONK Verifier]], [[08-fiat-shamir|08. Fiat-Shamir]], [[09-security-analysis|09. Security Analysis]], [[10-zkverify-implementation|10. zkVerify Implementation]]
-> **Objectives**:
+> **Prerequisites**: [[06-fflonk-verifier|06. FFLONK Verifier]], [[08-fiat-shamir|08. Fiat-Shamir]], [[09-security-analysis|09. Security Analysis]], [[10-zkverify-implementation|10. zkVerify Implementation]]  
+> **Objectives**:  
 > - Có workflow hoàn chỉnh để tìm bug trong FFLONK implementation
 > - Biết cách viết PoC cho từng bug class
 > - Nắm quy trình submission Immunefi

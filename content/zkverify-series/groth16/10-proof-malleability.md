@@ -5,8 +5,8 @@ aliases: [Groth16 Proof Malleability]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[05-groth16-prover|05]], [[06-groth16-verifier|06]]
-> **Objectives**:
+> **Prerequisites**: [[05-groth16-prover|05]], [[06-groth16-verifier|06]]  
+> **Objectives**:  
 > - Hiểu Groth16 malleable như thế nào và tại sao
 > - Biết các dạng transformation tạo proof mới từ proof cũ
 > - Hiểu attack scenario thực tế: double-spending

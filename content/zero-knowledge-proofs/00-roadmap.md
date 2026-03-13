@@ -10,7 +10,7 @@ created: 2026-03-13
 > **Level**: Advanced  
 > **Background**: Modular arithmetic, group theory, polynomials, probability, hash functions  
 > **Tools / Code**: Python + SageMath  
-> **Sources**: Thaler — *Proofs, Arguments, and ZK*; Boneh & Shoup; Berkeley ZK MOOC; IACR ePrint
+> **Sources**: Thaler — *Proofs, Arguments, and ZK*; Boneh & Shoup; Berkeley ZK MOOC; IACR ePrint  
 
 ---
 

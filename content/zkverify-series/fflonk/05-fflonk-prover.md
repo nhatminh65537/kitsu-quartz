@@ -5,8 +5,8 @@ aliases: [FFLONK Prover Algorithm]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[03-plonk|03. PLONK Protocol]], [[04-fflonk-core|04. FFLONK Core Idea]]
-> **Objectives**:
+> **Prerequisites**: [[03-plonk|03. PLONK Protocol]], [[04-fflonk-core|04. FFLONK Core Idea]]  
+> **Objectives**:  
 > - Nắm vững 5 round của FFLONK prover: mỗi round làm gì, output là gì
 > - Hiểu cách PLONK polynomials được nhóm và combined trong FFLONK
 > - Nắm cấu trúc proof 768 bytes (24 field elements)

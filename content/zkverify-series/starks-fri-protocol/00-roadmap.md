@@ -4,12 +4,12 @@ tags: [cryptography, starks, fri-protocol, zkverify, bug-bounty, roadmap]
 created: 2026-03-13
 ---
 
-> **Topic**: STARKs & FRI Protocol — Bug Bounty trên zkVerify
-> **Domain**: Cryptography (ZK Proof Systems)
-> **Level**: Intermediate → Advanced (CTF / Audit focused)
-> **Background**: Số học modular, polynomial arithmetic
-> **Tools / Code**: Python (lý thuyết) + Rust (thực chiến, winterfell / zkVerify codebase)
-> **Sources**: aszepieniec/stark-anatomy, eprint.iacr.org/2018/046, LambdaClass FRI blog, SRL audit report, Immunefi zkVerify, SoK ZKP vulnerabilities
+> **Topic**: STARKs & FRI Protocol — Bug Bounty trên zkVerify  
+> **Domain**: Cryptography (ZK Proof Systems)  
+> **Level**: Intermediate → Advanced (CTF / Audit focused)  
+> **Background**: Số học modular, polynomial arithmetic  
+> **Tools / Code**: Python (lý thuyết) + Rust (thực chiến, winterfell / zkVerify codebase)  
+> **Sources**: aszepieniec/stark-anatomy, eprint.iacr.org/2018/046, LambdaClass FRI blog, SRL audit report, Immunefi zkVerify, SoK ZKP vulnerabilities  
 
 ---
 

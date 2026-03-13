@@ -7,8 +7,8 @@ created: 2026-03-09
 
 # 9. Ate Pairing và Optimal Ate
 
-> **Prerequisites**: [[08-tate-lichtenbaum-pairing|Tate–Lichtenbaum Pairing]], [[05-torsion-points|Torsion Points]]
-> **Objectives**:
+> **Prerequisites**: [[08-tate-lichtenbaum-pairing|Tate–Lichtenbaum Pairing]], [[05-torsion-points|Torsion Points]]  
+> **Objectives**:  
 > - Hiểu tại sao Ate pairing có Miller loop ngắn hơn Tate: $|T| \approx \sqrt{r}$ thay vì $r$
 > - Nắm định nghĩa Ate pairing và vai trò của Frobenius eigenspace $\mathbb{G}_1$/$\mathbb{G}_2$
 > - Biết Optimal Ate và lower bound $\lfloor\log_2 r\rfloor/\varphi(k)$ của Vercauteren

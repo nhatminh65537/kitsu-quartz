@@ -5,8 +5,8 @@ aliases: [Polynomials Finite Fields, Lagrange Interpolation ZK]
 created: 2026-03-12
 ---
 
-> **Prerequisites**: [[01-finite-fields|01. Finite Fields & Field Arithmetic]] — phép toán trong $\mathbb{F}_p$, roots of unity
-> **Objectives**:
+> **Prerequisites**: [[01-finite-fields|01. Finite Fields & Field Arithmetic]] — phép toán trong $\mathbb{F}_p$, roots of unity  
+> **Objectives**:  
 > - Hiểu đa thức trên $\mathbb{F}_p$ và tại sao chúng là công cụ trung tâm của ZK
 > - Thành thạo Lagrange interpolation — kỹ thuật chuyển "danh sách giá trị" thành "đa thức"
 > - Hiểu và vận dụng Schwartz-Zippel lemma — nền tảng của polynomial identity testing

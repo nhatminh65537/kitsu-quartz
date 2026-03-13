@@ -5,8 +5,8 @@ aliases: [Implementation Integration Bugs ZK]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[12-circuit-bugs|12. Circuit-Level Bugs]], [[06-poseidon-implementations|06. Poseidon Implementations]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems]]
-> **Objectives**:
+> **Prerequisites**: [[12-circuit-bugs|12. Circuit-Level Bugs]], [[06-poseidon-implementations|06. Poseidon Implementations]], [[02-zk-proof-systems-circuits|02. ZK Proof Systems]]  
+> **Objectives**:  
 > - Hiểu Frozen Heart vulnerability và cách Fiat-Shamir bị implement sai
 > - Nắm spec mismatch patterns: khi implementation khác spec về tham số hoặc output
 > - Biết hash-to-field bugs: endianness, field overflow, truncation

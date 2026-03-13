@@ -5,8 +5,8 @@ aliases: [UltraHonk]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[08-ultraplonk|08. UltraPlonk]] — Ultra arithmetization, 4-wire system, plookup; [[09-multilinear-sumcheck|09. Multilinear Extensions and Sumcheck]] — MLE, sumcheck protocol, ZeroMorph
-> **Objectives**:
+> **Prerequisites**: [[08-ultraplonk|08. UltraPlonk]] — Ultra arithmetization, 4-wire system, plookup; [[09-multilinear-sumcheck|09. Multilinear Extensions and Sumcheck]] — MLE, sumcheck protocol, ZeroMorph  
+> **Objectives**:  
 > - Hiểu kiến trúc tổng thể của UltraHonk và điểm khác biệt căn bản so với UltraPlonk
 > - Nắm cách Honk encode Ultra arithmetization vào multilinear polynomials
 > - Hiểu Flavor system trong Barretenberg: cách tham số hóa proving scheme

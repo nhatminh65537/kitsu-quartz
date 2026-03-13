@@ -5,8 +5,8 @@ aliases: [ZK Proof Systems Arithmetic Circuits]
 created: 2026-03-13
 ---
 
-> **Prerequisites**: [[01-hash-functions-overview|01. Hash Functions — Nền tảng & Baseline]], finite field $\mathbb{F}_p$, đa thức cơ bản
-> **Objectives**:
+> **Prerequisites**: [[01-hash-functions-overview|01. Hash Functions — Nền tảng & Baseline]], finite field $\mathbb{F}_p$, đa thức cơ bản  
+> **Objectives**:  
 > - Hiểu mô hình tính toán của arithmetic circuit và constraint system
 > - Nắm cấu trúc R1CS, PLONK, AIR và khi nào dùng cái nào
 > - Biết cách đo "chi phí" của một phép tính trong ZK: số constraints và multiplicative complexity
