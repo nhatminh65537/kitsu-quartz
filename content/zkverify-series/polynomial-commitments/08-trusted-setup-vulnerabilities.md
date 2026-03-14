@@ -36,7 +36,7 @@ Giải pháp thực tế: **Multi-party Computation (MPC)** ceremony:
 > $n$ participants lần lượt đóng góp randomness:
 >
 > 1. Participant $i$ nhận SRS từ participant $(i-1)$: $\{[s^j]_1\}_{j=0}^{d}$
-> 2. Chọn secret $\tau_i \xleftarrow{\$} \mathbb{F}_q^*$
+> 2. Chọn secret $\tau_i \xleftarrow{R} \mathbb{F}_q^*$
 > 3. Update: $\{[s^j \cdot \tau_i^j]_1\}$ — multiply mỗi element bằng tương ứng power của $\tau_i$
 > 4. Publish SRS mới và xóa $\tau_i$
 >

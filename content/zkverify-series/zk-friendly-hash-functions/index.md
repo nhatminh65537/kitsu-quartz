@@ -30,6 +30,8 @@ created: 2026-03-13
 - [[a1-sagemath-scripts|A1. SageMath Scripts]]
 - [[a2-circom-bug-patterns|A2. Circom Bug Pattern Reference]]
 - [[a3-zk-hash-cve-database|A3. ZK Hash CVE & Finding Database]]
+- [[a4-practice|A4. Practice Exercises]] — Bài tập thực hành bao phủ toàn bộ 14 bài học: từ constraint counting, field arithmetic, MiMC/Poseidon trace, MDS verification, đến circuit bug hunting và mini audit.
+- [[a5-further-reading|A5. Further Reading]] — Danh sách sách, papers, và blogs nên đọc để đào sâu: Boneh-Shoup, Thaler ZK book, MiMC/Poseidon/Rescue papers gốc, zkbugs atlas, Circomspect, Halo2 book.
 
 ---
 

@@ -361,7 +361,7 @@ Câu hỏi cốt lõi mà FRI trả lời:
 
 > [!theorem] Theorem 1.12 — Schwartz-Zippel Lemma
 > Cho $f \in \mathbb{F}_p[X]$ là đa thức **không bằng 0 (identically)** bậc $d$.
-> Nếu chọn ngẫu nhiên $r \xleftarrow{\$} S$ với $S \subseteq \mathbb{F}_p$:
+> Nếu chọn ngẫu nhiên $r \xleftarrow{R} S$ với $S \subseteq \mathbb{F}_p$:
 >
 > $$\Pr[f(r) = 0] \leq \frac{d}{|S|}$$
 

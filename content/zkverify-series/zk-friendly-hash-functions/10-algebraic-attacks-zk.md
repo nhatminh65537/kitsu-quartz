@@ -229,7 +229,7 @@ GCD attack áp dụng cho MiMC được dùng như **block cipher** (với key),
 > [!definition] Definition 10.7 — GCD Attack trên MiMC
 > Trong MiMC-$n/n$ với key $k$, xét hai encryptions:
 >
-> $$c_1 = E_k(m_1) = F(m_1 + k) + k$$
+> $$c_1 = E_k(m_1) = F(m_1 + k) + k$$  
 > $$c_2 = E_k(m_2) = F(m_2 + k) + k$$
 >
 > trong đó $F$ là đa thức bậc $d = 7^r$ không có $k$.

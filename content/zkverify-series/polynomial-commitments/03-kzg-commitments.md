@@ -47,7 +47,7 @@ Với ký hiệu này: $e([a]_1, [b]_2) = e([1]_1, [ab]_2) = e([ab]_1, [1]_2)$.
 ## Bước 1: Setup (Trusted Setup)
 
 > [!definition] Definition 3.2 — KZG Setup / Structured Reference String
-> Một trusted party chọn ngẫu nhiên $\tau \xleftarrow{\$} \mathbb{F}_q^*$, tính và publish:
+> Một trusted party chọn ngẫu nhiên $\tau \xleftarrow{R} \mathbb{F}_q^*$, tính và publish:
 >
 > $$\text{SRS} = \left(\underbrace{[\tau^0]_1, [\tau^1]_1, \ldots, [\tau^d]_1}_{\text{SRS}_1}, \underbrace{[\tau^0]_2, [\tau^1]_2}_{\text{SRS}_2}\right)$$
 >
@@ -128,7 +128,7 @@ Verifier check: $e(\pi, [Z(\tau)]_2) = e(\text{com}_f - [r(\tau)]_1, [1]_2)$.
 
 Prover có $f_1, \ldots, f_k$ muốn prove $f_i(z) = y_i$ với cùng $z$:
 
-Verifier gửi challenge $\gamma \xleftarrow{\$} \mathbb{F}_q$. Prover combine:
+Verifier gửi challenge $\gamma \xleftarrow{R} \mathbb{F}_q$. Prover combine:
 
 $$h(X) = \sum_{i=1}^{k} \gamma^{i-1} f_i(X)$$
 

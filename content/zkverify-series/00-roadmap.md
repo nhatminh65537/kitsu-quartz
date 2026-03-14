@@ -7,8 +7,8 @@ created: 2026-03-13
 > **Topic**: zkVerify Bug Bounty Roadmap  
 > **Domain**: ZK Cryptography x Blockchain Security (Substrate / Rust)  
 > **Level**: Intermediate -> Advanced  
-> **Background giả định**: ZKP fundamentals, Rust cơ bản, smart contract/audit mindset
-> **Phạm vi hiện tại**: Bỏ ECC và Finite Field riêng lẻ, tập trung các topic phục vụ bug bounty trực tiếp
+> **Background giả định**: ZKP fundamentals, Rust cơ bản, smart contract/audit mindset  
+> **Phạm vi hiện tại**: Bỏ ECC và Finite Field riêng lẻ, tập trung các topic phục vụ bug bounty trực tiếp  
 > **Mục tiêu cuối**: Audit và săn bug có hệ thống trên zkVerify theo Immunefi scope
 
 ---

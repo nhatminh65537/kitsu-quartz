@@ -41,6 +41,8 @@ created: 2026-03-13
 | A1 | SageMath Scripts — MiMC, Poseidon, Rescue implementations | 04–07 |
 | A2 | Circom Bug Pattern Reference | 12, 13 |
 | A3 | ZK Hash CVE & Finding Database | 13, 14 |
+| A4 | Practice Exercises — bài tập thực hành bao phủ toàn bộ 14 bài | 01–14 |
+| A5 | Further Reading — sách, papers, blogs nên đọc sau khi học xong | 01–14 |
 
 ---
 
@@ -94,3 +96,5 @@ graph TD
 - [ ] [[a1-sagemath-scripts|A1. SageMath Scripts]]
 - [ ] [[a2-circom-bug-patterns|A2. Circom Bug Pattern Reference]]
 - [ ] [[a3-zk-hash-cve-database|A3. ZK Hash CVE & Finding Database]]
+- [ ] [[a4-practice|A4. Practice Exercises]]
+- [ ] [[a5-further-reading|A5. Further Reading]]

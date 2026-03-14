@@ -65,7 +65,7 @@ trong đó:
 
 $$f_0^{\text{even}}(Y) = \frac{f_0(\sqrt{Y}) + f_0(-\sqrt{Y})}{2}, \quad f_0^{\text{odd}}(Y) = \frac{f_0(\sqrt{Y}) - f_0(-\sqrt{Y})}{2\sqrt{Y}}$$
 
-**Verifier gửi** challenge $\beta_0 \xleftarrow{\$} \mathbb{F}_p$.
+**Verifier gửi** challenge $\beta_0 \xleftarrow{R} \mathbb{F}_p$.
 
 **Prover tạo đa thức folded**:
 
@@ -93,7 +93,7 @@ Sau commit phase, verifier thực hiện $t$ **queries** để kiểm tra consis
 > [!definition] Definition 6.3 — FRI Query Phase
 > Với mỗi query $j \in [t]$:
 >
-> 1. Verifier chọn ngẫu nhiên $x_0 \xleftarrow{\$} D_0$.
+> 1. Verifier chọn ngẫu nhiên $x_0 \xleftarrow{R} D_0$.
 > 2. Verifier yêu cầu:
 >    - $f_0(x_0)$ và $f_0(-x_0)$ với Merkle proof từ $\text{mt}_0$.
 >    - $f_1(x_0^2)$ với Merkle proof từ $\text{mt}_1$.

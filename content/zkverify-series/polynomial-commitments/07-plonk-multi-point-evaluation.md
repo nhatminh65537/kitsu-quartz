@@ -81,7 +81,7 @@ Giả sử có hai tập:
 
 ### Bước 1 — Nhóm theo opening set
 
-Verifier gửi $v \xleftarrow{\$} \mathbb{F}_p$. Prover tạo:
+Verifier gửi $v \xleftarrow{R} \mathbb{F}_p$. Prover tạo:
 
 $$f_1(X) = a(X) + v \cdot b(X) + v^2 \cdot c(X) + v^3 q_L(X) + \cdots$$
 
@@ -99,7 +99,7 @@ Proof $\pi_2$: multi-point opening của $f_2$ tại $\{\zeta, \zeta\omega\}$.
 
 ### Bước 3 — Aggregate hai proofs
 
-Verifier gửi $u \xleftarrow{\$} \mathbb{F}_p$. Kết hợp:
+Verifier gửi $u \xleftarrow{R} \mathbb{F}_p$. Kết hợp:
 
 $$W_\zeta = \pi_1 + u \cdot (\text{component of } \pi_2 \text{ at } \zeta)$$
 

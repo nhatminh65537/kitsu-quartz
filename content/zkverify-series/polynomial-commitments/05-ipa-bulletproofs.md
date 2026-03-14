@@ -59,7 +59,7 @@ $$L = \langle \mathbf{a}_L, \mathbf{G}_R \rangle + \langle \mathbf{b}_R, \mathbf
 
 $$R = \langle \mathbf{a}_R, \mathbf{G}_L \rangle + \langle \mathbf{b}_L, \mathbf{H}_R \rangle + r_R \cdot U$$
 
-**Verifier gửi** challenge $x \xleftarrow{\$} \mathbb{F}_p$.
+**Verifier gửi** challenge $x \xleftarrow{R} \mathbb{F}_p$.
 
 **Cả hai tính** (generators folded):
 

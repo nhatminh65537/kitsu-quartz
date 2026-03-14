@@ -63,7 +63,7 @@ Bước đầu tiên: **commit** (cam kết) với $x$ trước khi tính toán,
 > [!definition] Definition 2.6 — Pedersen Commitment
 > Cho cyclic group $\mathbb{G}$ bậc nguyên tố $p$ với generator $G$, chọn ngẫu nhiên $H = h \cdot G$ (giữ bí mật $h$).
 >
-> - **Commit**: $c = m \cdot G + r \cdot H$ với $r \xleftarrow{\$} \mathbb{F}_p$
+> - **Commit**: $c = m \cdot G + r \cdot H$ với $r \xleftarrow{R} \mathbb{F}_p$
 > - **Open**: Reveal $(m, r)$, verifier kiểm tra $c = m \cdot G + r \cdot H$
 
 **Tính chất**:
