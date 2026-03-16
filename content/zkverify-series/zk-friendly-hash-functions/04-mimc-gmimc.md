@@ -64,7 +64,7 @@ MiMC block cipher được dùng để xây dựng hash theo chế độ **Miyag
 > [!definition] Definition 4.3 — MiMC Hash (Miyaguchi-Preneel mode)
 > Để hash input $(x_1, x_2, \ldots, x_\ell)$, dùng MiMC block cipher $E$ như compression function:
 >
-> $$h_0 = 0$$
+> $$h_0 = 0$$  
 > $$h_i = E_{h_{i-1}}(x_i) + h_{i-1} + x_i$$
 >
 > Cụ thể với 2 inputs: $H(x_1, x_2) = E_{x_1}(x_2) + x_1 + x_2$
@@ -78,7 +78,7 @@ Ngoài Miyaguchi-Preneel, MiMC còn được dùng theo **sponge mode**:
 > [!definition] Definition 4.4 — MiMCsponge
 > State gồm 2 field elements $(s_L, s_R)$. Với mỗi input block $m_i$:
 >
-> 1. $s_L \leftarrow s_L + m_i$
+> 1. $s_L \leftarrow s_L + m_i$  
 > 2. $(s_L, s_R) \leftarrow \text{MiMC-Feistel}(s_L, s_R)$
 >
 > Output là $s_L$ sau khi absorb xong.
@@ -92,7 +92,7 @@ MiMCsponge dùng **Feistel network** — một cấu trúc quan trọng cần hi
 > [!definition] Definition 4.5 — Feistel Network
 > **Feistel network** chia state thành hai nửa $(L, R)$ và áp dụng round function $F$ luân phiên:
 >
-> $$L_{i+1} = R_i$$
+> $$L_{i+1} = R_i$$  
 > $$R_{i+1} = L_i + F(R_i, k_i)$$
 >
 > Tính chất quan trọng: **Dễ đảo ngược** (invertible) ngay cả khi $F$ không có inverse — chỉ cần chạy ngược. Đây là lý do Feistel network được dùng rộng rãi trong block ciphers (DES, Blowfish).
@@ -162,7 +162,7 @@ GMiMC (Generalized MiMC) được thiết kế để cải thiện **throughput*
 > [!definition] Definition 4.7 — GMiMC
 > **GMiMC** dùng state $t$ field elements $(x_0, x_1, \ldots, x_{t-1})$ và round function:
 >
-> $$x_0' = x_0 + F(x_1)$$
+> $$x_0' = x_0 + F(x_1)$$  
 > $$x_1' = x_2, \quad x_2' = x_3, \quad \ldots, \quad x_{t-1}' = x_0$$
 >
 > Sau đó **rotate** state. Nghĩa là chỉ **một phần tử** được apply nonlinear function mỗi round, phần còn lại chỉ shift.

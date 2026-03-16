@@ -80,7 +80,7 @@ $$\text{vk} = \Bigl([\alpha]_1,\ [\beta]_2,\ [\gamma]_2,\ [\delta]_2,\ \left\{\l
 
 ## Proving Algorithm (Summary)
 
-**Input**: $\text{pk},\ \mathbf{z} = (1, z_1, \ldots, z_{n-1}),\ r, s \xleftarrow{\$} \mathbb{F}_p$
+**Input**: $\text{pk},\ \mathbf{z} = (1, z_1, \ldots, z_{n-1}),\ r, s \xleftarrow{R} \mathbb{F}_p$
 
 $$[A]_1 = [\alpha]_1 + \sum_{i=0}^{n-1} z_i [A_i(\tau)]_1 + r[\delta]_1$$
 

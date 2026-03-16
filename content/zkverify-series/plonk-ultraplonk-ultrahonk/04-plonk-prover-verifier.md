@@ -88,12 +88,15 @@ Nhận $\alpha$ từ Verifier.
 > [!definition] Definition 4.2 — Quotient Polynomial $t(X)$
 > Prover tính $t(X)$ sao cho:
 >
-> $$\begin{aligned}
+> $$
+> \begin{aligned}
 > t(X) \cdot Z_H(X) = \; &[a(X)b(X)q_M(X) + a(X)q_L(X) + b(X)q_R(X) + c(X)q_O(X) + \text{PI}(X) + q_C(X)] \\
 > &+ \alpha \cdot [(a + \beta X + \gamma)(b + \beta k_1 X + \gamma)(c + \beta k_2 X + \gamma) \cdot z(X) \\
 > &\quad\quad - (a + \beta S_{\sigma 1} + \gamma)(b + \beta S_{\sigma 2} + \gamma)(c + \beta S_{\sigma 3} + \gamma) \cdot z(\omega X)] \\
 > &+ \alpha^2 \cdot (z(X) - 1) \cdot L_1(X)
-> \end{aligned}$$
+> \end{aligned}
+> $$
+
 
 Ba term (với weights $1, \alpha, \alpha^2$) correspond với ba nhóm identities. Challenge $\alpha$ đảm bảo "tách biệt" — nếu polynomial bên phải không chia hết cho $Z_H$, thì tổng weighted cũng không chia hết (với overwhelming probability).
 
@@ -111,7 +114,7 @@ Nhận $\zeta$ từ Verifier (random evaluation point).
 
 Prover tính và gửi các evaluations:
 
-$$\bar{a} = a(\zeta), \quad \bar{b} = b(\zeta), \quad \bar{c} = c(\zeta)$$
+$$\bar{a} = a(\zeta), \quad \bar{b} = b(\zeta), \quad \bar{c} = c(\zeta)$$  
 $$\bar{S}_{\sigma 1} = S_{\sigma 1}(\zeta), \quad \bar{S}_{\sigma 2} = S_{\sigma 2}(\zeta), \quad \bar{z}_\omega = z(\zeta \omega)$$
 
 **Tại sao $\bar{z}_\omega = z(\zeta\omega)$ chứ không phải $\bar{z} = z(\zeta)$?**
@@ -129,9 +132,9 @@ Nhận $\nu$ từ Verifier.
 > [!definition] Definition 4.3 — Linearization Polynomial $r(X)$
 > Prover tạo **linearization polynomial** $r(X)$ — một polynomial mà Verifier có thể kiểm tra commitment của nó bằng commitments đã có:
 >
-> $$r(X) = \bar{a}\bar{b} \cdot q_M(X) + \bar{a} \cdot q_L(X) + \bar{b} \cdot q_R(X) + \bar{c} \cdot q_O(X) + q_C(X)$$
-> $$+ \alpha \cdot [(\bar{a} + \beta\zeta + \gamma)(\bar{b} + \beta k_1\zeta + \gamma)(\bar{c} + \beta k_2\zeta + \gamma)] \cdot z(X)$$
-> $$- \alpha \cdot [(\bar{a} + \beta\bar{S}_{\sigma 1} + \gamma)(\bar{b} + \beta\bar{S}_{\sigma 2} + \gamma)(\bar{c} + \beta\bar{S}_{\sigma 3}(X) + \gamma)] \cdot \bar{z}_\omega$$
+> $$r(X) = \bar{a}\bar{b} \cdot q_M(X) + \bar{a} \cdot q_L(X) + \bar{b} \cdot q_R(X) + \bar{c} \cdot q_O(X) + q_C(X)$$  
+> $$+ \alpha \cdot [(\bar{a} + \beta\zeta + \gamma)(\bar{b} + \beta k_1\zeta + \gamma)(\bar{c} + \beta k_2\zeta + \gamma)] \cdot z(X)$$  
+> $$- \alpha \cdot [(\bar{a} + \beta\bar{S}_{\sigma 1} + \gamma)(\bar{b} + \beta\bar{S}_{\sigma 2} + \gamma)(\bar{c} + \beta\bar{S}_{\sigma 3}(X) + \gamma)] \cdot \bar{z}_\omega$$  
 > $$+ \alpha^2 \cdot L_1(\zeta) \cdot z(X)$$
 >
 > **Điểm mấu chốt**: Verifier có thể tính $[r]_1 = r(\tau)G_1$ từ các commitments đã có mà **không cần biết $r(X)$**.
