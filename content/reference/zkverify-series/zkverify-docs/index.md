@@ -1,5 +1,5 @@
 ---
-title: "00. Index — zkVerify Documentation Course"
+title: "Index — zkVerify Documentation Course"
 tags: [zkverify, index, zero-knowledge, blockchain, bug-bounty]
 source: "zkVerify Official Documentation — zkVerify Foundation, 2025–2026 — https://docs.zkverify.io"
 created: 2026-03-28

@@ -41,9 +41,9 @@ Cả hai bước đều cần thiết. Trong khi cộng đồng đang đẩy m�
 
 ### 1 — Chi Phí Xác Minh Proof Quá Cao
 
-Xác minh một ZK proof trên Ethereum tiêu tốn từ **200,000 đến 300,000 gas**, tùy loại proof. Trong thời điểm tắc nghẽn mạng, gas có thể vượt 100 Gwei, khiến chi phí verify một proof lên đến **$20–$60** hoặc hơn.
+Xác minh một ZK proof trên Ethereum tiêu tốn từ **200,000 đến 300,000 gas**, tùy loại proof. Trong thời điểm tắc nghẽn mạng, gas có thể vượt 100 Gwei, khiến chi phí verify một proof lên đến **\$20–\$60** hoặc hơn.
 
-Ở quy mô toàn thị trường, chi phí verification ước tính vượt **$100 triệu** chỉ riêng cho zkRollups năm 2024, và dự kiến đạt **$1.5 tỷ** vào 2028 khi tính cả zkApps. Ngoài chi phí danh nghĩa, sự biến động của gas fee còn gây bất ổn cho sản phẩm.
+Ở quy mô toàn thị trường, chi phí verification ước tính vượt **\$100 triệu** chỉ riêng cho zkRollups năm 2024, và dự kiến đạt **\$1.5 tỷ** vào 2028 khi tính cả zkApps. Ngoài chi phí danh nghĩa, sự biến động của gas fee còn gây bất ổn cho sản phẩm.
 
 ### 2 — Không Phải Mọi Proof Đều Verify Được Trên EVM
 

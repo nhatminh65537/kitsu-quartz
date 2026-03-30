@@ -2,7 +2,7 @@
 title: "05. Abstract Verifier & Statement Digest Internals"
 type: deep-dive
 tags: [zkverify, verifier, abstract-verifier, statement-digest, rust, substrate-pallet, lesson-05]
-aliases: [Abstract Verifier, hp_verifiers::Verifier, Verifier Trait]
+aliases: [Abstract Verifier, Verifier Trait]
 source: "zkVerify Official Documentation — zkVerify Foundation, 2025–2026 — https://docs.zkverify.io"
 created: 2026-03-28
 ---
