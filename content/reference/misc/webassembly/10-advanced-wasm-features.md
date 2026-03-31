@@ -22,11 +22,11 @@ WebAssembly không ngừng phát triển qua hệ thống **proposals** — mỗ
 
 ```mermaid
 graph LR
-    P0["Phase 0\nPre-proposal\n(idea)"] --> P1["Phase 1\nFeature Proposal\n(use cases)"]
-    P1 --> P2["Phase 2\nSpec text\n(draft)"]
-    P2 --> P3["Phase 3\nImplementation\n(≥2 browsers)"]
-    P3 --> P4["Phase 4\nStandardization\n(W3C vote)"]
-    P4 --> P5["Phase 5\nFinal Standard"]
+    P0["Phase 0<br>Pre-proposal<br>(idea)"] --> P1["Phase 1<br>Feature Proposal<br>(use cases)"]
+    P1 --> P2["Phase 2<br>Spec text<br>(draft)"]
+    P2 --> P3["Phase 3<br>Implementation<br>(≥2 browsers)"]
+    P3 --> P4["Phase 4<br>Standardization<br>(W3C vote)"]
+    P4 --> P5["Phase 5<br>Final Standard"]
 ```
 
 Tính đến 2026, các features **đã phase 5 (chuẩn hóa)**:
@@ -53,8 +53,8 @@ Tính đến 2026, các features **đã phase 5 (chuẩn hóa)**:
 
 ```mermaid
 graph LR
-    A["Scalar: 1 phép tính / cycle\nf32.add x 4 lần = 4 cycles"] --> SLOW[Chậm]
-    B["SIMD: 4 phép tính / cycle\nf32x4.add 1 lần = 1 cycle"] --> FAST[Nhanh ~4x]
+    A["Scalar: 1 phép tính / cycle<br>f32.add x 4 lần = 4 cycles"] --> SLOW[Chậm]
+    B["SIMD: 4 phép tính / cycle<br>f32x4.add 1 lần = 1 cycle"] --> FAST[Nhanh ~4x]
 ```
 
 CPU hiện đại có SIMD units (SSE, AVX trên x86; NEON trên ARM) idle nếu code không dùng — SIMD Wasm khai thác trực tiếp hardware này.
@@ -162,9 +162,9 @@ Wasm threads không giống threads OS — không có `pthread_create` hay `std:
 
 ```mermaid
 graph TD
-    MAIN["Main thread\n(JS + Wasm instance 1)"] -- "postMessage(sharedMem)" --> W1["Worker 1\n(Wasm instance 2)"]
-    MAIN -- "postMessage(sharedMem)" --> W2["Worker 2\n(Wasm instance 3)"]
-    SHARED["SharedArrayBuffer\n(shared linear memory)"] --- MAIN
+    MAIN["Main thread<br>(JS + Wasm instance 1)"] -- "postMessage(sharedMem)" --> W1["Worker 1<br>(Wasm instance 2)"]
+    MAIN -- "postMessage(sharedMem)" --> W2["Worker 2<br>(Wasm instance 3)"]
+    SHARED["SharedArrayBuffer<br>(shared linear memory)"] --- MAIN
     SHARED --- W1
     SHARED --- W2
 ```
@@ -331,12 +331,12 @@ Ngôn ngữ managed (Java, Kotlin, C#, Python, Dart) có runtime riêng với GC
 ```mermaid
 graph LR
     A["Kotlin code"] -- "Compile" --> B{".wasm với WasmGC"}
-    B --> C["Chrome V8 GC\n(native)"]
-    B --> D["Firefox SpiderMonkey GC\n(native)"]
-    B --> E["Wasmtime GC\n(native)"]
+    B --> C["Chrome V8 GC<br>(native)"]
+    B --> D["Firefox SpiderMonkey GC<br>(native)"]
+    B --> E["Wasmtime GC<br>(native)"]
 
-    F["Kotlin code"] -- "Compile\n(no WasmGC)" --> G[".wasm\n(bundle Kotlin GC)"]
-    G -- "Chạy" --> H["Large binary\nExtra overhead"]
+    F["Kotlin code"] -- "Compile<br>(no WasmGC)" --> G[".wasm<br>(bundle Kotlin GC)"]
+    G -- "Chạy" --> H["Large binary<br>Extra overhead"]
 ```
 
 ### WasmGC Value Types

@@ -30,12 +30,12 @@ Core Wasm module giao tiếp qua **raw bytes** và **numbers**:
 graph LR
     subgraph "Core Wasm (khó)"
         A["Module Rust"] -- "ptr: i32, len: i32" --> B["Module Go"]
-        B -- "Phải deserialize\nbytes thủ công" --> A
+        B -- "Phải deserialize<br>bytes thủ công" --> A
     end
 
     subgraph "Component Model (dễ)"
         C["Component Rust"] -- "string, list<u8>, record..." --> D["Component Go"]
-        D -- "Type-safe, automatic\nbindings generated" --> C
+        D -- "Type-safe, automatic<br>bindings generated" --> C
     end
 ```
 
@@ -127,11 +127,11 @@ world calculator {
 
 ```mermaid
 graph TD
-    C["Component (.wasm)"] --> M1["Core Module 1\n(Rust code)"]
-    C --> M2["Core Module 2\n(adapter)"]
-    C --> T["Type Section\n(WIT metadata)"]
-    C --> I["Component Imports\n(WIT types)"]
-    C --> E["Component Exports\n(WIT types)"]
+    C["Component (.wasm)"] --> M1["Core Module 1<br>(Rust code)"]
+    C --> M2["Core Module 2<br>(adapter)"]
+    C --> T["Type Section<br>(WIT metadata)"]
+    C --> I["Component Imports<br>(WIT types)"]
+    C --> E["Component Exports<br>(WIT types)"]
 ```
 
 ---
@@ -227,10 +227,10 @@ Một trong những tính năng mạnh nhất của Component Model là **compos
 
 ```mermaid
 graph LR
-    A["auth-component\n(Rust)"] -- "wasi:http/incoming-handler" --> COMP
-    B["db-component\n(Go)"] -- "wasi:postgres/query" --> COMP
-    C["cache-component\n(C++)" ] -- "wasi:keyvalue/store" --> COMP
-    COMP["Composed App\n(wasm-compose)"] --> D["wasmtime runtime"]
+    A["auth-component<br>(Rust)"] -- "wasi:http/incoming-handler" --> COMP
+    B["db-component<br>(Go)"] -- "wasi:postgres/query" --> COMP
+    C["cache-component<br>(C++)" ] -- "wasi:keyvalue/store" --> COMP
+    COMP["Composed App<br>(wasm-compose)"] --> D["wasmtime runtime"]
 ```
 
 Tool để compose: `wasm-compose` (từ Bytecode Alliance)
@@ -343,12 +343,12 @@ spin up
 
 ```mermaid
 graph TD
-    HOST1["wasmCloud Host\n(Node 1, US-East)"] --> A1["Actor A\n(Wasm)"]
-    HOST1 --> A2["Actor B\n(Wasm)"]
-    HOST2["wasmCloud Host\n(Node 2, EU-West)"] --> A3["Actor A'\n(Wasm)"]
-    LATTICE["NATS Lattice\n(Message Fabric)"] --- HOST1
+    HOST1["wasmCloud Host<br>(Node 1, US-East)"] --> A1["Actor A<br>(Wasm)"]
+    HOST1 --> A2["Actor B<br>(Wasm)"]
+    HOST2["wasmCloud Host<br>(Node 2, EU-West)"] --> A3["Actor A'<br>(Wasm)"]
+    LATTICE["NATS Lattice<br>(Message Fabric)"] --- HOST1
     LATTICE --- HOST2
-    CAP["Capability Provider\n(Redis, HTTP, SQL...)"] --- LATTICE
+    CAP["Capability Provider<br>(Redis, HTTP, SQL...)"] --- LATTICE
 ```
 
 Actors (Wasm components) giao tiếp qua message lattice — không có shared state, mỗi actor là isolated. Scale horizontally bằng cách deploy thêm actor instances.

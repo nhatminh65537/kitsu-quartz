@@ -34,8 +34,8 @@ graph TD
         B -- "Web APIs" --> C["Browser OS abstraction"]
     end
     subgraph "WASI environment"
-        D["Wasm module"] -- "WASI syscalls" --> E["WASI Runtime\n(wasmtime / wasmer)"]
-        E -- "Capability-gated syscalls" --> F["Host OS\n(Linux / macOS / Windows)"]
+        D["Wasm module"] -- "WASI syscalls" --> E["WASI Runtime<br>(wasmtime / wasmer)"]
+        E -- "Capability-gated syscalls" --> F["Host OS<br>(Linux / macOS / Windows)"]
     end
 ```
 
@@ -59,9 +59,9 @@ Trong WASI:
 
 ```mermaid
 graph LR
-    U["Người dùng chạy:\nwasmtime --dir=/tmp app.wasm"] --> R["Runtime\n(wasmtime)"]
-    R -- "Cấp capability:\n/tmp directory fd" --> W["Wasm module"]
-    W -- "Có thể đọc/ghi\n/tmp/*" --> F["/tmp/output.txt"]
+    U["Người dùng chạy:<br>wasmtime --dir=/tmp app.wasm"] --> R["Runtime<br>(wasmtime)"]
+    R -- "Cấp capability:<br>/tmp directory fd" --> W["Wasm module"]
+    W -- "Có thể đọc/ghi<br>/tmp/*" --> F["/tmp/output.txt"]
     W -- "KHÔNG thể truy cập" --> G["/home/user/secret"]
     W -- "KHÔNG thể truy cập" --> H["/etc/passwd"]
 ```
@@ -200,8 +200,8 @@ wasmtime --dir /tmp \
 # Output:
 # File: /tmp/test.txt
 # Lines: 3
-# Words: 7
-# Bytes: 42
+# Words: 9
+# Bytes: 44
 ```
 
 ### Bước 4: Dùng Wasmtime programmatically từ Rust host
@@ -268,10 +268,10 @@ WASI được tổ chức thành các **worlds** (tập hợp interfaces). WASI 
 
 ```mermaid
 graph LR
-    A["HTTP Request"] --> B["Cloudflare Worker\n(Wasm + WASI runtime)"]
-    B --> C["Wasm module\n(cold start < 1ms)"]
+    A["HTTP Request"] --> B["Cloudflare Worker<br>(Wasm + WASI runtime)"]
+    B --> C["Wasm module<br>(cold start < 1ms)"]
     C --> D["HTTP Response"]
-    E["Docker container\n(cold start ~100ms)"] -.->|"so sánh"| B
+    E["Docker container<br>(cold start ~100ms)"] -.->|"so sánh"| B
 ```
 
 Wasm có **cold start** cực nhanh (dưới 1ms) so với Docker (~100ms) hay Lambda (~1s). Cloudflare Workers, Fastly Compute@Edge đều chạy trên Wasm.
