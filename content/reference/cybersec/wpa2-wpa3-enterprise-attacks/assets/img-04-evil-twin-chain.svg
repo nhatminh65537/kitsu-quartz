@@ -1,0 +1,132 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg"
+     style="background:transparent;font-family:'Consolas','Monaco','Courier New',monospace;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#abb2bf"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e06c75"/>
+    </marker>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e5c07b"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#abb2bf">Evil Twin Attack Chain — WPA2 Enterprise (PEAP/MSCHAPv2)</text>
+
+  <!-- Phase labels -->
+  <text x="110" y="58" text-anchor="middle" font-size="11" fill="#e5c07b" font-weight="bold">① RECON</text>
+  <text x="310" y="58" text-anchor="middle" font-size="11" fill="#e06c75" font-weight="bold">② DEAUTH</text>
+  <text x="510" y="58" text-anchor="middle" font-size="11" fill="#e06c75" font-weight="bold">③ ROGUE AP</text>
+  <text x="700" y="58" text-anchor="middle" font-size="11" fill="#98c379" font-weight="bold">④ CAPTURE</text>
+
+  <!-- Phase separators -->
+  <line x1="210" y1="45" x2="210" y2="460" stroke="#4b5263" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="410" y1="45" x2="410" y2="460" stroke="#4b5263" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="610" y1="45" x2="610" y2="460" stroke="#4b5263" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- ── RECON ── -->
+  <!-- Attacker -->
+  <rect x="40" y="70" width="140" height="50" rx="6" ry="6" fill="#e06c75" stroke="#c0515f" stroke-width="1.5"/>
+  <text x="110" y="90" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Attacker</text>
+  <text x="110" y="108" text-anchor="middle" font-size="10" fill="#fff">Kali + WiFi adapter</text>
+
+  <!-- Legitimate AP -->
+  <rect x="40" y="155" width="140" height="50" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b" stroke-width="1.5"/>
+  <text x="110" y="175" text-anchor="middle" font-size="12" fill="#abb2bf" font-weight="bold">Legit AP</text>
+  <text x="110" y="193" text-anchor="middle" font-size="10" fill="#888">CorpWifi (MGT auth)</text>
+
+  <!-- Client -->
+  <rect x="40" y="240" width="140" height="50" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="110" y="260" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Client</text>
+  <text x="110" y="278" text-anchor="middle" font-size="10" fill="#cce5ff">Connected to legit AP</text>
+
+  <!-- airodump scan -->
+  <rect x="30" y="310" width="160" height="60" rx="4" ry="4" fill="#1e2127" stroke="#e5c07b" stroke-width="1"/>
+  <text x="110" y="328" text-anchor="middle" font-size="10" fill="#e5c07b" font-weight="bold">airodump-ng wlan0mon</text>
+  <text x="110" y="343" text-anchor="middle" font-size="10" fill="#888">→ BSSID, Channel</text>
+  <text x="110" y="358" text-anchor="middle" font-size="10" fill="#888">→ ESSID, Auth=MGT</text>
+  <text x="110" y="373" text-anchor="middle" font-size="10" fill="#888">→ Client MACs</text>
+
+  <!-- ── DEAUTH ── -->
+  <rect x="230" y="70" width="160" height="50" rx="6" ry="6" fill="#e06c75" stroke="#c0515f" stroke-width="1.5"/>
+  <text x="310" y="90" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Deauth Flood</text>
+  <text x="310" y="108" text-anchor="middle" font-size="10" fill="#fff">aireplay-ng -0</text>
+
+  <rect x="230" y="155" width="160" height="50" rx="6" ry="6" fill="#4b5263" stroke="#e06c75" stroke-width="1.5" stroke-dasharray="5,2"/>
+  <text x="310" y="175" text-anchor="middle" font-size="12" fill="#e06c75">Legit AP</text>
+  <text x="310" y="193" text-anchor="middle" font-size="10" fill="#888">Signal jammed / ignored</text>
+
+  <rect x="230" y="240" width="160" height="50" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="310" y="260" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Client</text>
+  <text x="310" y="278" text-anchor="middle" font-size="10" fill="#fff">Disconnected → Scanning</text>
+
+  <rect x="225" y="310" width="170" height="60" rx="4" ry="4" fill="#1e2127" stroke="#e06c75" stroke-width="1"/>
+  <text x="310" y="328" text-anchor="middle" font-size="10" fill="#e06c75">aireplay-ng -0 50</text>
+  <text x="310" y="343" text-anchor="middle" font-size="10" fill="#e06c75">-a &lt;BSSID&gt; -c &lt;CLIENT&gt;</text>
+  <text x="310" y="358" text-anchor="middle" font-size="10" fill="#888">wlan0mon</text>
+
+  <!-- Arrow: Attacker → Client (deauth) -->
+  <line x1="310" y1="120" x2="310" y2="238" stroke="#e06c75" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <!-- ── ROGUE AP ── -->
+  <rect x="430" y="70" width="160" height="50" rx="6" ry="6" fill="#e06c75" stroke="#c0515f" stroke-width="1.5"/>
+  <text x="510" y="90" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Rogue AP</text>
+  <text x="510" y="108" text-anchor="middle" font-size="10" fill="#fff">Same SSID, higher power</text>
+
+  <rect x="430" y="155" width="160" height="50" rx="6" ry="6" fill="#c678dd" stroke="#a558bd" stroke-width="1.5"/>
+  <text x="510" y="175" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Fake RADIUS</text>
+  <text x="510" y="193" text-anchor="middle" font-size="10" fill="#e8d0f8">hostapd-wpe / eaphammer</text>
+
+  <rect x="430" y="240" width="160" height="50" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="510" y="260" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Client</text>
+  <text x="510" y="278" text-anchor="middle" font-size="10" fill="#fff">Connects to Rogue AP</text>
+
+  <rect x="425" y="310" width="170" height="60" rx="4" ry="4" fill="#1e2127" stroke="#c678dd" stroke-width="1"/>
+  <text x="510" y="328" text-anchor="middle" font-size="10" fill="#c678dd">eaphammer --cert-wizard</text>
+  <text x="510" y="343" text-anchor="middle" font-size="10" fill="#c678dd">--auth peap --creds</text>
+  <text x="510" y="358" text-anchor="middle" font-size="10" fill="#888">Self-signed cert presented</text>
+
+  <!-- Arrow: Rogue AP ↔ Fake RADIUS -->
+  <line x1="510" y1="120" x2="510" y2="153" stroke="#c678dd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- Arrow: Client → Rogue AP -->
+  <line x1="510" y1="290" x2="510" y2="153" stroke="#e06c75" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <!-- ── CAPTURE ── -->
+  <rect x="630" y="70" width="150" height="50" rx="6" ry="6" fill="#98c379" stroke="#78a359" stroke-width="1.5"/>
+  <text x="705" y="90" text-anchor="middle" font-size="12" fill="#1e2127" font-weight="bold">Hash Captured</text>
+  <text x="705" y="108" text-anchor="middle" font-size="10" fill="#1e2127">NetNTLMv1</text>
+
+  <rect x="630" y="155" width="150" height="50" rx="6" ry="6" fill="#98c379" stroke="#78a359" stroke-width="1.5"/>
+  <text x="705" y="175" text-anchor="middle" font-size="12" fill="#1e2127" font-weight="bold">Crack Offline</text>
+  <text x="705" y="193" text-anchor="middle" font-size="10" fill="#1e2127">hashcat -m 5500</text>
+
+  <rect x="630" y="240" width="150" height="50" rx="6" ry="6" fill="#98c379" stroke="#78a359" stroke-width="1.5"/>
+  <text x="705" y="260" text-anchor="middle" font-size="12" fill="#1e2127" font-weight="bold">Domain Creds</text>
+  <text x="705" y="278" text-anchor="middle" font-size="10" fill="#1e2127">→ Lateral movement</text>
+
+  <!-- Arrows: capture chain -->
+  <line x1="705" y1="120" x2="705" y2="153" stroke="#98c379" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="705" y1="205" x2="705" y2="238" stroke="#98c379" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="625" y="310" width="160" height="60" rx="4" ry="4" fill="#1e2127" stroke="#98c379" stroke-width="1"/>
+  <text x="705" y="328" text-anchor="middle" font-size="10" fill="#98c379">hashcat -m 5500 hash.txt</text>
+  <text x="705" y="343" text-anchor="middle" font-size="10" fill="#98c379">rockyou.txt</text>
+  <text x="705" y="358" text-anchor="middle" font-size="10" fill="#888">asleap -C chal -R resp</text>
+
+  <!-- Phase transition arrows -->
+  <line x1="192" y1="95" x2="228" y2="95" stroke="#e5c07b" stroke-width="1.5" marker-end="url(#arrow-yellow)"/>
+  <line x1="392" y1="95" x2="428" y2="95" stroke="#e5c07b" stroke-width="1.5" marker-end="url(#arrow-yellow)"/>
+  <line x1="592" y1="95" x2="628" y2="95" stroke="#e5c07b" stroke-width="1.5" marker-end="url(#arrow-yellow)"/>
+
+  <!-- Bottom note -->
+  <rect x="30" y="390" width="740" height="80" rx="4" ry="4" fill="#1e2127" stroke="#4b5263" stroke-width="1"/>
+  <text x="400" y="410" text-anchor="middle" font-size="11" fill="#e5c07b" font-weight="bold">Key: Tại sao attack hoạt động?</text>
+  <text x="400" y="428" text-anchor="middle" font-size="11" fill="#abb2bf">802.11 protocol KHÔNG yêu cầu AP authenticate với client → client tự chọn AP có signal mạnh nhất</text>
+  <text x="400" y="445" text-anchor="middle" font-size="11" fill="#abb2bf">PEAP chỉ yêu cầu SERVER cert (not client) → attacker dùng self-signed cert → client thường bỏ qua cảnh báo</text>
+  <text x="400" y="462" text-anchor="middle" font-size="11" fill="#e06c75">Phase 2 (MSCHAPv2) xảy ra TRƯỚC khi RADIUS thực sự authenticate → hash bị capture trong TLS tunnel của attacker</text>
+</svg>

@@ -1,0 +1,100 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg"
+     style="background:transparent;font-family:'Consolas','Monaco','Courier New',monospace;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#abb2bf"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e06c75"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#98c379"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#abb2bf">802.1X / EAP / RADIUS — Kiến trúc 3 thành phần</text>
+
+  <!-- Supplicant (Attacker target) -->
+  <rect x="30" y="70" width="160" height="80" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="110" y="103" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">Supplicant</text>
+  <text x="110" y="120" text-anchor="middle" font-size="11" fill="#ffffff">(Client Device)</text>
+  <text x="110" y="137" text-anchor="middle" font-size="10" fill="#cce5ff">Laptop / Phone</text>
+
+  <!-- Authenticator -->
+  <rect x="310" y="70" width="180" height="80" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b" stroke-width="1.5"/>
+  <text x="400" y="103" text-anchor="middle" font-size="13" fill="#abb2bf" font-weight="bold">Authenticator</text>
+  <text x="400" y="120" text-anchor="middle" font-size="11" fill="#abb2bf">(Access Point / Switch)</text>
+  <text x="400" y="137" text-anchor="middle" font-size="10" fill="#888">Port: blocked until auth</text>
+
+  <!-- RADIUS Server -->
+  <rect x="590" y="70" width="180" height="80" rx="6" ry="6" fill="#c678dd" stroke="#a558bd" stroke-width="1.5"/>
+  <text x="680" y="103" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">Auth Server</text>
+  <text x="680" y="120" text-anchor="middle" font-size="11" fill="#ffffff">(RADIUS Server)</text>
+  <text x="680" y="137" text-anchor="middle" font-size="10" fill="#e8d0f8">FreeRADIUS / IAS / NPS</text>
+
+  <!-- Arrow: Supplicant → Authenticator (EAP over LAN / 802.11) -->
+  <line x1="192" y1="110" x2="308" y2="110" stroke="#abb2bf" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="250" y="100" text-anchor="middle" font-size="11" fill="#e5c07b">EAPOL</text>
+  <text x="250" y="126" text-anchor="middle" font-size="10" fill="#888">EAP over 802.11/LAN</text>
+
+  <!-- Arrow: Authenticator → RADIUS Server -->
+  <line x1="492" y1="110" x2="588" y2="110" stroke="#abb2bf" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="540" y="100" text-anchor="middle" font-size="11" fill="#e5c07b">RADIUS</text>
+  <text x="540" y="126" text-anchor="middle" font-size="10" fill="#888">UDP 1812 / 1813</text>
+
+  <!-- EAP Exchange Detail Box -->
+  <rect x="30" y="200" width="740" height="230" rx="6" ry="6" fill="#1e2127" stroke="#4b5263" stroke-width="1"/>
+  <text x="50" y="222" font-size="12" fill="#e5c07b" font-weight="bold">▶  EAP Authentication Flow (PEAP/MSCHAPv2 — phổ biến nhất)</text>
+
+  <!-- Phase 1 label -->
+  <rect x="50" y="235" width="100" height="20" rx="3" ry="3" fill="#4b5263"/>
+  <text x="100" y="249" text-anchor="middle" font-size="11" fill="#e5c07b">Phase 1 — TLS</text>
+
+  <!-- Phase 2 label -->
+  <rect x="420" y="235" width="130" height="20" rx="3" ry="3" fill="#4b5263"/>
+  <text x="485" y="249" text-anchor="middle" font-size="11" fill="#98c379">Phase 2 — Inner Auth</text>
+
+  <!-- Flow lines - supplicant col x=110, AP col x=400, RADIUS col x=680 -->
+  <!-- Vertical lines -->
+  <line x1="110" y1="265" x2="110" y2="415" stroke="#61afef" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="400" y1="265" x2="400" y2="415" stroke="#4b5263" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="680" y1="265" x2="680" y2="415" stroke="#c678dd" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- 1. EAP-Request Identity -->
+  <line x1="400" y1="275" x2="115" y2="275" stroke="#abb2bf" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="255" y="270" text-anchor="middle" font-size="10" fill="#abb2bf">1. EAP-Request/Identity</text>
+
+  <!-- 2. EAP-Response Identity -->
+  <line x1="110" y1="295" x2="395" y2="295" stroke="#61afef" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="255" y="290" text-anchor="middle" font-size="10" fill="#61afef">2. EAP-Response/Identity (anonymous@corp)</text>
+
+  <!-- 3. TLS Handshake -->
+  <line x1="400" y1="315" x2="115" y2="315" stroke="#abb2bf" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="400" y1="315" x2="675" y2="315" stroke="#abb2bf" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="255" y="310" text-anchor="middle" font-size="10" fill="#e5c07b">3. TLS Handshake (Server Cert → Client)</text>
+
+  <!-- 4. TLS Tunnel established -->
+  <rect x="55" y="325" width="690" height="14" rx="2" ry="2" fill="#2d3139" stroke="#98c379" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="336" text-anchor="middle" font-size="10" fill="#98c379">══════ TLS Tunnel Established (Phase 2 bắt đầu) ══════</text>
+
+  <!-- 5. Inner EAP MSCHAPv2 -->
+  <line x1="110" y1="355" x2="395" y2="355" stroke="#e06c75" stroke-width="1.2" marker-end="url(#arrow-red)"/>
+  <line x1="400" y1="355" x2="675" y2="355" stroke="#e06c75" stroke-width="1.2" marker-end="url(#arrow-red)"/>
+  <text x="255" y="350" text-anchor="middle" font-size="10" fill="#e06c75">4. MSCHAPv2 Challenge/Response (inside tunnel)</text>
+
+  <!-- 6. RADIUS Access-Accept -->
+  <line x1="680" y1="378" x2="405" y2="378" stroke="#98c379" stroke-width="1.2" marker-end="url(#arrow-green)"/>
+  <text x="540" y="373" text-anchor="middle" font-size="10" fill="#98c379">5. RADIUS Access-Accept</text>
+
+  <!-- 7. Port Open -->
+  <line x1="400" y1="398" x2="115" y2="398" stroke="#98c379" stroke-width="1.2" marker-end="url(#arrow-green)"/>
+  <text x="255" y="393" text-anchor="middle" font-size="10" fill="#98c379">6. Port Authorized — Network Access Granted</text>
+
+  <!-- Attacker note -->
+  <rect x="30" y="440" width="740" height="30" rx="4" ry="4" fill="#2d1f1f" stroke="#e06c75" stroke-width="1"/>
+  <text x="400" y="460" text-anchor="middle" font-size="11" fill="#e06c75">⚠  Attacker target: Rogue AP impersonates Authenticator → captures Phase 2 credentials before RADIUS validates</text>
+</svg>

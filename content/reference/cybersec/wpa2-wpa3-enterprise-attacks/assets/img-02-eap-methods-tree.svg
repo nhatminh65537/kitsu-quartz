@@ -1,0 +1,135 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg"
+     style="background:transparent;font-family:'Consolas','Monaco','Courier New',monospace;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#abb2bf"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#abb2bf">EAP Methods Taxonomy — Outer vs Inner Authentication</text>
+
+  <!-- Root EAP -->
+  <rect x="320" y="45" width="160" height="40" rx="6" ry="6" fill="#4b5263" stroke="#abb2bf" stroke-width="1.5"/>
+  <text x="400" y="61" text-anchor="middle" font-size="13" fill="#abb2bf" font-weight="bold">EAP Framework</text>
+  <text x="400" y="77" text-anchor="middle" font-size="10" fill="#888">RFC 3748</text>
+
+  <!-- Branch lines from root -->
+  <line x1="400" y1="85" x2="400" y2="110" stroke="#abb2bf" stroke-width="1"/>
+  <line x1="120" y1="110" x2="680" y2="110" stroke="#abb2bf" stroke-width="1"/>
+
+  <!-- ── TLS-tunneled methods (left branch) ── -->
+  <line x1="180" y1="110" x2="180" y2="130" stroke="#abb2bf" stroke-width="1"/>
+
+  <!-- PEAP node -->
+  <rect x="90" y="130" width="180" height="50" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="180" y="150" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="bold">PEAP</text>
+  <text x="180" y="166" text-anchor="middle" font-size="10" fill="#cce5ff">Protected EAP (RFC 5281)</text>
+
+  <!-- PEAP sub-branch -->
+  <line x1="180" y1="180" x2="180" y2="205" stroke="#61afef" stroke-width="1"/>
+  <line x1="100" y1="205" x2="260" y2="205" stroke="#61afef" stroke-width="1"/>
+
+  <line x1="115" y1="205" x2="115" y2="220" stroke="#61afef" stroke-width="1"/>
+  <rect x="42" y="220" width="145" height="38" rx="4" ry="4" fill="#2d3a4a" stroke="#61afef" stroke-width="1"/>
+  <text x="115" y="235" text-anchor="middle" font-size="11" fill="#61afef" font-weight="bold">PEAP/MSCHAPv2</text>
+  <text x="115" y="250" text-anchor="middle" font-size="10" fill="#888">NetNTLMv1 hash capture</text>
+
+  <line x1="245" y1="205" x2="245" y2="220" stroke="#61afef" stroke-width="1"/>
+  <rect x="172" y="220" width="145" height="38" rx="4" ry="4" fill="#2d3a4a" stroke="#61afef" stroke-width="1"/>
+  <text x="245" y="235" text-anchor="middle" font-size="11" fill="#61afef" font-weight="bold">PEAP/GTC</text>
+  <text x="245" y="250" text-anchor="middle" font-size="10" fill="#e06c75">Cleartext password!</text>
+
+  <!-- Attacker arrow PEAP -->
+  <rect x="60" y="270" width="370" height="22" rx="3" ry="3" fill="#2d1f1f" stroke="#e06c75" stroke-width="1"/>
+  <text x="245" y="285" text-anchor="middle" font-size="10" fill="#e06c75">⚠ Evil Twin → capture hash (MSCHAPv2) hoặc cleartext (GTC downgrade)</text>
+
+  <!-- ── EAP-TTLS (center-left) ── -->
+  <line x1="400" y1="110" x2="400" y2="130" stroke="#abb2bf" stroke-width="1"/>
+  <rect x="310" y="130" width="180" height="50" rx="6" ry="6" fill="#61afef" stroke="#4090cf" stroke-width="1.5"/>
+  <text x="400" y="150" text-anchor="middle" font-size="12" fill="#ffffff" font-weight="bold">EAP-TTLS</text>
+  <text x="400" y="166" text-anchor="middle" font-size="10" fill="#cce5ff">Tunneled TLS (RFC 5281)</text>
+
+  <line x1="400" y1="180" x2="400" y2="205" stroke="#61afef" stroke-width="1"/>
+  <line x1="325" y1="205" x2="475" y2="205" stroke="#61afef" stroke-width="1"/>
+
+  <line x1="340" y1="205" x2="340" y2="220" stroke="#61afef" stroke-width="1"/>
+  <rect x="267" y="220" width="145" height="38" rx="4" ry="4" fill="#2d3a4a" stroke="#61afef" stroke-width="1"/>
+  <text x="340" y="235" text-anchor="middle" font-size="11" fill="#e06c75" font-weight="bold">TTLS/PAP</text>
+  <text x="340" y="250" text-anchor="middle" font-size="10" fill="#e06c75">Cleartext password!</text>
+
+  <line x1="460" y1="205" x2="460" y2="220" stroke="#61afef" stroke-width="1"/>
+  <rect x="387" y="220" width="145" height="38" rx="4" ry="4" fill="#2d3a4a" stroke="#61afef" stroke-width="1"/>
+  <text x="460" y="235" text-anchor="middle" font-size="11" fill="#61afef" font-weight="bold">TTLS/MSCHAPv2</text>
+  <text x="460" y="250" text-anchor="middle" font-size="10" fill="#888">NetNTLMv1 hash</text>
+
+  <!-- ── EAP-TLS (right branch 1) ── -->
+  <line x1="580" y1="110" x2="580" y2="130" stroke="#abb2bf" stroke-width="1"/>
+  <rect x="490" y="130" width="180" height="50" rx="6" ry="6" fill="#98c379" stroke="#78a359" stroke-width="1.5"/>
+  <text x="580" y="150" text-anchor="middle" font-size="12" fill="#1e2127" font-weight="bold">EAP-TLS</text>
+  <text x="580" y="166" text-anchor="middle" font-size="10" fill="#1e2127">Mutual cert auth (RFC 5216)</text>
+
+  <rect x="492" y="193" width="176" height="38" rx="4" ry="4" fill="#1d2b1f" stroke="#98c379" stroke-width="1"/>
+  <text x="580" y="208" text-anchor="middle" font-size="10" fill="#98c379">✓ Hardest to attack</text>
+  <text x="580" y="222" text-anchor="middle" font-size="10" fill="#888">Client cert required</text>
+  <line x1="580" y1="180" x2="580" y2="193" stroke="#98c379" stroke-width="1"/>
+
+  <!-- ── EAP-FAST / EAP-PWD (far right) ── -->
+  <line x1="700" y1="110" x2="700" y2="130" stroke="#abb2bf" stroke-width="1"/>
+  <rect x="615" y="130" width="160" height="50" rx="6" ry="6" fill="#e5c07b" stroke="#c5a05b" stroke-width="1.5"/>
+  <text x="695" y="150" text-anchor="middle" font-size="12" fill="#1e2127" font-weight="bold">EAP-PWD / FAST</text>
+  <text x="695" y="166" text-anchor="middle" font-size="10" fill="#1e2127">WPA3 Enterprise / Cisco</text>
+
+  <rect x="617" y="193" width="156" height="38" rx="4" ry="4" fill="#2b2719" stroke="#e5c07b" stroke-width="1"/>
+  <text x="695" y="208" text-anchor="middle" font-size="10" fill="#e5c07b">EAP-PWD: Dragonblood</text>
+  <text x="695" y="222" text-anchor="middle" font-size="10" fill="#888">Side-channel attacks</text>
+  <line x1="695" y1="180" x2="695" y2="193" stroke="#e5c07b" stroke-width="1"/>
+
+  <!-- Legend box -->
+  <rect x="30" y="320" width="740" height="180" rx="6" ry="6" fill="#1e2127" stroke="#4b5263" stroke-width="1"/>
+  <text x="50" y="342" font-size="12" fill="#e5c07b" font-weight="bold">▶  Attacker's Cheat Sheet — EAP Method vs Attack Vector</text>
+
+  <!-- Table header -->
+  <rect x="42" y="352" width="716" height="20" rx="3" ry="3" fill="#2d3139"/>
+  <text x="130" y="366" text-anchor="middle" font-size="11" fill="#abb2bf" font-weight="bold">EAP Method</text>
+  <text x="310" y="366" text-anchor="middle" font-size="11" fill="#abb2bf" font-weight="bold">Inner Auth</text>
+  <text x="480" y="366" text-anchor="middle" font-size="11" fill="#abb2bf" font-weight="bold">What attacker captures</text>
+  <text x="660" y="366" text-anchor="middle" font-size="11" fill="#abb2bf" font-weight="bold">Hashcat mode</text>
+
+  <!-- Row 1 -->
+  <text x="130" y="386" text-anchor="middle" font-size="11" fill="#61afef">PEAP</text>
+  <text x="310" y="386" text-anchor="middle" font-size="11" fill="#abb2bf">MSCHAPv2</text>
+  <text x="480" y="386" text-anchor="middle" font-size="11" fill="#e5c07b">NetNTLMv1 hash</text>
+  <text x="660" y="386" text-anchor="middle" font-size="11" fill="#e5c07b">-m 5500</text>
+
+  <!-- Row 2 -->
+  <text x="130" y="404" text-anchor="middle" font-size="11" fill="#61afef">PEAP</text>
+  <text x="310" y="404" text-anchor="middle" font-size="11" fill="#e06c75">GTC (downgrade)</text>
+  <text x="480" y="404" text-anchor="middle" font-size="11" fill="#e06c75">Cleartext password</text>
+  <text x="660" y="404" text-anchor="middle" font-size="11" fill="#e06c75">No crack needed</text>
+
+  <!-- Row 3 -->
+  <text x="130" y="422" text-anchor="middle" font-size="11" fill="#61afef">EAP-TTLS</text>
+  <text x="310" y="422" text-anchor="middle" font-size="11" fill="#e06c75">PAP</text>
+  <text x="480" y="422" text-anchor="middle" font-size="11" fill="#e06c75">Cleartext password</text>
+  <text x="660" y="422" text-anchor="middle" font-size="11" fill="#e06c75">No crack needed</text>
+
+  <!-- Row 4 -->
+  <text x="130" y="440" text-anchor="middle" font-size="11" fill="#61afef">EAP-TTLS</text>
+  <text x="310" y="440" text-anchor="middle" font-size="11" fill="#abb2bf">MSCHAPv2</text>
+  <text x="480" y="440" text-anchor="middle" font-size="11" fill="#e5c07b">NetNTLMv1 hash</text>
+  <text x="660" y="440" text-anchor="middle" font-size="11" fill="#e5c07b">-m 5500</text>
+
+  <!-- Row 5 -->
+  <text x="130" y="458" text-anchor="middle" font-size="11" fill="#98c379">EAP-TLS</text>
+  <text x="310" y="458" text-anchor="middle" font-size="11" fill="#98c379">Mutual cert</text>
+  <text x="480" y="458" text-anchor="middle" font-size="11" fill="#98c379">Nothing (cert-based)</text>
+  <text x="660" y="458" text-anchor="middle" font-size="11" fill="#98c379">N/A</text>
+
+  <!-- Row 6 -->
+  <text x="130" y="476" text-anchor="middle" font-size="11" fill="#e5c07b">EAP-PWD</text>
+  <text x="310" y="476" text-anchor="middle" font-size="11" fill="#e5c07b">Password-based</text>
+  <text x="480" y="476" text-anchor="middle" font-size="11" fill="#e5c07b">Side-channel / offline</text>
+  <text x="660" y="476" text-anchor="middle" font-size="11" fill="#e5c07b">dragonblood tools</text>
+</svg>

@@ -1,0 +1,111 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg"
+     style="background:transparent;font-family:'Consolas','Monaco','Courier New',monospace;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#abb2bf"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e06c75"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#98c379"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#abb2bf">Evil Twin Attack — Full Topology</text>
+
+  <!-- VICTIM CLIENT -->
+  <rect x="60" y="50" width="140" height="54" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b"/>
+  <text x="130" y="72" text-anchor="middle" font-size="13" fill="#abb2bf">Victim Client</text>
+  <text x="130" y="88" text-anchor="middle" font-size="10" fill="#abb2bf">192.168.X.X</text>
+  <text x="130" y="101" text-anchor="middle" font-size="10" fill="#abb2bf">(connected to Rogue AP)</text>
+
+  <!-- LEGITIMATE AP (faded/disabled) -->
+  <rect x="300" y="50" width="150" height="54" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b" opacity="0.4"/>
+  <text x="375" y="72" text-anchor="middle" font-size="13" fill="#abb2bf" opacity="0.5">Legitimate AP</text>
+  <text x="375" y="88" text-anchor="middle" font-size="10" fill="#abb2bf" opacity="0.5">SSID: Corp-WiFi</text>
+  <text x="375" y="101" text-anchor="middle" font-size="10" fill="#e06c75">⚡ Deauthed</text>
+
+  <!-- ROGUE AP (Attacker's) -->
+  <rect x="580" y="50" width="170" height="54" rx="6" ry="6" fill="#e06c75" stroke="#c0515f"/>
+  <text x="665" y="72" text-anchor="middle" font-size="13" fill="#ffffff">Rogue AP</text>
+  <text x="665" y="88" text-anchor="middle" font-size="10" fill="#ffffff">SSID: Corp-WiFi (clone)</text>
+  <text x="665" y="101" text-anchor="middle" font-size="10" fill="#ffffff">hostapd / airbase-ng</text>
+
+  <!-- INTERNET / UPSTREAM -->
+  <rect x="580" y="200" width="170" height="44" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b"/>
+  <text x="665" y="220" text-anchor="middle" font-size="12" fill="#abb2bf">Internet / Uplink</text>
+  <text x="665" y="235" text-anchor="middle" font-size="10" fill="#abb2bf">(eth0 or real WiFi)</text>
+
+  <!-- ATTACKER MACHINE -->
+  <rect x="560" y="320" width="210" height="64" rx="6" ry="6" fill="#e06c75" stroke="#c0515f"/>
+  <text x="665" y="342" text-anchor="middle" font-size="13" fill="#ffffff">Attacker Machine</text>
+  <text x="665" y="358" text-anchor="middle" font-size="10" fill="#ffffff">Kali Linux</text>
+  <text x="665" y="373" text-anchor="middle" font-size="10" fill="#ffffff">wlan0mon + wlan1 (AP)</text>
+
+  <!-- CAPTIVE PORTAL SERVER -->
+  <rect x="60" y="320" width="180" height="64" rx="6" ry="6" fill="#c678dd" stroke="#a558bd"/>
+  <text x="150" y="342" text-anchor="middle" font-size="12" fill="#ffffff">Captive Portal</text>
+  <text x="150" y="358" text-anchor="middle" font-size="10" fill="#ffffff">nginx / lighttpd</text>
+  <text x="150" y="373" text-anchor="middle" font-size="10" fill="#ffffff">Fake login page</text>
+
+  <!-- DHCP SERVER -->
+  <rect x="290" y="200" width="150" height="44" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b"/>
+  <text x="365" y="220" text-anchor="middle" font-size="12" fill="#abb2bf">DHCP Server</text>
+  <text x="365" y="235" text-anchor="middle" font-size="10" fill="#abb2bf">dnsmasq</text>
+
+  <!-- DNS SERVER -->
+  <rect x="60" y="200" width="150" height="44" rx="6" ry="6" fill="#4b5263" stroke="#3a3f4b"/>
+  <text x="135" y="220" text-anchor="middle" font-size="12" fill="#abb2bf">DNS Spoof</text>
+  <text x="135" y="235" text-anchor="middle" font-size="10" fill="#abb2bf">dnsmasq redirect</text>
+
+  <!-- CONNECTIONS -->
+
+  <!-- Victim -> Rogue AP (solid red - connected) -->
+  <line x1="200" y1="77" x2="578" y2="77" stroke="#e06c75" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="390" y="65" text-anchor="middle" font-size="10" fill="#e06c75">① Connect (forced/voluntary)</text>
+
+  <!-- Deauth to Legit AP -->
+  <line x1="578" y1="70" x2="452" y2="70" stroke="#e06c75" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-red)"/>
+  <text x="515" y="60" text-anchor="middle" font-size="10" fill="#e06c75">Deauth</text>
+
+  <!-- Rogue AP -> DHCP -->
+  <line x1="665" y1="104" x2="440" y2="200" stroke="#abb2bf" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="575" y="158" text-anchor="middle" font-size="10" fill="#abb2bf">② DHCP lease</text>
+
+  <!-- Rogue AP -> DNS -->
+  <line x1="600" y1="104" x2="215" y2="200" stroke="#abb2bf" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="380" y="185" text-anchor="middle" font-size="10" fill="#abb2bf">DNS redirect all</text>
+
+  <!-- Victim -> Captive Portal -->
+  <line x1="130" y1="104" x2="130" y2="318" stroke="#c678dd" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="50" y="220" text-anchor="middle" font-size="10" fill="#c678dd">③ HTTP</text>
+  <text x="50" y="232" text-anchor="middle" font-size="10" fill="#c678dd">redirect</text>
+
+  <!-- Captive Portal -> Attacker (credentials) -->
+  <line x1="240" y1="352" x2="558" y2="352" stroke="#98c379" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="400" y="344" text-anchor="middle" font-size="10" fill="#98c379">④ Credentials captured</text>
+
+  <!-- Rogue AP -> Internet -->
+  <line x1="665" y1="104" x2="665" y2="198" stroke="#abb2bf" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="710" y="160" font-size="10" fill="#abb2bf">⑤ Forward</text>
+  <text x="710" y="172" font-size="10" fill="#abb2bf">traffic</text>
+
+  <!-- Rogue AP -> Attacker -->
+  <line x1="665" y1="244" x2="665" y2="318" stroke="#e06c75" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <text x="710" y="288" font-size="10" fill="#e06c75">MitM</text>
+
+  <!-- LEGEND BOX -->
+  <rect x="10" y="420" width="780" height="50" rx="4" ry="4" fill="#4b5263" stroke="#3a3f4b"/>
+  <text x="20" y="438" font-size="11" fill="#abb2bf" font-weight="bold">Attack components:</text>
+  <rect x="140" y="428" width="10" height="10" fill="#e06c75"/>
+  <text x="154" y="438" font-size="10" fill="#abb2bf">Attacker / Rogue</text>
+  <rect x="255" y="428" width="10" height="10" fill="#c678dd"/>
+  <text x="269" y="438" font-size="10" fill="#abb2bf">Captive Portal (credential harvest)</text>
+  <rect x="445" y="428" width="10" height="10" fill="#4b5263" stroke="#abb2bf"/>
+  <text x="459" y="438" font-size="10" fill="#abb2bf">Infrastructure (DHCP/DNS)</text>
+  <text x="20" y="462" font-size="10" fill="#abb2bf">Tools: hostapd (AP) · dnsmasq (DHCP+DNS) · nginx (captive portal) · aireplay-ng (deauth) · iptables (routing)</text>
+</svg>
