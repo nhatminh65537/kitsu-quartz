@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 32px;
+    width: 1060px;
+  }
+  .title {
+    text-align: center;
+    color: #e2e8f0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: -22px;
+    margin-bottom: 28px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .branch {
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 1px solid;
+  }
+  .branch-header {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .branch-header .icon {
+    font-size: 18px;
+  }
+  .items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .items li {
+    font-size: 11.5px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #cbd5e1;
+  }
+  .hard-problem {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  /* Number Theory */
+  .nt { background: #1e1b2e; border-color: #6d28d9; }
+  .nt .branch-header { color: #a78bfa; }
+  .nt .items li { background: #2d1f4e; }
+  .nt .hard-problem { background: #3b1d8c; color: #c4b5fd; }
+
+  /* Abstract Algebra */
+  .aa { background: #1a2535; border-color: #1d4ed8; }
+  .aa .branch-header { color: #60a5fa; }
+  .aa .items li { background: #1e3a5f; }
+  .aa .hard-problem { background: #1e3a8a; color: #93c5fd; }
+
+  /* Elliptic Curves */
+  .ec { background: #1a2820; border-color: #15803d; }
+  .ec .branch-header { color: #4ade80; }
+  .ec .items li { background: #1a3a28; }
+  .ec .hard-problem { background: #14532d; color: #86efac; }
+
+  /* Lattice */
+  .lat { background: #2a1f10; border-color: #d97706; }
+  .lat .branch-header { color: #fbbf24; }
+  .lat .items li { background: #3d2a0a; }
+  .lat .hard-problem { background: #78350f; color: #fde68a; }
+
+  /* Probability */
+  .prob { background: #251a2e; border-color: #db2777; }
+  .prob .branch-header { color: #f472b6; }
+  .prob .items li { background: #3b1135; }
+  .prob .hard-problem { background: #831843; color: #fbcfe8; }
+
+  /* Complexity */
+  .comp { background: #1f2a22; border-color: #0d9488; }
+  .comp .branch-header { color: #2dd4bf; }
+  .comp .items li { background: #0f3833; }
+  .comp .hard-problem { background: #134e4a; color: #99f6e4; }
+
+  .bottom-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .primitive-chip {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .primitive-chip span {
+    color: #e2e8f0;
+    font-weight: 700;
+  }
+  .connector {
+    text-align: center;
+    color: #334155;
+    font-size: 22px;
+    margin: 8px 0 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="title">Bản đồ toán học trong mật mã</div>
+  <div class="subtitle">Mathematics of Cryptography — Reference Map</div>
+
+  <div class="grid">
+    <!-- Number Theory -->
+    <div class="branch nt">
+      <div class="branch-header"><span class="icon">🔢</span> Lý thuyết số</div>
+      <ul class="items">
+        <li>Số nguyên tố, GCD, EEA</li>
+        <li>φ(n) — Euler phi, Fermat/Euler thm</li>
+        <li>Chinese Remainder Theorem (CRT)</li>
+        <li>Quadratic residues, Legendre</li>
+        <li>p-adic numbers (Hensel lifting)</li>
+      </ul>
+      <div class="hard-problem">⚡ Hard: Factoring, DLP</div>
+    </div>
+
+    <!-- Abstract Algebra -->
+    <div class="branch aa">
+      <div class="branch-header"><span class="icon">⚙️</span> Đại số trừu tượng</div>
+      <ul class="items">
+        <li>Nhóm (Group): cyclic, abelian, order</li>
+        <li>Vành (Ring): Z/nZ, polynomial rings</li>
+        <li>Trường (Field): GF(p), GF(2ⁿ)</li>
+        <li>Extension fields, characteristic</li>
+        <li>Galois theory, automorphisms</li>
+      </ul>
+      <div class="hard-problem">⚡ Hard: DLP in groups</div>
+    </div>
+
+    <!-- Elliptic Curves -->
+    <div class="branch ec">
+      <div class="branch-header"><span class="icon">〰️</span> Đường cong Elliptic</div>
+      <ul class="items">
+        <li>Weierstrass eq., group law</li>
+        <li>Hasse theorem, torsion points</li>
+        <li>Endomorphism ring, Frobenius</li>
+        <li>Weil / Tate / Ate Pairing</li>
+        <li>Isogeny, Deuring correspondence</li>
+      </ul>
+      <div class="hard-problem">⚡ Hard: ECDLP (no Index Calculus)</div>
+    </div>
+
+    <!-- Lattice -->
+    <div class="branch lat">
+      <div class="branch-header"><span class="icon">🔷</span> Đại số tuyến tính & Lattice</div>
+      <ul class="items">
+        <li>Vector spaces over 𝔽p, basis</li>
+        <li>Lattice trong Rⁿ, determinant</li>
+        <li>Gram-Schmidt orthogonalization</li>
+        <li>SVP / CVP problems</li>
+        <li>LLL / BKZ reduction algorithms</li>
+      </ul>
+      <div class="hard-problem">⚡ Hard: SVP, LWE, SIS (PQC!)</div>
+    </div>
+
+    <!-- Probability -->
+    <div class="branch prob">
+      <div class="branch-header"><span class="icon">🎲</span> Xác suất & Thông tin</div>
+      <ul class="items">
+        <li>Shannon entropy H(X)</li>
+        <li>Perfect secrecy, mutual info</li>
+        <li>Statistical / Total variation dist.</li>
+        <li>Negligible / overwhelming prob.</li>
+        <li>Birthday paradox → collision</li>
+      </ul>
+      <div class="hard-problem">📐 Foundation: Security proofs</div>
+    </div>
+
+    <!-- Complexity -->
+    <div class="branch comp">
+      <div class="branch-header"><span class="icon">⏱️</span> Độ phức tạp tính toán</div>
+      <ul class="items">
+        <li>P, NP, BPP — classical classes</li>
+        <li>BQP — quantum complexity class</li>
+        <li>One-Way Functions (OWF)</li>
+        <li>Average-case vs. worst-case</li>
+        <li>Reduction, PPT adversary model</li>
+      </ul>
+      <div class="hard-problem">⚡ Hard: Factoring, DLP, LWE all in NP∩coNP</div>
+    </div>
+  </div>
+
+  <div class="connector">↓ ↓ ↓</div>
+  <div class="bottom-row">
+    <div class="primitive-chip"><span>RSA</span> ← Number Theory</div>
+    <div class="primitive-chip"><span>DH/ElGamal</span> ← Algebra + NT</div>
+    <div class="primitive-chip"><span>ECC/ECDSA</span> ← Elliptic Curves</div>
+    <div class="primitive-chip"><span>Kyber/Dilithium</span> ← Lattice</div>
+    <div class="primitive-chip"><span>ZK-SNARKs</span> ← EC + Pairing</div>
+    <div class="primitive-chip"><span>FHE</span> ← Ring-LWE</div>
+  </div>
+</body>
+</html>

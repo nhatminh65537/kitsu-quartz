@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 32px;
+    width: 1060px;
+  }
+  .title {
+    text-align: center; color: #e2e8f0; font-size: 20px;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center; color: #64748b; font-size: 13px; margin-bottom: 30px;
+  }
+
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr 48px 1fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .step {
+    border-radius: 12px;
+    padding: 20px 18px;
+    border: 2px solid;
+    position: relative;
+  }
+  .step-num {
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+  .step-subtitle {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 12px;
+  }
+  .item-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+  .item-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .item-value {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    flex: 1;
+  }
+  .formula-box {
+    border-radius: 7px;
+    padding: 8px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 11.5px;
+    line-height: 1.8;
+    margin-top: 10px;
+  }
+
+  /* KEM */
+  .step-kem { background: #1a2535; border-color: #1d4ed8; }
+  .step-kem .step-num { background: #1d4ed8; color: #fff; }
+  .step-kem .step-title { color: #60a5fa; }
+  .step-kem .item-label { background: #1e3a5f; color: #93c5fd; }
+  .step-kem .item-value { color: #bfdbfe; }
+  .step-kem .formula-box { background: #0d1929; color: #93c5fd; }
+
+  /* DEM */
+  .step-dem { background: #1a2820; border-color: #15803d; }
+  .step-dem .step-num { background: #15803d; color: #fff; }
+  .step-dem .step-title { color: #4ade80; }
+  .step-dem .item-label { background: #1a3a28; color: #86efac; }
+  .step-dem .item-value { color: #bbf7d0; }
+  .step-dem .formula-box { background: #0d1f15; color: #86efac; }
+
+  /* Combine */
+  .step-combine { background: #251a2e; border-color: #7c3aed; }
+  .step-combine .step-num { background: #7c3aed; color: #fff; }
+  .step-combine .step-title { color: #a78bfa; }
+  .step-combine .item-label { background: #2d1f4e; color: #c4b5fd; }
+  .step-combine .item-value { color: #e9d5ff; }
+  .step-combine .formula-box { background: #1a0f2e; color: #c4b5fd; }
+
+  /* Arrow */
+  .arrow-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 20px;
+  }
+  .arrow-shaft {
+    width: 36px; height: 2px;
+    background: #334155;
+    position: relative;
+  }
+  .arrow-shaft::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: -4px;
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 9px solid #334155;
+  }
+  .arrow-label-txt {
+    font-size: 10px; color: #475569;
+    white-space: nowrap; margin-top: 2px;
+  }
+
+  /* Decrypt section */
+  .decrypt-section {
+    margin-top: 24px;
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+  .decrypt-title {
+    color: #f59e0b;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .decrypt-steps {
+    display: flex;
+    gap: 0;
+    align-items: center;
+  }
+  .d-step {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    padding: 8px;
+  }
+  .d-arrow {
+    color: #334155;
+    font-size: 18px;
+    padding: 0 8px;
+  }
+  .d-step strong { display: block; color: #e2e8f0; margin-bottom: 3px; }
+
+  /* Security theorem */
+  .security-box {
+    margin-top: 16px;
+    background: #1a1a2e;
+    border: 1px solid #312e81;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .security-icon { font-size: 24px; flex-shrink: 0; }
+  .security-text { font-size: 12px; color: #a5b4fc; line-height: 1.6; }
+  .security-text strong { color: #c7d2fe; }
+</style>
+</head>
+<body>
+  <div class="title">KEM/DEM Hybrid Encryption — Cách mã hóa đúng trong thực tế</div>
+  <div class="subtitle">Combine asymmetric key encapsulation (KEM) + symmetric encryption (DEM) = IND-CCA2</div>
+
+  <div class="flow">
+    <!-- KEM -->
+    <div class="step step-kem">
+      <div class="step-num">1</div>
+      <div class="step-title">KEM — Key Encapsulation</div>
+      <div class="step-subtitle">Asymmetric component</div>
+
+      <div class="item-row">
+        <span class="item-label">Input</span>
+        <span class="item-value">pk (Bob's public key)</span>
+      </div>
+      <div class="item-row">
+        <span class="item-label">Random</span>
+        <span class="item-value">r ← random bits</span>
+      </div>
+
+      <div class="formula-box">
+(k, c₁) ← Encap(pk)<br>
+k  = symmetric key (32B)<br>
+c₁ = encapsulation (RSA/ECDH)
+      </div>
+
+      <div style="margin-top:10px; font-size:11px; color:#475569;">
+        Examples: DHKEM(X25519), RSA-KEM,<br>ML-KEM (Kyber) — post-quantum
+      </div>
+    </div>
+
+    <!-- Arrow 1 -->
+    <div class="arrow-col">
+      <div class="arrow-shaft"></div>
+      <div class="arrow-label-txt">k →</div>
+    </div>
+
+    <!-- DEM -->
+    <div class="step step-dem">
+      <div class="step-num">2</div>
+      <div class="step-title">DEM — Data Encapsulation</div>
+      <div class="step-subtitle">Symmetric component</div>
+
+      <div class="item-row">
+        <span class="item-label">Input</span>
+        <span class="item-value">k (from KEM) + plaintext M</span>
+      </div>
+      <div class="item-row">
+        <span class="item-label">Nonce</span>
+        <span class="item-value">n ← random (96-bit)</span>
+      </div>
+
+      <div class="formula-box">
+(c₂, tag) ← AEAD(k, M, n)<br>
+c₂  = ciphertext of M<br>
+tag = authentication tag
+      </div>
+
+      <div style="margin-top:10px; font-size:11px; color:#475569;">
+        Examples: AES-256-GCM,<br>ChaCha20-Poly1305
+      </div>
+    </div>
+
+    <!-- Arrow 2 -->
+    <div class="arrow-col">
+      <div class="arrow-shaft"></div>
+      <div class="arrow-label-txt">combine</div>
+    </div>
+
+    <!-- Combine -->
+    <div class="step step-combine">
+      <div class="step-num">3</div>
+      <div class="step-title">Final Ciphertext</div>
+      <div class="step-subtitle">Sent to recipient</div>
+
+      <div class="item-row">
+        <span class="item-label">C</span>
+        <span class="item-value">= (c₁ ‖ c₂ ‖ tag ‖ n)</span>
+      </div>
+
+      <div class="formula-box">
+c₁ = KEM encapsulation<br>
+c₂ = encrypted message<br>
+tag = AEAD auth tag<br>
+n  = nonce (often in c₂)
+      </div>
+
+      <div style="margin-top:10px; font-size:11px; color:#475569;">
+        Key k is NEVER transmitted!<br>
+        Only encapsulation c₁ is sent.
+      </div>
+    </div>
+  </div>
+
+  <!-- Decrypt -->
+  <div class="decrypt-section">
+    <div class="decrypt-title">🔓 Decryption (Bob, has sk)</div>
+    <div class="decrypt-steps">
+      <div class="d-step">
+        <strong>Receive C</strong>
+        parse (c₁, c₂, tag, n)
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-step">
+        <strong>KEM Decap</strong>
+        k ← Decap(sk, c₁)
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-step">
+        <strong>AEAD Verify</strong>
+        Check tag with k
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-step">
+        <strong>AEAD Decrypt</strong>
+        M ← Dec(k, c₂, n)
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-step">
+        <strong>Output M</strong>
+        or ⊥ if tag invalid
+      </div>
+    </div>
+  </div>
+
+  <!-- Security theorem -->
+  <div class="security-box">
+    <div class="security-icon">🛡️</div>
+    <div class="security-text">
+      <strong>Security Theorem (KEM/DEM):</strong>
+      Nếu KEM đạt <strong>IND-CCA2</strong> và DEM đạt <strong>IND-CCA2</strong>,
+      thì Hybrid scheme đạt <strong>IND-CCA2</strong>. Đây là nền tảng của
+      TLS 1.3 (ECDHE + AES-GCM), HPKE (RFC 9180), Signal Protocol, và hầu hết
+      public-key encryption trong thực tế. Key k không bao giờ được truyền đi — chỉ có encapsulation c₁.
+    </div>
+  </div>
+</body>
+</html>

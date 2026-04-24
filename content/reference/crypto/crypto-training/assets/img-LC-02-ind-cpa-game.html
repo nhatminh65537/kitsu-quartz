@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 32px;
+    width: 1060px;
+  }
+  .title {
+    text-align: center; color: #e2e8f0; font-size: 20px;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center; color: #64748b; font-size: 13px; margin-bottom: 30px;
+  }
+
+  .game-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 0;
+  }
+
+  /* Participants */
+  .participant {
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .participant-icon { font-size: 32px; margin-bottom: 8px; }
+  .participant-name {
+    font-size: 15px; font-weight: 800; margin-bottom: 4px;
+  }
+  .participant-role {
+    font-size: 11px; text-align: center; line-height: 1.5;
+  }
+  .participant-state {
+    margin-top: 12px;
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 11px;
+    font-family: monospace;
+    line-height: 1.7;
+  }
+
+  .adversary { background: #2a0f0f; border: 2px solid #991b1b; }
+  .adversary .participant-name { color: #f87171; }
+  .adversary .participant-role { color: #fca5a5; }
+  .adversary .participant-state { background: #1a0505; color: #fca5a5; }
+
+  .challenger { background: #0f1a2e; border: 2px solid #1e40af; }
+  .challenger .participant-name { color: #60a5fa; }
+  .challenger .participant-role { color: #93c5fd; }
+  .challenger .participant-state { background: #050f1a; color: #93c5fd; }
+
+  /* Steps column */
+  .steps-col {
+    padding: 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .step-block {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* Phase header */
+  .phase-header {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin: 8px 0 4px;
+  }
+
+  /* Message arrow */
+  .msg-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    position: relative;
+  }
+  .msg-label {
+    font-size: 11px;
+    font-family: monospace;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .msg-arrow {
+    flex: 1;
+    height: 2px;
+    position: relative;
+  }
+  .msg-arrow::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  .arrow-right .msg-arrow { background: #334155; }
+  .arrow-right .msg-arrow::after {
+    right: 0;
+    border-left: 9px solid #334155;
+  }
+  .arrow-left .msg-arrow { background: #334155; }
+  .arrow-left .msg-arrow::after {
+    left: 0;
+    border-right: 9px solid #334155;
+  }
+  .msg-desc {
+    font-size: 10.5px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 1px;
+    padding: 0 4px;
+  }
+
+  /* Phase colors */
+  .phase-setup { background: #1a3a28; color: #4ade80; }
+  .phase-query1 { background: #1e3a5f; color: #60a5fa; }
+  .phase-challenge { background: #3d2a0a; color: #fbbf24; }
+  .phase-query2 { background: #1e3a5f; color: #60a5fa; }
+  .phase-guess { background: #2a1a2e; color: #c4b5fd; }
+
+  .adv-sends { background: #1a0505; color: #fca5a5; }
+  .chal-sends { background: #050f1a; color: #93c5fd; }
+
+  /* Win condition */
+  .win-box {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .win-card {
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid;
+  }
+  .win-card h4 { font-size: 13px; margin-bottom: 7px; }
+  .win-card p { font-size: 11.5px; line-height: 1.6; }
+
+  .win-success { background: #1a3a28; border-color: #15803d; }
+  .win-success h4 { color: #4ade80; }
+  .win-success p { color: #86efac; }
+
+  .win-secure { background: #1e1b2e; border-color: #6d28d9; }
+  .win-secure h4 { color: #a78bfa; }
+  .win-secure p { color: #c4b5fd; }
+</style>
+</head>
+<body>
+  <div class="title">IND-CPA Security Game — PKE</div>
+  <div class="subtitle">Challenger C ↔ Adversary A • A wins nếu đoán đúng b với advantage non-negligible</div>
+
+  <div class="game-layout">
+
+    <!-- Adversary -->
+    <div class="participant adversary">
+      <div class="participant-icon">😈</div>
+      <div class="participant-name">Adversary 𝒜</div>
+      <div class="participant-role">PPT algorithm<br>Mục tiêu: phân biệt<br>Enc(m₀) vs Enc(m₁)</div>
+      <div class="participant-state">
+Input: pk<br>
+Can query:<br>
+  Enc(pk, ·) oracle<br>
+<br>
+Output: b' ∈ {0,1}<br>
+(guess về b)
+      </div>
+    </div>
+
+    <!-- Steps column -->
+    <div class="steps-col">
+
+      <!-- Setup -->
+      <div class="phase-header phase-setup">① SETUP</div>
+      <div class="msg-row arrow-right">
+        <div class="msg-label chal-sends">pk</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-desc">C runs KeyGen(1λ) → (pk, sk)<br>sends pk to 𝒜</div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="phase-header phase-query1">② PHASE 1 — Query (optional)</div>
+      <div class="msg-row arrow-left">
+        <div class="msg-desc">𝒜 chọn m để học ciphertext pattern</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-label adv-sends">m</div>
+      </div>
+      <div class="msg-row arrow-right">
+        <div class="msg-label chal-sends">Enc(pk, m)</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-desc">C encrypts và trả về ciphertext</div>
+      </div>
+      <div style="text-align:center; font-size:10.5px; color:#475569; padding:2px 0;">↻ lặp nhiều lần</div>
+
+      <!-- Challenge -->
+      <div class="phase-header phase-challenge">③ CHALLENGE</div>
+      <div class="msg-row arrow-left">
+        <div class="msg-desc">𝒜 gửi hai messages có cùng độ dài</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-label adv-sends">m₀, m₁</div>
+      </div>
+      <div class="msg-row arrow-right">
+        <div class="msg-label chal-sends" style="background:#3d2a0a; color:#fbbf24;">c* = Enc(pk, m_b)</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-desc">C chọn b ←$ {0,1}<br>gửi challenge ciphertext</div>
+      </div>
+
+      <!-- Phase 2 (CPA: no Dec oracle) -->
+      <div class="phase-header phase-query2">④ PHASE 2 — Query (CPA: tiếp tục Enc)</div>
+      <div class="msg-row arrow-left">
+        <div class="msg-desc">Tiếp tục query Enc — CPA không có Dec oracle</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-label adv-sends">m</div>
+      </div>
+      <div class="msg-row arrow-right">
+        <div class="msg-label chal-sends">Enc(pk, m)</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-desc">C trả về ciphertext</div>
+      </div>
+
+      <!-- Guess -->
+      <div class="phase-header phase-guess">⑤ GUESS</div>
+      <div class="msg-row arrow-left">
+        <div class="msg-desc">𝒜 output guess sau khi phân tích c*</div>
+        <div class="msg-arrow"></div>
+        <div class="msg-label adv-sends" style="background:#2a1a2e; color:#c4b5fd;">b' ∈ {0,1}</div>
+      </div>
+
+    </div>
+
+    <!-- Challenger -->
+    <div class="participant challenger">
+      <div class="participant-icon">⚖️</div>
+      <div class="participant-name">Challenger 𝒞</div>
+      <div class="participant-role">Represents the scheme<br>Holds sk bí mật<br>Chọn b ngẫu nhiên</div>
+      <div class="participant-state">
+KeyGen(1λ):<br>
+  pk, sk ← ...<br>
+<br>
+Challenge step:<br>
+  b ←$ {0,1}<br>
+  c* = Enc(pk, m_b)<br>
+<br>
+Win check:<br>
+  b' = b ?
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Win conditions -->
+  <div class="win-box">
+    <div class="win-card win-success">
+      <h4>🏆 𝒜 wins nếu...</h4>
+      <p>
+        <strong>Pr[b' = b] ≥ ½ + ε</strong> với ε non-negligible.<br><br>
+        Advantage: <strong>Adv = |Pr[b'=b] − ½|</strong><br>
+        Adversary đoán đúng thường xuyên hơn tung đồng xu.
+      </p>
+    </div>
+    <div class="win-card win-secure">
+      <h4>🛡️ Scheme IND-CPA secure nếu...</h4>
+      <p>
+        Với mọi PPT adversary 𝒜: <strong>Adv ≤ negl(λ)</strong><br><br>
+        Tức là không có thuật toán đa thức nào phân biệt được tốt hơn đoán mù.<br>
+        <strong>Hệ quả</strong>: Enc phải probabilistic!
+      </p>
+    </div>
+  </div>
+</body>
+</html>

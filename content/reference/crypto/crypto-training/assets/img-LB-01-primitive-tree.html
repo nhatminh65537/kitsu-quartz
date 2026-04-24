@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f1117; font-family: 'Segoe UI', system-ui, sans-serif; padding: 26px; width: 1060px; }
+  .title { text-align: center; color: #e2e8f0; font-size: 20px; font-weight: 700; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #64748b; font-size: 12.5px; margin-bottom: 20px; }
+  .root { text-align: center; margin-bottom: 12px; }
+  .root-chip { display: inline-block; background: linear-gradient(135deg,#1e293b,#0f172a); border: 2px solid #475569; border-radius: 12px; padding: 9px 26px; color: #e2e8f0; font-size: 15px; font-weight: 800; }
+  .top-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .bottom-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+  .column { border-radius: 10px; border: 2px solid; overflow: hidden; }
+  .col-header { padding: 8px 12px; font-size: 12px; font-weight: 800; }
+  .col-body { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
+  .prim-item { border-radius: 6px; padding: 6px 9px; font-size: 11px; }
+  .pname { font-weight: 700; display: block; margin-bottom: 1px; }
+  .pdesc { font-size: 10px; opacity: 0.78; display: block; }
+  .warn { display: inline-block; background: #dc2626; color: #fff; border-radius: 3px; font-size: 9px; padding: 1px 4px; font-weight: 700; margin-left: 3px; }
+  .ok { display: inline-block; background: #15803d; color: #fff; border-radius: 3px; font-size: 9px; padding: 1px 4px; font-weight: 700; margin-left: 3px; }
+  .sym { border-color: #1d4ed8; background: #0a1628; }
+  .sym .col-header { background: #1d4ed8; color: #fff; }
+  .sym .prim-item { background: #1e3a5f; color: #93c5fd; }
+  .asym { border-color: #7c3aed; background: #130f22; }
+  .asym .col-header { background: #7c3aed; color: #fff; }
+  .asym .prim-item { background: #2d1f4e; color: #c4b5fd; }
+  .build { border-color: #d97706; background: #1a1000; }
+  .build .col-header { background: #d97706; color: #fff; }
+  .build .prim-item { background: #3d2a0a; color: #fde68a; }
+  .zkp { border-color: #059669; background: #001a0d; }
+  .zkp .col-header { background: #059669; color: #fff; }
+  .zkp .prim-item { background: #1a3a28; color: #86efac; }
+  .kdf { border-color: #0891b2; background: #001a22; }
+  .kdf .col-header { background: #0891b2; color: #fff; }
+  .kdf .prim-item { background: #0c2a35; color: #67e8f9; }
+  .csprng { border-color: #9333ea; background: #150a22; }
+  .csprng .col-header { background: #9333ea; color: #fff; }
+  .csprng .prim-item { background: #2a1040; color: #d8b4fe; }
+  .pwd { border-color: #dc2626; background: #1a0505; }
+  .pwd .col-header { background: #dc2626; color: #fff; }
+  .pwd .prim-item { background: #3d0f0f; color: #fca5a5; }
+  .inter { border-color: #db2777; background: #1a0012; }
+  .inter .col-header { background: #db2777; color: #fff; }
+  .inter .prim-item { background: #3a0028; color: #f9a8d4; }
+  .hard-row { margin-top: 10px; display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .hard-chip { border-radius: 7px; padding: 7px 10px; text-align: center; font-size: 10.5px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="title">Bản đồ Cryptographic Primitives — Phân loại đầy đủ</div>
+  <div class="subtitle">8 nhóm: Symmetric · Asymmetric · KDF · CSPRNG · Password Hashing · Building Blocks · ZKP · Interactive/MPC</div>
+  <div class="root"><div class="root-chip">🔐 Cryptographic Primitives</div></div>
+
+  <div class="top-row">
+    <div class="column sym">
+      <div class="col-header">🔑 SYMMETRIC</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">Block Ciphers</span><span class="pdesc">AES-128/256, DES/3DES, Camellia, PRESENT, SIMON/SPECK (lightweight)</span></div>
+        <div class="prim-item"><span class="pname">Stream Ciphers</span><span class="pdesc">ChaCha20, Salsa20, Trivium; RC4 <span class="warn">LEGACY</span></span></div>
+        <div class="prim-item"><span class="pname">Hash Functions (unkeyed)</span><span class="pdesc">SHA-2/3, BLAKE2/3; MD5/SHA-1 <span class="warn">BROKEN</span></span></div>
+        <div class="prim-item"><span class="pname">MACs / AEAD</span><span class="pdesc">HMAC, KMAC, Poly1305, AES-GCM (AEAD), SipHash, GHASH</span></div>
+      </div>
+    </div>
+    <div class="column asym">
+      <div class="col-header">🔓 ASYMMETRIC</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">PKE</span><span class="pdesc">RSA-OAEP, ElGamal, Cramer-Shoup, HPKE (RFC 9180)</span></div>
+        <div class="prim-item"><span class="pname">KEM</span><span class="pdesc">DHKEM, ML-KEM (Kyber), NTRU, McEliece, FrodoKEM</span></div>
+        <div class="prim-item"><span class="pname">Key Exchange</span><span class="pdesc">DH, ECDH, X25519, X448 — ephemeral cho Forward Secrecy</span></div>
+        <div class="prim-item"><span class="pname">Digital Signatures</span><span class="pdesc">RSA-PSS, ECDSA, EdDSA, Schnorr, BLS, ML-DSA (Dilithium)</span></div>
+        <div class="prim-item"><span class="pname">Identity / Functional</span><span class="pdesc">IBE (Boneh-Franklin), ABE (CP/KP-ABE), FE, Searchable Enc.</span></div>
+      </div>
+    </div>
+    <div class="column build">
+      <div class="col-header">🧱 BUILDING BLOCKS</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">OWF / PRG / PRF / PRP</span><span class="pdesc">Theoretical foundations — OWF→PRG→PRF→PRP chain (HILL thm)</span></div>
+        <div class="prim-item"><span class="pname">Commitment Schemes</span><span class="pdesc">Pedersen (perfectly hiding), hash-based, KZG polynomial commitment</span></div>
+        <div class="prim-item"><span class="pname">Oblivious Transfer (OT)</span><span class="pdesc">1-of-2 OT — base primitive của mọi MPC; Naor-Pinkas, IKNP OT ext.</span></div>
+        <div class="prim-item"><span class="pname">Secret Sharing</span><span class="pdesc">Shamir (t,n) info-theoretic; Additive; VSS verifiable</span></div>
+        <div class="prim-item"><span class="pname">VRF</span><span class="pdesc">Verifiable Random Function — Algorand, Chainlink VRF, ETH RANDAO</span></div>
+      </div>
+    </div>
+    <div class="column zkp">
+      <div class="col-header">✨ ZERO-KNOWLEDGE</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">Sigma-protocols</span><span class="pdesc">Schnorr PoK, Chaum-Pedersen; Fiat-Shamir → NIZK</span></div>
+        <div class="prim-item"><span class="pname">zk-SNARKs</span><span class="pdesc">Groth16 (192B proof), PLONK, Halo2, Marlin — trusted setup</span></div>
+        <div class="prim-item"><span class="pname">zk-STARKs</span><span class="pdesc">FRI-based, transparent (no setup), PQ-secure — StarkWare, Miden</span></div>
+        <div class="prim-item"><span class="pname">Bulletproofs</span><span class="pdesc">No trusted setup, log-size range proofs — Monero, Liquid Network</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="column kdf">
+      <div class="col-header">🔧 KDF — Key Derivation</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">HKDF (RFC 5869) <span class="ok">★</span></span><span class="pdesc">Extract+Expand từ secret material. TLS 1.3, Signal, WireGuard, Age</span></div>
+        <div class="prim-item"><span class="pname">PBKDF2</span><span class="pdesc">Password-based, iterated HMAC (PKCS#5). Prefer Argon2 cho passwords</span></div>
+        <div class="prim-item"><span class="pname">NIST SP 800-108</span><span class="pdesc">Counter/feedback/pipeline mode — derive multiple symmetric keys</span></div>
+        <div class="prim-item"><span class="pname">Double Ratchet KDF</span><span class="pdesc">Signal Protocol — KDF chain cho forward secrecy per-message</span></div>
+      </div>
+    </div>
+    <div class="column csprng">
+      <div class="col-header">🎲 CSPRNG / DRBG</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">CTR_DRBG (NIST) <span class="ok">★</span></span><span class="pdesc">SP 800-90A. AES-CTR core. HSM, TLS nonce, FIPS-certified platforms</span></div>
+        <div class="prim-item"><span class="pname">HMAC_DRBG</span><span class="pdesc">RFC 6979 deterministic ECDSA nonce. SHA-2 core. Widely deployed</span></div>
+        <div class="prim-item"><span class="pname">ChaCha20-based</span><span class="pdesc">Linux /dev/urandom, arc4random() — fast, no AES-NI dependency</span></div>
+        <div class="prim-item"><span class="pname">Dual_EC_DRBG <span class="warn">BACKDOOR</span></span><span class="pdesc">NSA backdoor 2006-2014. NIST withdrawn 2014. Never use.</span></div>
+      </div>
+    </div>
+    <div class="column pwd">
+      <div class="col-header">🔒 PASSWORD HASHING</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">Argon2id <span class="ok">RECOMMENDED</span></span><span class="pdesc">PHC winner 2015. Memory-hard + side-channel resistant. OWASP recommend</span></div>
+        <div class="prim-item"><span class="pname">scrypt</span><span class="pdesc">Memory-hard + CPU-hard. Litecoin PoW, WPA3-Enterprise</span></div>
+        <div class="prim-item"><span class="pname">bcrypt</span><span class="pdesc">Blowfish 1999. Still adequate; 72-byte input limit (truncation risk)</span></div>
+        <div class="prim-item"><span class="pname">PBKDF2 <span class="warn">WEAK</span></span><span class="pdesc">Not memory-hard → GPU-friendly crack. Django, iOS keychain legacy</span></div>
+        <div class="prim-item"><span class="pname">MD5 / SHA plain <span class="warn">NEVER</span></span><span class="pdesc">Rainbow tables crack in seconds. Không bao giờ dùng cho mật khẩu.</span></div>
+      </div>
+    </div>
+    <div class="column inter">
+      <div class="col-header">🤝 INTERACTIVE / MPC / FHE</div>
+      <div class="col-body">
+        <div class="prim-item"><span class="pname">MPC (Multi-Party Computation)</span><span class="pdesc">Garbled circuits (Yao), GMW, SPDZ — compute f(x₁…xₙ) privately</span></div>
+        <div class="prim-item"><span class="pname">FHE</span><span class="pdesc">BGV, BFV, CKKS (approx/ML), TFHE — arbitrary compute on ciphertext</span></div>
+        <div class="prim-item"><span class="pname">PSI / PIR / ORAM</span><span class="pdesc">Private Set Intersection, Private Info Retrieval, Oblivious RAM</span></div>
+        <div class="prim-item"><span class="pname">Threshold Crypto</span><span class="pdesc">t-of-n signing/decryption. DKG, TSS — no single point of failure</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hard-row">
+    <div class="hard-chip" style="background:#1e3a5f;color:#93c5fd;">⚡ Sym: PRF/PRG/PRP — OWF existence assumed</div>
+    <div class="hard-chip" style="background:#2d1f4e;color:#c4b5fd;">⚡ Asym: Factoring · DLP · ECDLP · LWE · SIS</div>
+    <div class="hard-chip" style="background:#0c2a35;color:#67e8f9;">🔑 KDF/CSPRNG: PRF security of underlying hash/cipher</div>
+    <div class="hard-chip" style="background:#1a3a28;color:#86efac;">⚡ ZKP/MPC: DLP · Pairing · LWE + Soundness assumptions</div>
+  </div>
+</body>
+</html>

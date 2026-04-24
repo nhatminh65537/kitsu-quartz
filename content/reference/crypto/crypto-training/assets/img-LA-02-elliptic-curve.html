@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 32px;
+    width: 1060px;
+  }
+  .title {
+    text-align: center;
+    color: #e2e8f0;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* Canvas area */
+  .canvas-wrap {
+    background: #111827;
+    border: 1px solid #1e3a5f;
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+  }
+  canvas {
+    display: block;
+    border-radius: 8px;
+  }
+  .canvas-label {
+    text-align: center;
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  /* Right panel */
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .formula-box {
+    background: #111827;
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid #1e3a5f;
+  }
+  .formula-box h3 {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+  }
+  .formula {
+    background: #0d1929;
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #a5f3fc;
+    margin-bottom: 6px;
+    line-height: 1.7;
+  }
+  .formula .comment {
+    color: #475569;
+    font-size: 11px;
+  }
+
+  .cases-box {
+    background: #111827;
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid #14532d;
+  }
+  .cases-box h3 {
+    color: #4ade80;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .case-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .case-badge {
+    background: #14532d;
+    color: #86efac;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .case-desc {
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .group-box {
+    background: #1a1a2e;
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid #312e81;
+  }
+  .group-box h3 {
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .axiom {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+  .axiom-num {
+    color: #6d28d9;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="title">Elliptic Curve — Group Law (Chord-and-Tangent)</div>
+  <div class="subtitle">y² = x³ + ax + b (mod p) — Cấu trúc nhóm trên đường cong</div>
+
+  <div class="layout">
+    <!-- Canvas -->
+    <div class="canvas-wrap">
+      <canvas id="cv" width="440" height="340"></canvas>
+      <div class="canvas-label">y² = x³ − 3x + 3 (minh họa trên ℝ) • P + Q = R qua chord-and-tangent</div>
+    </div>
+
+    <!-- Right: formulas + axioms -->
+    <div class="right-panel">
+      <div class="formula-box">
+        <h3>📐 Addition Formulas (P ≠ Q)</h3>
+        <div class="formula">
+λ = (y₂ − y₁) · (x₂ − x₁)⁻¹  mod p<br>
+x₃ = λ² − x₁ − x₂            mod p<br>
+y₃ = λ(x₁ − x₃) − y₁         mod p<br>
+<span class="comment">→  P + Q = (x₃, y₃)</span>
+        </div>
+        <h3 style="margin-top:10px;">📐 Doubling Formulas (P = Q)</h3>
+        <div class="formula">
+λ = (3x₁² + a) · (2y₁)⁻¹     mod p<br>
+x₃ = λ² − 2x₁                 mod p<br>
+y₃ = λ(x₁ − x₃) − y₁         mod p<br>
+<span class="comment">→  2P = (x₃, y₃)</span>
+        </div>
+      </div>
+
+      <div class="cases-box">
+        <h3>⚡ Các trường hợp đặc biệt</h3>
+        <div class="case-item">
+          <span class="case-badge">P + 𝒪</span>
+          <span class="case-desc">Identity element: 𝒪 là điểm tại vô cực, mọi P + 𝒪 = P</span>
+        </div>
+        <div class="case-item">
+          <span class="case-badge">P + (−P)</span>
+          <span class="case-desc">Nghịch đảo: −(x,y) = (x,−y); cộng lại cho 𝒪</span>
+        </div>
+        <div class="case-item">
+          <span class="case-badge">x₁ = x₂</span>
+          <span class="case-desc">Nếu y₁ = −y₂: P + Q = 𝒪 (vertical line → infinity)</span>
+        </div>
+        <div class="case-item">
+          <span class="case-badge">Non-singular</span>
+          <span class="case-desc">Δ = −16(4a³+27b²) ≠ 0 đảm bảo không có cusp/node</span>
+        </div>
+      </div>
+
+      <div class="group-box">
+        <h3>✓ E(𝔽p) là nhóm Abel vì:</h3>
+        <div class="axiom"><span class="axiom-num">1.</span> <span>Đóng — P+Q ∈ E(𝔽p) với mọi P,Q</span></div>
+        <div class="axiom"><span class="axiom-num">2.</span> <span>Kết hợp — (P+Q)+R = P+(Q+R)</span></div>
+        <div class="axiom"><span class="axiom-num">3.</span> <span>Identity — 𝒪 là phần tử đơn vị</span></div>
+        <div class="axiom"><span class="axiom-num">4.</span> <span>Nghịch đảo — với P=(x,y), −P=(x,−y)</span></div>
+        <div class="axiom"><span class="axiom-num">5.</span> <span>Giao hoán — P+Q = Q+P (abelian)</span></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+const W = cv.width, H = cv.height;
+
+// Dark background
+ctx.fillStyle = '#0d1117';
+ctx.fillRect(0, 0, W, H);
+
+// Coordinate transform
+const ox = 160, oy = H/2;
+const scale = 60;
+function tx(x) { return ox + x * scale; }
+function ty(y) { return oy - y * scale; }
+
+// Grid
+ctx.strokeStyle = '#1e293b';
+ctx.lineWidth = 1;
+for (let i = -2; i <= 4; i++) {
+  ctx.beginPath(); ctx.moveTo(tx(i), 20); ctx.lineTo(tx(i), H-20);
+  ctx.stroke();
+}
+for (let j = -2; j <= 2; j++) {
+  ctx.beginPath(); ctx.moveTo(30, ty(j)); ctx.lineTo(W-20, ty(j));
+  ctx.stroke();
+}
+
+// Axes
+ctx.strokeStyle = '#334155';
+ctx.lineWidth = 1.5;
+ctx.beginPath(); ctx.moveTo(30, oy); ctx.lineTo(W-20, oy); ctx.stroke();
+ctx.beginPath(); ctx.moveTo(ox, 15); ctx.lineTo(ox, H-15); ctx.stroke();
+
+// Axis labels
+ctx.fillStyle = '#475569';
+ctx.font = '11px monospace';
+ctx.fillText('x', W-15, oy+4);
+ctx.fillText('y', ox+6, 22);
+
+// Curve: y² = x³ - 3x + 3
+function curveY(x) {
+  const rhs = x*x*x - 3*x + 3;
+  return rhs >= 0 ? Math.sqrt(rhs) : null;
+}
+
+// Draw curve (upper + lower branch)
+ctx.strokeStyle = '#22d3ee';
+ctx.lineWidth = 2.5;
+ctx.shadowColor = '#22d3ee';
+ctx.shadowBlur = 6;
+
+for (let branch = 0; branch <= 1; branch++) {
+  ctx.beginPath();
+  let first = true;
+  for (let px = 30; px < W-20; px++) {
+    const x = (px - ox) / scale;
+    const yv = curveY(x);
+    if (yv === null) { first = true; continue; }
+    const y = branch === 0 ? yv : -yv;
+    const py = ty(y);
+    if (first) { ctx.moveTo(px, py); first = false; }
+    else ctx.lineTo(px, py);
+  }
+  ctx.stroke();
+}
+ctx.shadowBlur = 0;
+
+// Points P and Q
+const Px = -1.2, Py = curveY(Px);
+const Qx = 0.5, Qy = curveY(Qx);
+// Compute R = P + Q
+const lam = (Qy - Py) / (Qx - Px);
+const Rx = lam*lam - Px - Qx;
+const Ry = lam*(Px - Rx) - Py; // y of P+Q
+
+// Draw chord P→Q extended to find -R, then reflect to R
+// Chord line extended
+const x_left = -2.5, x_right = 3.5;
+const y_left = Py + lam*(x_left - Px);
+const y_right = Py + lam*(x_right - Px);
+
+ctx.strokeStyle = '#f59e0b';
+ctx.lineWidth = 1.5;
+ctx.setLineDash([5,3]);
+ctx.beginPath();
+ctx.moveTo(tx(x_left), ty(y_left));
+ctx.lineTo(tx(x_right), ty(y_right));
+ctx.stroke();
+ctx.setLineDash([]);
+
+// Vertical dashed line from -R to R
+ctx.strokeStyle = '#a78bfa';
+ctx.lineWidth = 1.5;
+ctx.setLineDash([4,3]);
+ctx.beginPath();
+ctx.moveTo(tx(Rx), ty(-Ry));
+ctx.lineTo(tx(Rx), ty(Ry));
+ctx.stroke();
+ctx.setLineDash([]);
+
+// Draw points
+function dot(x, y, color, label, labelDx, labelDy) {
+  ctx.beginPath();
+  ctx.arc(tx(x), ty(y), 6, 0, Math.PI*2);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.strokeStyle = '#0d1117';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.fillStyle = color;
+  ctx.font = 'bold 14px Segoe UI';
+  ctx.fillText(label, tx(x)+labelDx, ty(y)+labelDy);
+}
+
+dot(Px, Py, '#60a5fa', 'P', 8, -8);
+dot(Qx, Qy, '#34d399', 'Q', 8, -8);
+dot(Rx, -Ry, '#f87171', '−R', 8, -8);
+dot(Rx, Ry, '#fbbf24', 'R=P+Q', 8, 18);
+
+// Arrow from -R to R
+ctx.strokeStyle = '#a78bfa';
+ctx.lineWidth = 2;
+const arrowY1 = ty(-Ry), arrowY2 = ty(Ry);
+const midX = tx(Rx);
+ctx.beginPath();
+ctx.moveTo(midX, arrowY1 + 10);
+ctx.lineTo(midX, arrowY2 - 10);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(midX-5, arrowY2-15);
+ctx.lineTo(midX, arrowY2-5);
+ctx.lineTo(midX+5, arrowY2-15);
+ctx.fillStyle = '#a78bfa';
+ctx.fill();
+
+// Reflect label
+ctx.fillStyle = '#a78bfa';
+ctx.font = '11px Segoe UI';
+ctx.fillText('reflect', tx(Rx)+8, (arrowY1+arrowY2)/2);
+</script>
+</body>
+</html>

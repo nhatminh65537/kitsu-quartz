@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 32px;
+    width: 1060px;
+  }
+  .title {
+    text-align: center; color: #e2e8f0; font-size: 20px;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center; color: #64748b; font-size: 13px; margin-bottom: 32px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* PKE column */
+  .pke-col, .sig-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .col-title {
+    font-size: 14px; font-weight: 800;
+    padding: 8px 16px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  .notion-card {
+    padding: 14px 16px;
+    border-left: 3px solid;
+    border-right: 3px solid;
+    position: relative;
+  }
+  .notion-card:last-child {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 3px solid;
+  }
+  .notion-name {
+    font-size: 15px; font-weight: 800;
+    margin-bottom: 3px;
+  }
+  .notion-full {
+    font-size: 11px; opacity: 0.7; margin-bottom: 6px; letter-spacing: 0.2px;
+  }
+  .notion-desc { font-size: 12px; line-height: 1.5; }
+  .notion-oracle {
+    margin-top: 7px;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+  .strength-badge {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* PKE colors — gradient from weak to strong */
+  .pke-ow   { background: #0f1f0f; border-color: #166534; color: #86efac; }
+  .pke-ow   .notion-name { color: #4ade80; }
+  .pke-ow   .notion-oracle { background: #1a3a28; color: #86efac; }
+  .pke-ow   .strength-badge { background: #14532d; color: #86efac; }
+
+  .pke-cpa  { background: #0f1a2e; border-color: #1e40af; color: #93c5fd; }
+  .pke-cpa  .notion-name { color: #60a5fa; }
+  .pke-cpa  .notion-oracle { background: #1e3a5f; color: #93c5fd; }
+  .pke-cpa  .strength-badge { background: #1e3a8a; color: #93c5fd; }
+
+  .pke-cca1 { background: #1a1428; border-color: #5b21b6; color: #c4b5fd; }
+  .pke-cca1 .notion-name { color: #a78bfa; }
+  .pke-cca1 .notion-oracle { background: #2d1f4e; color: #c4b5fd; }
+  .pke-cca1 .strength-badge { background: #4c1d95; color: #c4b5fd; }
+
+  .pke-cca2 { background: #2a0f0f; border-color: #991b1b; color: #fca5a5; }
+  .pke-cca2 .notion-name { color: #f87171; }
+  .pke-cca2 .notion-oracle { background: #450a0a; color: #fca5a5; }
+  .pke-cca2 .strength-badge { background: #7f1d1d; color: #fca5a5; }
+
+  /* PKE col header */
+  .pke-header { background: #1e40af; color: #fff; border: 3px solid #1e40af; }
+  /* Sig header */
+  .sig-header { background: #d97706; color: #fff; border: 3px solid #d97706; }
+
+  /* Signature colors */
+  .sig-euf  { background: #1a1000; border-color: #d97706; color: #fde68a; }
+  .sig-euf  .notion-name { color: #fbbf24; }
+  .sig-euf  .notion-oracle { background: #3d2a0a; color: #fde68a; }
+  .sig-euf  .strength-badge { background: #78350f; color: #fde68a; }
+
+  .sig-suf  { background: #1a0a00; border-color: #c2410c; color: #fed7aa; }
+  .sig-suf  .notion-name { color: #fb923c; }
+  .sig-suf  .notion-oracle { background: #431407; color: #fed7aa; }
+  .sig-suf  .strength-badge { background: #7c2d12; color: #fed7aa; }
+
+  /* Arrow between cards */
+  .notion-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f1117;
+    padding: 2px 0;
+    position: relative;
+    z-index: 2;
+  }
+  .arrow-txt {
+    font-size: 10.5px; color: #475569;
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  /* Bottom: adversary models */
+  .adv-row {
+    margin-top: 22px;
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .adv-title {
+    color: #94a3b8; font-size: 13px; font-weight: 700; margin-bottom: 12px;
+  }
+  .adv-chips {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .adv-chip {
+    flex: 1;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+  .adv-sep { color: #334155; font-size: 18px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+  <div class="title">Security Notions — Từ yếu nhất đến mạnh nhất</div>
+  <div class="subtitle">Hierarchy cho PKE và Digital Signatures • Mũi tên: notion yếu hơn ⇒ notion mạnh hơn</div>
+
+  <div class="two-col">
+
+    <!-- PKE Column -->
+    <div class="pke-col">
+      <div class="col-title pke-header">🔒 PKE — Public-Key Encryption</div>
+
+      <div class="notion-card pke-ow">
+        <span class="strength-badge">WEAKEST</span>
+        <div class="notion-name">OW-CPA</div>
+        <div class="notion-full">One-Wayness under Chosen-Plaintext Attack</div>
+        <div class="notion-desc">Adversary không thể recover plaintext m từ ciphertext Enc(pk, m), dù có encryption oracle.</div>
+        <div class="notion-oracle">Oracle: Enc(pk, ·)  |  Goal: recover m</div>
+      </div>
+
+      <div class="notion-arrow">
+        <div class="arrow-txt">⬇ IND ⇒ OW (không đổi chiều)</div>
+      </div>
+
+      <div class="notion-card pke-cpa">
+        <div class="notion-name">IND-CPA</div>
+        <div class="notion-full">Indistinguishability under CPA • = Semantic Security</div>
+        <div class="notion-desc">Adversary gửi (m₀, m₁), nhận Enc(pk, mᵦ) ngẫu nhiên. Không phân biệt b được. Yêu cầu: Enc phải probabilistic!</div>
+        <div class="notion-oracle">Oracle: Enc(pk, ·)  |  Goal: guess b</div>
+      </div>
+
+      <div class="notion-arrow">
+        <div class="arrow-txt">⬇ CCA1 ⇒ CPA (không đổi chiều)</div>
+      </div>
+
+      <div class="notion-card pke-cca1">
+        <div class="notion-name">IND-CCA1</div>
+        <div class="notion-full">Non-Adaptive CCA • "Lunchtime Attack"</div>
+        <div class="notion-desc">Thêm decryption oracle — nhưng chỉ được query TRƯỚC khi nhận challenge ciphertext c*.</div>
+        <div class="notion-oracle">Oracles: Enc + Dec(sk, ·) [only before c*]</div>
+      </div>
+
+      <div class="notion-arrow">
+        <div class="arrow-txt">⬇ CCA2 ⇒ CCA1 (không đổi chiều)</div>
+      </div>
+
+      <div class="notion-card pke-cca2">
+        <span class="strength-badge">STRONGEST</span>
+        <div class="notion-name">IND-CCA2</div>
+        <div class="notion-full">Adaptive CCA • Standard for Modern Crypto</div>
+        <div class="notion-desc">Decryption oracle cả sau challenge — trừ c* chính nó. Equivalent to NM-CCA2 (non-malleability).</div>
+        <div class="notion-oracle">Oracles: Enc + Dec(sk, ·≠c*)  |  Goal: guess b</div>
+      </div>
+    </div>
+
+    <!-- Signature Column -->
+    <div class="sig-col">
+      <div class="col-title sig-header">✍️ Digital Signatures</div>
+
+      <div class="notion-card sig-euf" style="flex:1">
+        <span class="strength-badge">Standard</span>
+        <div class="notion-name">EUF-CMA</div>
+        <div class="notion-full">Existential Unforgeability under CMA</div>
+        <div class="notion-desc">Adversary có signing oracle — query chữ ký cho bất kỳ message nào. Mục tiêu: tạo (m*, σ*) hợp lệ với m* chưa từng được ký. "Existential" — chỉ cần forge một signature nào đó.</div>
+        <div class="notion-oracle">Oracle: Sign(sk, ·)  |  Goal: forge (m*, σ*) with m* new</div>
+
+        <div style="margin-top:14px; font-size:11.5px; color:#fde68a; line-height:1.6;">
+          <strong>Examples đạt EUF-CMA:</strong><br>
+          • RSA-PSS (ROM, dưới RSA assumption)<br>
+          • ECDSA (ROM, dưới ECDLP)<br>
+          • Schnorr (ROM, dưới DLP — via Forking Lemma)<br>
+          • EdDSA (ROM, dưới ECDLP)<br>
+          • BLS signature (ROM, dưới co-CDH)
+        </div>
+      </div>
+
+      <div class="notion-arrow">
+        <div class="arrow-txt">⬇ SUF-CMA ⇒ EUF-CMA (không đổi chiều)</div>
+      </div>
+
+      <div class="notion-card sig-suf" style="flex:1">
+        <span class="strength-badge">Stronger</span>
+        <div class="notion-name">SUF-CMA</div>
+        <div class="notion-full">Strong Existential Unforgeability under CMA</div>
+        <div class="notion-desc">Mạnh hơn EUF: adversary không thể forge kể cả signature MỚI cho message CŨ đã được ký trước đó. Tức là (m*, σ*) với m* = mᵢ nhưng σ* ≠ σᵢ cũng không cho phép.</div>
+        <div class="notion-oracle">Oracle: Sign(sk, ·)  |  Goal: forge any NEW (m*, σ*) pair</div>
+
+        <div style="margin-top:14px; font-size:11.5px; color:#fed7aa; line-height:1.6;">
+          <strong>Examples đạt SUF-CMA:</strong><br>
+          • EdDSA (deterministic — cùng message → cùng σ)<br>
+          • RSA-PSS với random salt lớn đủ<br>
+          <strong>Không đạt SUF:</strong> RSA-PKCS#1 v1.5 (malleable), ECDSA (có thể có σ khác)
+        </div>
+      </div>
+
+      <!-- Bonus: Hash security -->
+      <div style="margin-top:14px; background:#1f2937; border:1px solid #374151; border-radius:10px; padding:14px;">
+        <div style="color:#94a3b8; font-size:12px; font-weight:700; margin-bottom:8px;">🔑 Hash Function Security</div>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:11.5px; color:#cbd5e1; line-height:1.5;">
+          <div><strong style="color:#a78bfa;">Collision Resistance</strong> — Khó tìm (x₁≠x₂): H(x₁)=H(x₂) — Birthday bound: O(2^{n/2})</div>
+          <div><strong style="color:#60a5fa;">2nd Preimage Resistance</strong> — Cho x₁, khó tìm x₂≠x₁: H(x₁)=H(x₂)</div>
+          <div><strong style="color:#4ade80;">Preimage Resistance</strong> — Cho y, khó tìm x: H(x)=y — O(2^n)</div>
+          <div style="color:#475569; font-size:10.5px; margin-top:4px;">Collision-R ⇒ 2nd-Preimage-R ⇒ Preimage-R (không đổi chiều)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Adversary models -->
+  <div class="adv-row">
+    <div class="adv-title">Adversary Models — Từ yếu (passive) → mạnh (active)</div>
+    <div class="adv-chips">
+      <div class="adv-chip" style="background:#1a3a1a; color:#86efac;">COA<br><span style="font-weight:400; font-size:10px;">Ciphertext only</span></div>
+      <div class="adv-sep">→</div>
+      <div class="adv-chip" style="background:#1a2a3a; color:#93c5fd;">KPA<br><span style="font-weight:400; font-size:10px;">Known plaintext</span></div>
+      <div class="adv-sep">→</div>
+      <div class="adv-chip" style="background:#1e3a5f; color:#60a5fa;">CPA<br><span style="font-weight:400; font-size:10px;">Chosen plaintext</span></div>
+      <div class="adv-sep">→</div>
+      <div class="adv-chip" style="background:#2d1f4e; color:#c4b5fd;">CCA1<br><span style="font-weight:400; font-size:10px;">CCA non-adaptive</span></div>
+      <div class="adv-sep">→</div>
+      <div class="adv-chip" style="background:#450a0a; color:#fca5a5;">CCA2<br><span style="font-weight:400; font-size:10px;">CCA adaptive</span></div>
+      <div class="adv-sep">→</div>
+      <div class="adv-chip" style="background:#1a1a00; color:#fde68a;">RKA<br><span style="font-weight:400; font-size:10px;">Related-key</span></div>
+    </div>
+  </div>
+</body>
+</html>
