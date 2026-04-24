@@ -1,5 +1,5 @@
 ---
-title: "CLB Cryptography Training — Master Index"
+title: "The Compass of Cryptography"
 type: index
 tags: [crypto, ctf, roadmap, index]
 created: 2026-04-24

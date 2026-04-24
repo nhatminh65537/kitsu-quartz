@@ -144,7 +144,7 @@ graph TD
 
 #### 3.2.1. MACs — Message Authentication Codes
 
-**Câu chuyện**: Ngân hàng A gửi lệnh chuyển tiền "Transfer $1000 to account 12345" cho ngân hàng B qua kênh mã hóa. Kẻ tấn công Mallory chặn ciphertext, flip một vài bit, và gửi lại. Ngân hàng B decrypt được "$1000 to account 67890". Không ai biết gì. Đây là **malleability** — và MAC giải quyết vấn đề này.
+**Câu chuyện**: Ngân hàng A gửi lệnh chuyển tiền "Transfer \$1000 to account 12345" cho ngân hàng B qua kênh mã hóa. Kẻ tấn công Mallory chặn ciphertext, flip một vài bit, và gửi lại. Ngân hàng B decrypt được "\$1000 to account 67890". Không ai biết gì. Đây là **malleability** — và MAC giải quyết vấn đề này.
 
 > [!note] Định nghĩa: MAC
 > Một **Message Authentication Code (MAC)** gồm ba thuật toán $(K\text{gen}, \text{Mac}, \text{Verify})$:
