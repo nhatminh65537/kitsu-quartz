@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 32px;
+  }
+  .canvas {
+    width: 860px;
+    background: #161b27;
+    border-radius: 16px;
+    padding: 36px 40px 40px;
+    border: 1px solid #2a3145;
+  }
+  h1 {
+    text-align: center;
+    color: #e2e8f0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0.7;
+  }
+
+  /* --- actors --- */
+  .actors-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .actor {
+    flex: 1;
+    border-radius: 12px;
+    padding: 18px 14px 16px;
+    text-align: center;
+    border: 1.5px solid;
+  }
+  .actor.user   { background: #0d1f3c; border-color: #3b82f6; }
+  .actor.signer { background: #1a1030; border-color: #a855f7; }
+  .actor.verify { background: #0f2318; border-color: #22c55e; }
+
+  .actor .icon { font-size: 26px; margin-bottom: 6px; }
+  .actor .name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .actor.user   .name { color: #93c5fd; }
+  .actor.signer .name { color: #d8b4fe; }
+  .actor.verify .name { color: #86efac; }
+
+  .actor .desc {
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  .actor .key {
+    margin-top: 9px;
+    font-size: 10.5px;
+    font-family: monospace;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .actor.user   .key { background: #1e3a5f; color: #60a5fa; }
+  .actor.signer .key { background: #2d1b4e; color: #c084fc; }
+  .actor.verify .key { background: #14391f; color: #4ade80; }
+
+  /* --- phases --- */
+  .phases {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .phase {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+  }
+  .phase-label {
+    width: 86px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 14px;
+  }
+  .phase-label .num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+  .phase-label .title {
+    font-size: 10.5px;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  .ph1 .num, .ph1 .title { color: #60a5fa; }
+  .ph2 .num, .ph2 .title { color: #c084fc; }
+  .ph3 .num, .ph3 .title { color: #4ade80; }
+
+  /* flow track */
+  .track {
+    flex: 1;
+    height: 52px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid;
+  }
+  .ph1 .track { background: #0a1628; border-color: #1e3a6e; }
+  .ph2 .track { background: #160c28; border-color: #3b1a6e; }
+  .ph3 .track { background: #071a0e; border-color: #124a22; }
+
+  /* dots for parties in track */
+  .dot {
+    position: absolute;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .dot-u { left: 14%; background: #3b82f6; }
+  .dot-s { left: 50%; transform: translateX(-50%); }
+  .dot-v { right: 14%; }
+  .ph1 .dot-s { background: #a855f7; }
+  .ph1 .dot-v { background: #64748b; }
+  .ph2 .dot-s { background: #a855f7; }
+  .ph2 .dot-v { background: #64748b; }
+  .ph3 .dot-s { background: #64748b; }
+  .ph3 .dot-v { background: #22c55e; }
+
+  /* arrows */
+  .arrow {
+    position: absolute;
+    height: 2px;
+    display: flex;
+    align-items: center;
+  }
+  .arrow-line {
+    flex: 1;
+    height: 2px;
+  }
+  .arrowhead {
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    flex-shrink: 0;
+  }
+
+  /* ph1: user->signer */
+  .ph1 .arr1 { left: calc(14% + 10px); right: calc(50% + 8px); top: 50%; transform: translateY(-50%); }
+  .ph1 .arr1 .arrow-line { background: #3b82f6; }
+  .ph1 .arr1 .arrowhead { border-left: 8px solid #3b82f6; }
+
+  /* ph2: signer->user */
+  .ph2 .arr1 { left: calc(14% + 10px); right: calc(50% + 8px); top: 50%; transform: translateY(-50%); flex-direction: row-reverse; }
+  .ph2 .arr1 .arrow-line { background: #a855f7; }
+  .ph2 .arr1 .arrowhead { border-right: 8px solid #a855f7; }
+
+  /* ph3: user->verifier */
+  .ph3 .arr1 { left: calc(14% + 10px); right: calc(14% + 10px); top: 50%; transform: translateY(-50%); }
+  .ph3 .arr1 .arrow-line { background: #22c55e; }
+  .ph3 .arr1 .arrowhead { border-left: 8px solid #22c55e; }
+
+  .msg {
+    position: absolute;
+    top: 4px;
+    font-size: 9.5px;
+    font-family: monospace;
+    white-space: nowrap;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  .ph1 .msg { color: #93c5fd; background: #0d1f3c; left: 25%; }
+  .ph2 .msg { color: #d8b4fe; background: #1a1030; left: 18%; }
+  .ph3 .msg { color: #86efac; background: #0f2318; left: 30%; }
+
+  .sub-msg {
+    position: absolute;
+    bottom: 3px;
+    font-size: 9px;
+    color: #64748b;
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .ph1 .sub-msg { left: 24%; }
+  .ph2 .sub-msg { left: 18%; }
+  .ph3 .sub-msg { left: 28%; }
+
+  /* legend */
+  .legend {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10.5px;
+    color: #94a3b8;
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* property tags */
+  .props {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .prop-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+  .prop-tag.blindness { background: #1e3a5f; color: #60a5fa; border: 1px solid #2563eb; }
+  .prop-tag.omuf      { background: #2d1b4e; color: #c084fc; border: 1px solid #7c3aed; }
+  .prop-tag.correct   { background: #14391f; color: #4ade80; border: 1px solid #16a34a; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <h1>Blind Signature — Participants &amp; Protocol Phases</h1>
+
+  <!-- actors -->
+  <div class="actors-row">
+    <div class="actor user">
+      <div class="icon">👤</div>
+      <div class="name">USER</div>
+      <div class="desc">Muốn ký message <em>m</em><br>mà không để lộ nội dung</div>
+      <span class="key">pk, m, blinding factor r</span>
+    </div>
+    <div class="actor signer">
+      <div class="icon">✍️</div>
+      <div class="name">SIGNER</div>
+      <div class="desc">Ký mù trên blinded message<br>không biết <em>m</em> thực sự</div>
+      <span class="key">sk, pk</span>
+    </div>
+    <div class="actor verify">
+      <div class="icon">🔍</div>
+      <div class="name">VERIFIER</div>
+      <div class="desc">Xác minh chữ ký trên <em>m</em><br>không liên kết được với session</div>
+      <span class="key">pk, m, σ</span>
+    </div>
+  </div>
+
+  <!-- phases -->
+  <div class="phases">
+
+    <!-- Phase 1: Blind -->
+    <div class="phase ph1">
+      <div class="phase-label">
+        <div class="num">PHASE 1</div>
+        <div class="title">BLIND</div>
+      </div>
+      <div class="track">
+        <div class="dot dot-u"></div>
+        <div class="dot dot-s"></div>
+        <div class="dot dot-v"></div>
+        <div class="arrow arr1">
+          <div class="arrow-line"></div>
+          <div class="arrowhead"></div>
+        </div>
+        <div class="msg">m&#770; = Blind(m, r)</div>
+        <div class="sub-msg">User làm mờ message trước khi gửi</div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Sign -->
+    <div class="phase ph2">
+      <div class="phase-label">
+        <div class="num">PHASE 2</div>
+        <div class="title">SIGN</div>
+      </div>
+      <div class="track">
+        <div class="dot dot-u"></div>
+        <div class="dot dot-s"></div>
+        <div class="dot dot-v"></div>
+        <div class="arrow arr1">
+          <div class="arrowhead"></div>
+          <div class="arrow-line"></div>
+        </div>
+        <div class="msg">&#963;&#770; = Sign(sk, m&#770;)</div>
+        <div class="sub-msg">Signer ký trên blinded message</div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Unblind + Verify -->
+    <div class="phase ph3">
+      <div class="phase-label">
+        <div class="num">PHASE 3</div>
+        <div class="title">UNBLIND</div>
+      </div>
+      <div class="track">
+        <div class="dot dot-u"></div>
+        <div class="dot dot-s"></div>
+        <div class="dot dot-v"></div>
+        <div class="arrow arr1">
+          <div class="arrow-line"></div>
+          <div class="arrowhead"></div>
+        </div>
+        <div class="msg">&#963; = Unblind(&#963;&#770;, r)  &#x2192;  Verify(pk, m, &#963;)</div>
+        <div class="sub-msg">User bỏ blinding, gửi (m, σ) cho Verifier</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- security property tags -->
+  <div class="props">
+    <span class="prop-tag blindness">Blindness: Signer không link được m với σ</span>
+    <span class="prop-tag omuf">OMUF: Không forge thêm chữ ký</span>
+    <span class="prop-tag correct">Correctness: Verify(pk, m, σ) = 1</span>
+  </div>
+</div>
+</body>
+</html>

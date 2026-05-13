@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    padding: 32px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: #e2e8f0;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  /* Left: matrix */
+  .matrix-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .matrix-label {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .matrix-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bracket {
+    font-size: 72px;
+    line-height: 1;
+    color: #475569;
+    font-weight: 100;
+    user-select: none;
+  }
+
+  table.matrix {
+    border-collapse: separate;
+    border-spacing: 4px;
+  }
+
+  table.matrix td {
+    width: 52px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* Row 1..ℓ: trivial rows */
+  .row-trivial td { background: #1e293b; color: #64748b; }
+  /* Last row: target */
+  .row-target td { background: #1e3a5f; color: #60a5fa; font-weight: 700; }
+
+  /* Highlight the diagonal (ones) */
+  td.one { background: #1d4038; color: #34d399; font-weight: 800; }
+  td.one-t { background: #162044; color: #60a5fa; font-weight: 800; }
+  td.zero { color: #334155; }
+
+  /* equals vector c* */
+  .eq-sign { font-size: 22px; color: #475569; padding: 0 8px; align-self: center; }
+
+  .rhs-block { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .rhs-cell {
+    width: 52px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .rhs-normal { background: #1e293b; color: #94a3b8; }
+  .rhs-target { background: #1e3a5f; color: #60a5fa; font-weight: 800; }
+
+  /* Right: legend */
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    background: #161b2e;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    min-width: 260px;
+  }
+
+  .legend-title { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+
+  .legend-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .dot-trivial { background: #1d4038; border: 1.5px solid #34d399; }
+  .dot-target { background: #162044; border: 1.5px solid #60a5fa; }
+  .dot-rhs-n { background: #1e293b; border: 1.5px solid #475569; }
+  .dot-rhs-t { background: #1e3a5f; border: 1.5px solid #60a5fa; }
+
+  .legend-text { color: #94a3b8; }
+  .legend-text strong { color: #e2e8f0; }
+
+  /* Bottom annotation */
+  .annotation {
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .ann-box {
+    background: #161b2e;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 340px;
+  }
+  .ann-box strong { color: #e2e8f0; }
+  .ann-box .tag {
+    display: inline-block;
+    background: #1d4038;
+    color: #34d399;
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  .ann-box .tag-b {
+    background: #162044;
+    color: #60a5fa;
+  }
+
+  .dim-label {
+    font-size: 11px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<h2>ROS Attack — Overdetermined Linear System</h2>
+
+<div class="container">
+
+  <!-- Matrix side -->
+  <div class="matrix-block">
+    <div class="matrix-label">coefficient matrix A &nbsp; (ℓ+1 rows × ℓ cols)</div>
+
+    <div class="matrix-wrap">
+      <span class="bracket">[</span>
+
+      <table class="matrix">
+        <!-- Row 1: (1,0,...,0) trivial -->
+        <tr class="row-trivial">
+          <td class="one">1</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">·</td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="row-trivial">
+          <td class="zero">0</td><td class="one">1</td><td class="zero">0</td><td class="zero">0</td><td class="zero">·</td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="row-trivial">
+          <td class="zero">0</td><td class="zero">0</td><td class="one">1</td><td class="zero">0</td><td class="zero">·</td>
+        </tr>
+        <!-- Row ℓ = 4 -->
+        <tr class="row-trivial">
+          <td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="one">1</td><td class="zero">·</td>
+        </tr>
+        <!-- Separator row -->
+        <tr><td colspan="5" style="height:2px; background:#1e293b; padding:0;"></td></tr>
+        <!-- Target row ℓ+1 -->
+        <tr class="row-target">
+          <td class="one-t">ρ₁</td><td class="one-t">ρ₂</td><td class="one-t">ρ₃</td><td class="one-t">ρ₄</td><td class="one-t">·</td>
+        </tr>
+      </table>
+
+      <span class="bracket">]</span>
+    </div>
+
+    <div class="dim-label">(ℓ+1) × ℓ &nbsp;·&nbsp; c = c*</div>
+
+    <!-- RHS -->
+    <div style="display:flex; align-items:center; gap:8px; margin-top: 10px;">
+      <span style="font-size:13px; color:#475569;">A · c =</span>
+      <div class="rhs-block">
+        <div class="rhs-cell rhs-normal">c*₁</div>
+        <div class="rhs-cell rhs-normal">c*₂</div>
+        <div class="rhs-cell rhs-normal">c*₃</div>
+        <div class="rhs-cell rhs-normal">c*₄</div>
+        <div style="height:2px; background:#1e293b; width:52px;"></div>
+        <div class="rhs-cell rhs-target">c*ₗ₊₁</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-title">Legend</div>
+
+    <div class="legend-row">
+      <div class="legend-dot dot-trivial"></div>
+      <div class="legend-text">
+        <strong>Rows 1 … ℓ (trivial sessions)</strong><br>
+        Unit vector e_i: session i sends commitment R_i,<br>
+        gets challenge c_i = H_ros(e_i) = c*_i directly.<br>
+        Adversary picks aux_i so hash returns c_i.
+      </div>
+    </div>
+
+    <div class="legend-row">
+      <div class="legend-dot dot-target"></div>
+      <div class="legend-text">
+        <strong>Row ℓ+1 (target session)</strong><br>
+        Coefficient vector ρ̂ = (ρ₁,…,ρₗ) chosen so that<br>
+        H_ros(ρ̂) = ⟨ρ̂, c⟩ = Σ ρ_i·c_i mod p.<br>
+        This produces the extra forgery.
+      </div>
+    </div>
+
+    <div class="legend-row">
+      <div class="legend-dot dot-rhs-t"></div>
+      <div class="legend-text">
+        <strong>c*_ℓ+1 (target hash value)</strong><br>
+        Must satisfy inner product constraint.<br>
+        Benhamouda et al.: write c*_ℓ+1 in binary;<br>
+        each bit ↔ one dimension → polynomial-time<br>
+        solution when ℓ ≥ log₂ p.
+      </div>
+    </div>
+
+    <div style="border-top:1px solid #1e293b; padding-top:12px;">
+      <div class="legend-title" style="margin-bottom:8px;">Complexity</div>
+      <div class="legend-text" style="font-size:12px; line-height:1.8;">
+        <strong>Wagner (2002)</strong>: sub-exponential O(ℓ · 2^(log p / log ℓ))<br>
+        <strong>Benhamouda+ (2021)</strong>: polynomial when ℓ ≥ log p<br>
+        <span style="color:#f87171;">→ Schnorr blind sig broken in practice</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom annotation -->
+<div class="annotation">
+  <div class="ann-box">
+    <span class="tag">OMUF break</span>
+    Solving ROS gives ℓ+1 valid Schnorr blind signatures after only ℓ signing interactions.
+    Adversary opens ℓ sessions, uses the ℓ hash values c*_1,…,c*_ℓ to construct the
+    target row, and outputs one extra forgery without any additional session.
+  </div>
+  <div class="ann-box">
+    <span class="tag tag-b">Key insight</span>
+    The overdetermined system (ℓ+1 equations, ℓ unknowns) has a solution because
+    the adversary freely chooses the coefficient vectors ρ̂_i — she is not forced to
+    use specific commitments. This freedom is exactly what concurrent sessions provide
+    and sequential sessions deny.
+  </div>
+</div>
+
+</body>
+</html>
