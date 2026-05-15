@@ -39,33 +39,12 @@ Tuy nhiên, "blindifying" ECDSA khó hơn đáng kể so với Schnorr hay RSA. 
 
 ---
 
-## ECDSA-ROS Attack
-
-Trước khi xây dựng scheme, cần hiểu attack generic nhất trên blind ECDSA — tương tự ROS attack trên Schnorr.
-
-> [!danger] ECDSA-ROS Attack
-> Cho $\ell$ signing session cho ra các chữ ký $(r_j, s_j)$ trên messages $m_j$, adversary tìm vector $\vec{\rho} = (\rho_1, \ldots, \rho_\ell) \in \mathbb{Z}_q^\ell$ sao cho ba phương trình sau đồng thời thỏa mãn với message $m^*$ và điểm $R^*$:
->
-> $$
-> \frac{H(m^*)}{s^*} = \sum_{j=1}^\ell \rho_j \frac{H(m_j)}{s_j} \pmod{q}
-> $$
->
-> $$
-> \frac{r^*}{s^*} = \sum_{j=1}^\ell \rho_j \frac{r_j}{s_j} \pmod{q}, \qquad R^* = \sum_{j=1}^\ell \rho_j R_j
-> $$
->
-> Nếu tìm được $(\vec{\rho}, m^*, R^*, s^*)$ thỏa ba phương trình, cặp $(r^* = f(R^*), s^*)$ là chữ ký hợp lệ trên $m^*$ mà không cần session thứ $\ell + 1$.
-
-ECDSA-ROS attack khó hơn ROS attack thông thường (Lesson 12) vì phải giải đồng thời ba phương trình với hai hàm phi tuyến $f$ và $H$. Tác giả Qin et al. (2021) đề xuất đây là assumption độc lập có thể là hard.
-
----
-
 ## Generic Construction: HE + NIZK
 
 Ý tưởng cốt lõi: dùng **additive homomorphic encryption (HE)** để Signer tính $k^{-1}(H(m) + dr)$ mà không học được $H(m)$ hay $m$.
 
 > [!note] Scheme 5.1 — Generic Blind ECDSA (Qin-Cai-Yuen 2021)
-> **Type**: Blind Digital Signature
+> **Type**: Blind Digital Signature  
 > **Setting**: EC group $\mathbb{G}$ bậc $q$, generator $G$; additive HE scheme $\mathsf{HE}$; NIZK proof system $\mathsf{NIZK}$; hash $H: \{0,1\}^* \to \mathbb{Z}_q$
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**
@@ -113,15 +92,21 @@ ECDSA-ROS attack khó hơn ROS attack thông thường (Lesson 12) vì phải gi
 sequenceDiagram
     participant U as User (pk, m)
     participant S as Signer (sk=d)
-    Note over S: Chon k_a; A = k_a * G
+
+    Note over S: Chọn k_a<br/>A = k_a · G
     S->>U: A
-    Note over U: Chon k_b; R = k_b * A; r = f(R)
-    Note over U: Enc h=H(m) va r; tao NIZK proof pi
-    U->>S: (upk, C_h, C_r, pi)
-    Note over S: Verify pi; tinh C_s = k_a^{-1}(C_h + d*C_r)
+
+    Note over U: Chọn k_b<br/>R = k_b · A<br/>r = f(R)
+
+    Note over U: Enc h = H(m) và r<br/>Tạo NIZK proof pi
+    U->>S: upk, C_h, C_r, pi
+
+    Note over S: Verify pi<br/>C_s = k_a^{-1} · (C_h + d · C_r)
     S->>U: C_s
-    Note over U: Decrypt s_a; unblind s = k_b^{-1} * s_a
-    Note over U: sigma = (r, s) -- standard ECDSA sig
+
+    Note over U: Decrypt s_a<br/>s = k_b^{-1} · s_a
+
+    Note over U: sigma = (r, s)<br/>Standard ECDSA signature
 ```
 
 ---
@@ -178,6 +163,27 @@ Một paper gần đây (Maire & Pulval-Dady, 2025) đề xuất cách tiếp c�
 > - **Concurrent OMUF**: Reduction extract $m$ và query standard ECDSA oracle — không cần ABRO
 >
 > Đây là first construction với concurrent OMUF dưới standard ECDSA assumption.
+
+---
+
+## ECDSA-ROS Attack
+
+Trước khi xây dựng scheme, cần hiểu attack generic nhất trên blind ECDSA — tương tự ROS attack trên Schnorr.
+
+> [!danger] ECDSA-ROS Attack
+> Cho $\ell$ signing session cho ra các chữ ký $(r_j, s_j)$ trên messages $m_j$, adversary tìm vector $\vec{\rho} = (\rho_1, \ldots, \rho_\ell) \in \mathbb{Z}_q^\ell$ sao cho ba phương trình sau đồng thời thỏa mãn với message $m^*$ và điểm $R^*$:
+>
+> $$
+> \frac{H(m^*)}{s^*} = \sum_{j=1}^\ell \rho_j \frac{H(m_j)}{s_j} \pmod{q}
+> $$
+>
+> $$
+> \frac{r^*}{s^*} = \sum_{j=1}^\ell \rho_j \frac{r_j}{s_j} \pmod{q}, \qquad R^* = \sum_{j=1}^\ell \rho_j R_j
+> $$
+>
+> Nếu tìm được $(\vec{\rho}, m^*, R^*, s^*)$ thỏa ba phương trình, cặp $(r^* = f(R^*), s^*)$ là chữ ký hợp lệ trên $m^*$ mà không cần session thứ $\ell + 1$.
+
+ECDSA-ROS attack khó hơn ROS attack thông thường (Lesson 12) vì phải giải đồng thời ba phương trình với hai hàm phi tuyến $f$ và $H$. Tác giả Qin et al. (2021) đề xuất đây là assumption độc lập có thể là hard.
 
 ---
 

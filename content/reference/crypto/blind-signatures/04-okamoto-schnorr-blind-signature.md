@@ -6,7 +6,7 @@ aliases: [Okamoto-Schnorr Blind Signature]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], [[03-schnorr-blind-signature|03. Schnorr Blind Signature]], witness indistinguishability cơ bản
+> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], [[03-schnorr-blind-signature|03. Schnorr Blind Signature]], witness indistinguishability cơ bản  
 > **Lesson type**: Scheme
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -34,10 +34,10 @@ Pointcheval & Stern (1996/2000) dùng Okamoto-Schnorr làm scheme nền để x�
 ## Mathematical Setting
 
 > [!note] Setting 4.0 — Okamoto Group
-> **Primes**: $p, q$ nguyên tố với $q \mid (p-1)$; subgroup $\mathbb{G}$ bậc $q$ trong $\mathbb{Z}_p^*$.
-> **Two generators**: $g, h \in \mathbb{G}$ với $\log_g h$ **không biết** với bất kỳ ai (kể cả Signer). Đây là yêu cầu thiết yếu.
-> **Secret key**: $(r, s) \in \mathbb{Z}_q^2$ — hai giá trị độc lập.
-> **Public key**: $y = g^{-r} h^{-s} \bmod p$.
+> **Primes**: $p, q$ nguyên tố với $q \mid (p-1)$; subgroup $\mathbb{G}$ bậc $q$ trong $\mathbb{Z}_p^*$.  
+> **Two generators**: $g, h \in \mathbb{G}$ với $\log_g h$ **không biết** với bất kỳ ai (kể cả Signer). Đây là yêu cầu thiết yếu.  
+> **Secret key**: $(r, s) \in \mathbb{Z}_q^2$ — hai giá trị độc lập.  
+> **Public key**: $y = g^{-r} h^{-s} \bmod p$.  
 > **Hash**: $f : \{0,1\}^* \to \mathbb{Z}_q$ (random oracle).
 
 ---
@@ -59,7 +59,7 @@ Tính chất quan trọng nhất của Okamoto-Schnorr là mỗi public key $y$ 
 ## Scheme Definition
 
 > [!note] Scheme 4.2 — Okamoto-Schnorr Blind Signature (Pointcheval-Stern)
-> **Type**: Blind Digital Signature
+> **Type**: Blind Digital Signature  
 > **Setting**: Subgroup $\mathbb{G}$ bậc $q$ trong $\mathbb{Z}_p^*$, hai generator $g, h$; hash $f: \{0,1\}^* \to \mathbb{Z}_q$
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**
@@ -99,16 +99,22 @@ Tính chất quan trọng nhất của Okamoto-Schnorr là mỗi public key $y$ 
 ```mermaid
 sequenceDiagram
     participant U as User (pk=y, m)
-    participant S as Signer (sk = r,s)
-    Note over S: Chon (t,u); a = g**t * h**u
+    participant S as Signer (sk=r,s)
+
+    Note over S: Chọn t,u<br/>a = g^t · h^u
     S->>U: a
-    Note over U: Chon (beta, gamma, delta)
-    Note over U: alpha = a * g**beta * h**gamma * y**delta
-    Note over U: eps = f(m, alpha); e = eps - delta
+
+    Note over U: Chọn beta, gamma, delta
+    Note over U: alpha = a · g^beta · h^gamma · y^delta
+
+    Note over U: eps = f(m, alpha)<br/>e = eps - delta
     U->>S: e
-    Note over S: R = t + e*r; S = u + e*s
-    S->>U: (R, S)
-    Note over U: rho = R + beta; sigma = S + gamma
+
+    Note over S: R = t + e·r<br/>S = u + e·s
+    S->>U: R, S
+
+    Note over U: rho = R + beta<br/>sigma = S + gamma
+
     Note over U: sig = (alpha, eps, rho, sigma)
 ```
 

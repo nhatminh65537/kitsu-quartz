@@ -6,7 +6,7 @@ aliases: [Abe-Okamoto, Partially Blind Signature, AO00]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], [[03-schnorr-blind-signature|03. Schnorr Blind Signature]], Sigma-protocol, witness indistinguishability (WI), OR-proof technique (Cramer et al.)
+> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], [[03-schnorr-blind-signature|03. Schnorr Blind Signature]], Sigma-protocol, witness indistinguishability (WI), OR-proof technique (Cramer et al.)  
 > **Lesson type**: Scheme
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -66,7 +66,7 @@ Do WI, Verifier không biết Signer dùng witness nào. Điều then chốt tro
 ## Scheme Definition
 
 > [!note] Scheme 8.2 — Abe-Okamoto Partially Blind Signature
-> **Type**: Partially Blind Digital Signature
+> **Type**: Partially Blind Digital Signature  
 > **Setting**: Cyclic group $\mathbb{G}$ bậc nguyên tố $q$, generator $g$; $H^*: \{0,1\}^* \to \mathbb{G}^*$, $H: \{0,1\}^* \to \mathbb{Z}_q$ (random oracles)
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**

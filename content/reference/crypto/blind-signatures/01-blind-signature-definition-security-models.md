@@ -6,7 +6,7 @@ aliases: [Blind Signature Definition, OMUF, Blindness Game]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: Digital signature (EUF-CMA), hash function (Random Oracle Model), PPT adversary, cyclic group cơ bản
+> **Prerequisites**: Digital signature (EUF-CMA), hash function (Random Oracle Model), PPT adversary, cyclic group cơ bản  
 > **Lesson type**: Foundation
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -106,13 +106,13 @@ Blindness đảm bảo rằng Signer không thể liên kết một phiên ký v
 sequenceDiagram
     participant A as Adversary A (Signer)
     participant C as Challenger C (User)
-    A->>C: Chon m0, m1
-    Note over C: Chon b ngau nhien, mo session 1 (dung m_b) va session 2 (dung m_{1-b})
+    A->>C: Chọn m0, m1
+    Note over C: Chọn b ngẫu nhiên, mở session 1 (dùng m_b) và session 2 (dùng m_{1-b})
     C->>A: Transcript session 1
     C->>A: Transcript session 2
-    Note over A: Tuong tac ca hai session (dieu khien phia Signer)
-    C->>A: (sigma_b, sigma_{1-b}) sau khi ca hai session done
-    A->>C: Doan b
+    Note over A: Tương tác cả hai session (điều khiển phía Signer)
+    C->>A: (sigma_b, sigma_{1-b}) sau khi cả hai session done
+    A->>C: Đoán b
 ```
 
 > [!note] Definition 1.4 — Perfect Blindness
@@ -146,14 +146,14 @@ OMUF là analog của EUF-CMA cho blind signatures. Intuition: sau $\ell$ phiên
 sequenceDiagram
     participant A as Adversary A (User)
     participant C as Challenger C (Signer)
-    A->>C: S1() -- mo session moi
+    A->>C: S1() -- mở session mới
     C->>A: sid, first signer message
     Note over A: Tinh blinded message
-    A->>C: S2(sid, blinded_msg) -- dong session
+    A->>C: S2(sid, blinded_msg) -- đóng session
     C->>A: Final signer message
-    Note over A: Unblind -- thu duoc 1 chu ky
-    Note over A: Lap lai voi nhieu session (QS2 lan)
-    A->>C: Xuat k >= QS2 + 1 chu ky hop le
+    Note over A: Unblind -- thu được 1 chữ kí
+    Note over A: Lặp lại với nhiều session (QS2 lần)
+    A->>C: Xuất k >= QS2 + 1 chữ kí hợp lệ
 ```
 
 > [!abstract] Definition 1.6 — OMUF Security

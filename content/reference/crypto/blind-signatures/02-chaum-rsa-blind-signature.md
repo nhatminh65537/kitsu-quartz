@@ -6,7 +6,7 @@ aliases: [Chaum RSA Blind Signature, RSA Blind Signature]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], RSA trapdoor permutation, multiplicative group $\mathbb{Z}_N^*$
+> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], RSA trapdoor permutation, multiplicative group $\mathbb{Z}_N^*$  
 > **Lesson type**: Scheme
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -37,9 +37,9 @@ Tính chất này cho phép User nhân message với một *blinding factor* ng�
 ## Mathematical Setting
 
 > [!note] Setting 2.0 — RSA Group
-> **Modulus**: $N = p \cdot q$ với $p, q$ là hai số nguyên tố lớn phân biệt.
-> **Exponent pair**: $e \in \mathbb{Z}_{\varphi(N)}^*$ (public exponent), $d = e^{-1} \bmod \varphi(N)$ (secret exponent), thỏa $ed \equiv 1 \pmod{\varphi(N)}$.
-> **RSA trapdoor**: Với phần tử bất kỳ $x \in \mathbb{Z}_N^*$, ta có $(x^e)^d \equiv x \pmod{N}$ và $(x^d)^e \equiv x \pmod{N}$.
+> **Modulus**: $N = p \cdot q$ với $p, q$ là hai số nguyên tố lớn phân biệt.  
+> **Exponent pair**: $e \in \mathbb{Z}_{\varphi(N)}^*$ (public exponent), $d = e^{-1} \bmod \varphi(N)$ (secret exponent), thỏa $ed \equiv 1 \pmod{\varphi(N)}$.  
+> **RSA trapdoor**: Với phần tử bất kỳ $x \in \mathbb{Z}_N^*$, ta có $(x^e)^d \equiv x \pmod{N}$ và $(x^d)^e \equiv x \pmod{N}$.  
 > **Hash**: $H : \{0,1\}^* \to \mathbb{Z}_N^*$ được model như random oracle.
 
 ---
@@ -47,7 +47,7 @@ Tính chất này cho phép User nhân message với một *blinding factor* ng�
 ## Scheme Definition
 
 > [!note] Scheme 2.1 — Chaum RSA Blind Signature
-> **Type**: Blind Digital Signature
+> **Type**: Blind Digital Signature  
 > **Setting**: RSA group $\mathbb{Z}_N^*$; hash $H : \{0,1\}^* \to \mathbb{Z}_N^*$ (random oracle)
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**

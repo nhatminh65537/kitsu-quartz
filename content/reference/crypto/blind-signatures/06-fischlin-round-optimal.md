@@ -49,12 +49,22 @@ Chữ ký mù cuối cùng là $\sigma = (m, \pi)$. Verification: kiểm tra $\p
 sequenceDiagram
     participant U as User (pk_S, m)
     participant S as Signer (sk_S)
-    Note over U: Chon r ngau nhien<br>Tinh c = COM(m; r)
-    U->>S: c (commitment)
-    Note over S: Ky len c bang sk_S
-    S->>U: sigma_hat = S.Sign(sk_S, c)
-    Note over U: Tao NIZK proof pi: biet (m, r) sao cho<br>COM(m; r) = c va S.Verify(pk_S, c, sigma_hat) = 1
-    Note over U: Output blind signature = (m, pi)
+
+    Note over U: Chọn r ngẫu nhiên
+    Note over U: Tính c = COM(m, r)
+
+    U->>S: c (giá trị cam kết)
+
+    Note over S: Ký lên c bằng sk_S
+
+    S->>U: σ̂ = Sign(sk_S, c)
+
+    Note over U: Tạo bằng chứng NIZK π
+    Note over U: Chứng minh biết (m, r)
+    Note over U: sao cho COM(m, r) = c
+    Note over U: và Verify(pk_S, c, σ̂) = 1
+
+    Note over U: Output chữ ký mù = (m, π)
 ```
 
 ---
@@ -84,7 +94,7 @@ Fischlin's construction là **generic**: nó hoạt động với bất kỳ b�
 ## Scheme Definition
 
 > [!note] Scheme 6.2 — Fischlin Round-Optimal Blind Signature
-> **Type**: Blind Digital Signature
+> **Type**: Blind Digital Signature  
 > **Setting**: Signature scheme $\mathsf{S}$; commitment scheme $\mathsf{COM}$; NIZK proof system với online-extractable extractor, cho relation $\mathcal{R}$ định nghĩa ở trên; hash $H: \{0,1\}^* \to \{0,1\}^\lambda$ (random oracle)
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**

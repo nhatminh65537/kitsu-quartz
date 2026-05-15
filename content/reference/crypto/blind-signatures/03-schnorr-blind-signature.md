@@ -6,7 +6,7 @@ aliases: [Schnorr Blind Signature, CP Blind Signature]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], Schnorr identification protocol, discrete logarithm problem (DLP), Fiat-Shamir transform, Random Oracle Model
+> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], Schnorr identification protocol, discrete logarithm problem (DLP), Fiat-Shamir transform, Random Oracle Model  
 > **Lesson type**: Scheme
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -54,8 +54,8 @@ Soundness (special soundness): hai response hợp lệ $(s, s')$ cho cùng $R$ v
 
 ## Scheme Definition
 
-> [!note] Scheme 3.1 — Schnorr Blind Signature
-> **Type**: Blind Digital Signature
+> [!note] Scheme 3.1 — Schnorr Blind Signature  
+> **Type**: Blind Digital Signature  
 > **Setting**: Cyclic group $\mathbb{G}$ bậc nguyên tố $q$, generator $g$; hash $H: \{0,1\}^* \to \mathbb{Z}_q$ (random oracle)
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**
@@ -96,14 +96,19 @@ Soundness (special soundness): hai response hợp lệ $(s, s')$ cho cùng $R$ v
 sequenceDiagram
     participant U as User (pk, m)
     participant S as Signer (sk)
-    Note over S: Chon k ngau nhien
-    S->>U: R = g**k
-    Note over U: Chon alpha, beta; R' = g**alpha * R * X**beta
-    Note over U: c' = H(R' || m); c = c' - beta
+
+    Note over S: Chọn k ngẫu nhiên
+    S->>U: R = g^k
+
+    Note over U: Chọn α, β<br/>R' = g^α · R · X^β
+
+    Note over U: c' = H(R' || m)<br/>c = c' - β
     U->>S: c (blinded challenge)
-    Note over S: s = k - x*c mod q
+
+    Note over S: s = k - x·c mod q
     S->>U: s
-    Note over U: s' = s + alpha mod q; sigma = (R', c', s')
+
+    Note over U: s' = s + α mod q<br/>σ = (R', c', s')
 ```
 
 ---

@@ -6,7 +6,7 @@ aliases: [Blind BLS, Boldyreva Blind Signature, BGS]
 created: 2026-05-13
 ---
 
-> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], BLS signature scheme, bilinear pairings cơ bản, Diffie-Hellman assumptions
+> **Prerequisites**: [[01-blind-signature-definition-security-models|01. Definition & Security Models]], BLS signature scheme, bilinear pairings cơ bản, Diffie-Hellman assumptions  
 > **Lesson type**: Scheme
 >
 > **Notation** (ký hiệu dùng mà không định nghĩa trong bài này):
@@ -74,7 +74,7 @@ Tính đúng: $e(H(m)^x, g) = e(H(m), g)^x = e(H(m), g^x)$. ✓
 Ý tưởng blinding: User chọn scalar $\beta \stackrel{R}{\leftarrow} \mathbb{Z}_p^*$ và gửi $\hat{\alpha} = H(m)^\beta$ cho Signer. Signer tính $\hat{\sigma} = \hat{\alpha}^x = H(m)^{\beta x}$. User tính $\sigma = \hat{\sigma}^{\beta^{-1}} = H(m)^x$. Đây là chữ ký BLS chuẩn trên $m$.
 
 > [!note] Scheme 7.3 — Blind BLS (Boldyreva BGS)
-> **Type**: Blind Digital Signature
+> **Type**: Blind Digital Signature  
 > **Setting**: GDH group $\mathbb{G}$ bậc nguyên tố $p$, generator $g$; hash $H: \{0,1\}^* \to \mathbb{G}^*$ (random oracle)
 >
 > **$\mathsf{KeyGen}(1^\lambda)$**
@@ -104,11 +104,18 @@ Tính đúng: $e(H(m)^x, g) = e(H(m), g)^x = e(H(m), g^x)$. ✓
 sequenceDiagram
     participant U as User (pk = y, m)
     participant S as Signer (sk = x)
-    Note over U: Chon beta tu Z_p*<br>Tinh alpha_hat = H(m)**beta
-    U->>S: alpha_hat (blinded hash)
-    Note over S: Tinh sigma_hat = alpha_hat**x
-    S->>U: sigma_hat
-    Note over U: sigma = sigma_hat**(1/beta) = H(m)**x<br>Kiem tra e(sigma, g) = e(H(m), y)
+
+    Note over U: Chọn β từ Z_p*
+    Note over U: Tính α̂ = H(m)^β
+
+    U->>S: α̂ (blinded hash)
+
+    Note over S: Tính σ̂ = α̂^x
+
+    S->>U: σ̂
+
+    Note over U: Tính σ = σ̂^(1/β) = H(m)^x
+    Note over U: Kiểm tra e(σ, g) = e(H(m), y)
 ```
 
 ---
