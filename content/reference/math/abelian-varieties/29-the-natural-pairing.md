@@ -2,7 +2,7 @@
 title: "29. The Natural Pairing Between A[n] and Â[n]"
 type: theory
 tags: [math, abelian-varieties, weil-pairing, lesson-29]
-aliases: [Natural Pairing A[n] and Adual[n]]
+aliases: [Natural Pairing and Adual]
 created: 2026-05-18
 ---
 
