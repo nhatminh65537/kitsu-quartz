@@ -2,7 +2,7 @@
 title: "A1. Proof: A[n] ≅ (ℤ/nℤ)^{2g}"
 type: appendix
 tags: [math, abelian-varieties, appendix, n-torsion]
-aliases: [Proof A[n] isomorphic (Z/nZ)^2g]
+aliases: ["Proof A[n] isomorphic (Z/nZ)^2g"]
 created: 2026-05-18
 ---
 
