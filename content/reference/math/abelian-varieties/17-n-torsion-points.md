@@ -2,7 +2,7 @@
 title: "17. n-Torsion Points A[n]"
 type: theory
 tags: [math, abelian-varieties, lesson-17]
-aliases: [n-Torsion Points A[n]]
+aliases: [n-Torsion Points]
 created: 2026-05-17
 ---
 
